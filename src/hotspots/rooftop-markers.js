@@ -1,0 +1,61 @@
+import * as THREE from 'three';
+
+export const ROOFTOP_MARKERS = [
+  { id: 'left-equipment', position: [-17.29753, 5.33822, -13.98721], normal: [0, 1, 0] },
+  { id: 'upper-unit-1', position: [3.02027, 13.095, -32.85433], normal: [0, 1, 0] },
+  { id: 'upper-unit-2', position: [8.09217, 13.095, -37.95532], normal: [0, 1, 0] },
+  { id: 'right-equipment', position: [13.42586, 5.33822, -44.07659], normal: [0, 1, 0] },
+  { id: 'central-structure', position: [10.04157, 8.79009, -30.89224], normal: [0.7071065, 0.0008309, 0.7071065] },
+];
+
+export function createRooftopMarkers(building) {
+  const canvas = document.createElement('canvas');
+  canvas.width = canvas.height = 128;
+  const context = canvas.getContext('2d');
+  context.beginPath();
+  context.arc(64, 64, 44, 0, Math.PI * 2);
+  context.fillStyle = '#ffffff';
+  context.fill();
+  context.strokeStyle = '#37434b';
+  context.lineWidth = 5;
+  context.stroke();
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  const material = new THREE.SpriteMaterial({
+    map: texture, transparent: true, depthTest: true, depthWrite: false,
+    toneMapped: false, fog: false,
+  });
+  const group = new THREE.Group();
+  group.name = 'rooftopMarkers';
+  for (const anchor of ROOFTOP_MARKERS) {
+    const marker = new THREE.Sprite(material);
+    marker.name = anchor.id;
+    marker.position.fromArray(anchor.position);
+    // A small local-space offset prevents intersection with the equipment surface.
+    marker.position.addScaledVector(new THREE.Vector3(...anchor.normal), 0.3);
+    group.add(marker);
+  }
+  building.add(group);
+  const point = new THREE.Vector3();
+  const scale = new THREE.Vector3();
+  return {
+    update(camera, viewportHeight) {
+      camera.updateMatrixWorld();
+      group.updateWorldMatrix(true, true);
+      group.getWorldScale(scale);
+      const pixelsToWorld = 2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * 26 / Math.max(1, viewportHeight);
+      for (const marker of group.children) {
+        marker.getWorldPosition(point).applyMatrix4(camera.matrixWorldInverse);
+        const depth = -point.z;
+        marker.visible = depth > camera.near;
+        const size = Math.max(0, depth) * pixelsToWorld;
+        marker.scale.set(size / scale.x, size / scale.y, 1);
+      }
+    },
+    dispose() {
+      group.removeFromParent();
+      material.dispose();
+      texture.dispose();
+    },
+  };
+}

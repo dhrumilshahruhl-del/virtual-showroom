@@ -35,6 +35,8 @@ async function screenshot(name) {
 try {
   await send('Runtime.enable');
   await send('Page.enable');
+  await send('Network.enable');
+  await send('Network.setCacheDisabled', { cacheDisabled: true });
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false });
   await send('Page.navigate', { url: 'http://localhost:4173/' });
   for (let attempt = 0; attempt < 90; attempt++) {
@@ -56,6 +58,9 @@ try {
   const stats = await evaluate(`(() => {
     const app = window.qaApp;
     const site = app.scene.getObjectByName('cityContext').userData.siteLayout;
+    const markers = app.scene.getObjectByName('rooftopMarkers');
+    if (!markers || markers.children.length !== 5) throw new Error('Missing rooftop markers');
+    if (markers.parent !== app.scene.getObjectByName('cityContext').parent.children[0]) throw new Error('Markers are not attached to building');
     const overlaps = (a, b) => a.minX < b.maxX && a.maxX > b.minX && a.minZ < b.maxZ && a.maxZ > b.minZ;
     const roadOverlaps = [...site.buildings, ...site.parking].filter(rect => site.roads.some(road => overlaps(rect, road))).length;
     if (roadOverlaps) throw new Error('Building or parking footprint overlaps a road');

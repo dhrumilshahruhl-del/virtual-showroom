@@ -7,6 +7,7 @@ import { EnvironmentManager } from './environment/EnvironmentManager.js';
 import { createStudioLights } from './lighting/studio-lights.js';
 import { cloneSceneFromGltf, loadGltf } from './loaders/model-loader.js';
 import { createShowroomUi } from './ui/showroom-ui.js';
+import { createRooftopMarkers } from './hotspots/rooftop-markers.js';
 
 const DEFAULTS = {
   root: '#rooftop-showroom',
@@ -56,6 +57,8 @@ export async function launchShowroom(options = {}) {
   let controls = null;
   let buildingObject = null;
   let cityContext = null;
+  let rooftopMarkers = null;
+  let viewportHeight = 1;
   let intro = null;
   let disposed = false;
   const clock = new THREE.Clock();
@@ -64,6 +67,7 @@ export async function launchShowroom(options = {}) {
     const rect = root.getBoundingClientRect();
     const width = Math.max(1, Math.floor(rect.width));
     const height = Math.max(1, Math.floor(rect.height));
+    viewportHeight = height;
     renderer.setSize(width, height, false);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
@@ -181,6 +185,7 @@ export async function launchShowroom(options = {}) {
     const defaultTarget = vectorFromSnapshot(DEFAULT_VIEW.camera.target);
     cityContext = await createCityContext(new THREE.Box3().setFromObject(building));
     modelRoot.add(cityContext);
+    rooftopMarkers = createRooftopMarkers(building);
     renderer.shadowMap.autoUpdate = false;
     renderer.shadowMap.needsUpdate = true;
 
@@ -225,6 +230,7 @@ export async function launchShowroom(options = {}) {
       }
     }
     controls?.update();
+    rooftopMarkers?.update(camera, viewportHeight);
     renderer.render(scene, camera);
   });
 
@@ -239,6 +245,7 @@ export async function launchShowroom(options = {}) {
       disposed = true;
       renderer.setAnimationLoop(null);
       controls?.dispose();
+      rooftopMarkers?.dispose();
       cityContext?.userData?.dispose?.();
       environment.dispose();
       window.removeEventListener('resize', resize);
