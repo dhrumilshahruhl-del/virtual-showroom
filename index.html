@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>200 Water Rooftop Virtual Showroom</title>
+    <link rel="stylesheet" href="./src/ui/showroom.css" />
+    <link rel="preload" href="./assets/models/200-water-building.opt.glb" as="fetch" crossorigin />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main id="rooftop-showroom" class="showroom" data-building-model="./assets/models/200-water-building.opt.glb">
+      <canvas class="showroom__canvas" aria-label="Interactive 200 Water Street building model"></canvas>
+      <div class="showroom__hud">
+        <div class="showroom__toolbar" aria-label="Showroom controls">
+          <button type="button" data-action="reset">Reset view</button>
+          <button type="button" data-action="copy-view">Copy view</button>
+        </div>
+      </div>
+      <p class="showroom__status" role="status" aria-live="polite">Loading building model...</p>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

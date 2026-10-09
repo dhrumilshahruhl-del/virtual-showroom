@@ -1,0 +1,23 @@
+# Local tooling and generated QA captures
+node_modules/
+docs/environment-*.png
+docs/environment-validation.json
+
+# Keep only the runtime city glTF exports and their referenced textures.
+assets/models/Downtown City MegaKit[Standard]/*
+!assets/models/Downtown City MegaKit[Standard]/
+assets/models/Downtown City MegaKit[Standard]/*/*
+!assets/models/Downtown City MegaKit[Standard]/Exports/
+assets/models/Downtown City MegaKit[Standard]/Exports/*
+!assets/models/Downtown City MegaKit[Standard]/Exports/glTF (Godot)/
+assets/models/Downtown City MegaKit[Standard]/Exports/glTF (Godot)/*
+!assets/models/Downtown City MegaKit[Standard]/Exports/glTF (Godot)/Building_Large_2.gltf
+!assets/models/Downtown City MegaKit[Standard]/Exports/glTF (Godot)/Building_Large_2.bin
+!assets/models/Downtown City MegaKit[Standard]/Exports/glTF (Godot)/Building_Medium_2_001.gltf
+!assets/models/Downtown City MegaKit[Standard]/Exports/glTF (Godot)/Building_Medium_2_001.bin
+!assets/models/Downtown City MegaKit[Standard]/Exports/glTF (Godot)/Building_Small_1.gltf
+!assets/models/Downtown City MegaKit[Standard]/Exports/glTF (Godot)/Building_Small_1.bin
+!assets/models/Downtown City MegaKit[Standard]/Exports/glTF (Godot)/*.png
+
+# Do not commit the source archive when present beside the project.
+*.zip

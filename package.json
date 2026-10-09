@@ -1,0 +1,10 @@
+{
+  "name": "rooftop-virtual-showroom",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx http-server . -p 4173 -c-1",
+    "check": "node --check src/main.js && node --check src/showroom.js"
+  }
+}
