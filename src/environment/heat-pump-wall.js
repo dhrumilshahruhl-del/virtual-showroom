@@ -6,6 +6,7 @@ import * as THREE from 'three';
 export function makeHeatPumpWallTranslucent(building, root) {
   const progress = { value: 0 };
   let target = 0;
+  let guided = false;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   building.updateWorldMatrix(true, true);
   const inverse = building.matrixWorld.clone().invert();
@@ -68,8 +69,13 @@ export function makeHeatPumpWallTranslucent(building, root) {
     wallMesh.name = 'heatPumpEnclosureWall';
     wallMesh.receiveShadow = true;
     wallMesh.castShadow = true;
+    // Retain the room's structural outline as its infill becomes translucent.
+    const edgeGeometry = new THREE.EdgesGeometry(wallGeometry, 35);
+    const edgeMaterial = new THREE.LineBasicMaterial({ color: 0x607381, transparent: true, opacity: 0.35 });
+    const edges = new THREE.LineSegments(edgeGeometry, edgeMaterial);
+    wallMesh.add(edges);
     node.add(wallMesh);
-    resources.push({ node, geometry, opaqueGeometry, wallGeometry, material, wallMesh });
+    resources.push({ node, geometry, opaqueGeometry, wallGeometry, material, wallMesh, edgeGeometry, edgeMaterial });
   }
   const button = document.createElement('button');
   button.type = 'button';
@@ -79,36 +85,39 @@ export function makeHeatPumpWallTranslucent(building, root) {
   button.setAttribute('aria-label', 'Make heat pump wall translucent');
   button.setAttribute('aria-pressed', 'false');
   root.append(button);
-  button.addEventListener('click', () => {
-    target = target ? 0 : 1;
+  function setTranslucent(value) {
+    target = value ? 1 : 0;
     button.textContent = target ? 'Solid' : 'Reveal';
     button.setAttribute('aria-pressed', String(Boolean(target)));
     button.setAttribute('aria-label', target ? 'Make heat pump wall solid' : 'Make heat pump wall translucent');
-  });
+  }
+  button.addEventListener('click', () => setTranslucent(!target));
   const anchor = new THREE.Vector3(14.85, 7.15, -35.70);
   const world = new THREE.Vector3();
   return {
+    get translucent() { return Boolean(target); },
+    get settled() { return progress.value === target; },
+    setTranslucent,
+    setGuided(value) { guided = value; button.disabled = value; },
     update(camera, dt) {
       progress.value = reducedMotion.matches ? target : THREE.MathUtils.clamp(
         progress.value + Math.sign(target - progress.value) * dt / 0.7, 0, 1);
       // Prevent overshoot when reversing the wipe midway.
       if ((target === 1 && progress.value > target) || (target === 0 && progress.value < target)) progress.value = target;
-      let shadowsChanged = false;
-      for (const { material, wallMesh } of resources) {
+      for (const { material } of resources) {
         material.depthWrite = progress.value === 0;
-        const casts = progress.value === 0;
-        if (wallMesh.castShadow !== casts) { wallMesh.castShadow = casts; shadowsChanged = true; }
+        // Keep the original wall shadow and PBR reflections throughout the reveal.
       }
       world.copy(anchor);
       building.localToWorld(world);
       world.project(camera);
       const visible = world.z >= -1 && world.z <= 1 && Math.abs(world.x) <= 1 && Math.abs(world.y) <= 1;
-      button.style.display = visible ? 'inline-flex' : 'none';
+      button.style.display = visible && !guided ? 'inline-flex' : 'none';
       if (visible) {
         button.style.left = `${(world.x + 1) * 0.5 * root.clientWidth}px`;
         button.style.top = `${(1 - world.y) * 0.5 * root.clientHeight}px`;
       }
-      return shadowsChanged;
+      return false;
     },
     dispose() {
       button.remove();
@@ -118,6 +127,8 @@ export function makeHeatPumpWallTranslucent(building, root) {
         resource.opaqueGeometry.dispose();
         resource.wallGeometry.dispose();
         resource.material.dispose();
+        resource.edgeGeometry.dispose();
+        resource.edgeMaterial.dispose();
       }
     },
   };

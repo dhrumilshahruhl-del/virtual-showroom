@@ -237,3 +237,89 @@ button {
 .showroom__wall-toggle[aria-pressed="true"] { background: #00375a; color: white; }
 .showroom__wall-toggle:hover { border-color: #005f8f; }
 .showroom__wall-toggle:focus-visible { outline: 3px solid #005f8f; outline-offset: 3px; }
+
+.flow-launch {
+  position: absolute;
+  right: clamp(16px, 3vw, 40px);
+  bottom: clamp(16px, 3vw, 32px);
+  z-index: 15;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 22px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: #00375a;
+  color: #fff;
+  box-shadow: 0 12px 36px rgba(0, 35, 58, 0.24);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.flow-launch span { color: #96e9ff; font-size: 11px; }
+.flow-launch:hover { background: #005077; }
+.flow-launch[hidden], .flow-panel[hidden] { display: none; }
+.flow-panel {
+  position: absolute;
+  left: clamp(16px, 3vw, 40px);
+  bottom: clamp(16px, 3vw, 32px);
+  z-index: 20;
+  width: min(390px, calc(100vw - 32px));
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  background: rgba(250, 253, 255, 0.96);
+  box-shadow: 0 18px 60px rgba(0, 35, 58, 0.2);
+  backdrop-filter: blur(18px);
+}
+.flow-panel__top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.flow-panel__eyebrow { color: #005f8f; font-size: 10px; letter-spacing: 0.15em; font-weight: 800; text-transform: uppercase; }
+.flow-panel__count { color: #607381; font-size: 11px; }
+.flow-panel__steps { display: flex; gap: 8px; margin: 16px 0 20px; }
+.flow-panel__steps button {
+  flex: 1;
+  height: 32px;
+  padding: 0;
+  border: 1px solid #d7e2e9;
+  border-radius: 9px;
+  background: transparent;
+  color: #607381;
+  font-size: 11px;
+  cursor: pointer;
+}
+.flow-panel__steps button[data-state="active"] { background: #00375a; border-color: #00375a; color: #fff; }
+.flow-panel__steps button[data-state="done"] { border-color: #83bdd4; color: #005f8f; background: #e9f4f9; }
+.flow-panel h2 { margin: 0 0 10px; color: #00375a; font-size: 22px; line-height: 1.2; letter-spacing: -0.025em; }
+.flow-panel__copy { min-height: 128px; }
+.flow-panel__copy p { margin: 0; color: #405161; font-size: 13px; line-height: 1.6; }
+.flow-panel__legend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.flow-panel__legend span { display: flex; align-items: center; gap: 5px; color: #405161; font-size: 10px; }
+.flow-panel__legend span::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #47aaff; }
+.flow-panel__legend [data-kind="exhaust"]::before { background: #ff9c4a; border-radius: 0; transform: rotate(45deg); }
+.flow-panel__legend [data-kind="energy"]::before { width: 12px; height: 3px; background: #00bed4; border-radius: 2px; }
+.flow-panel .flow-panel__principle { margin: 12px 0 18px; color: #005f8f; font-size: 11px; line-height: 1.4; }
+.flow-panel__detail { margin: 0 0 16px; color: #607381; font-size: 11px; line-height: 1.5; }
+.flow-panel__navigation { display: flex; gap: 8px; padding-top: 12px; border-top: 1px solid #dce7ed; }
+.flow-panel__navigation button { flex: 1; min-height: 36px; border: 1px solid #d7e2e9; border-radius: 9px; background: white; color: #00375a; font-size: 12px; font-weight: 700; cursor: pointer; }
+.flow-panel__navigation [data-flow="next"] { background: #00375a; border-color: #00375a; color: white; }
+.flow-panel__navigation button:disabled { opacity: 0.4; cursor: default; }
+.flow-panel__controls { display: flex; gap: 8px; margin-top: 16px; }
+.flow-panel__controls button { min-height: 36px; padding: 0 12px; border: 1px solid #d7e2e9; border-radius: 9px; background: white; color: #00375a; font-size: 11px; font-weight: 700; cursor: pointer; }
+.flow-panel__controls [data-flow="pause"] { min-width: 78px; background: #00375a; color: white; border-color: #00375a; }
+.flow-panel__controls [data-flow="exit"] { margin-left: auto; }
+.flow-panel__controls button:disabled { opacity: 0.55; cursor: default; }
+.flow-launch:focus-visible, .flow-panel button:focus-visible { outline: 3px solid #009dc7; outline-offset: 3px; }
+.showroom[data-flow-active="true"] .showroom__toolbar { visibility: hidden; }
+.showroom[data-flow-active="true"] .showroom__canvas { cursor: default; }
+@media (max-width: 600px) {
+  .flow-panel { padding: 16px; }
+  .flow-panel__copy { min-height: 105px; }
+  .flow-panel__steps { margin: 12px 0 14px; }
+  .flow-panel h2 { font-size: 20px; }
+  .flow-panel__legend { margin-top: 10px; }
+}
+@media (max-height: 580px) {
+  .flow-panel { bottom: 12px; max-height: calc(100dvh - 24px); overflow-y: auto; }
+  .flow-panel__copy { min-height: 0; }
+}

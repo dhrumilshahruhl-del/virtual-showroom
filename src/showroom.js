@@ -10,6 +10,7 @@ import { createShowroomUi } from './ui/showroom-ui.js';
 import { makeHeatPumpWallTranslucent } from './environment/heat-pump-wall.js';
 import { createEquipmentModal } from './ui/equipment-modal.js';
 import { createRooftopMarkers } from './hotspots/rooftop-markers.js';
+import { createSystemFlow } from './flow/system-flow.js';
 
 const DEFAULTS = {
   root: '#rooftop-showroom',
@@ -62,6 +63,7 @@ export async function launchShowroom(options = {}) {
   let cityContext = null;
   let rooftopMarkers = null;
   let heatPumpWall = null;
+  let systemFlow = null;
   let viewportHeight = 1;
   let intro = null;
   let disposed = false;
@@ -196,23 +198,27 @@ export async function launchShowroom(options = {}) {
 
     controls = createShowroomControls(camera, canvas, defaultTarget);
     controls.saveState();
+    systemFlow = createSystemFlow({ root, building, camera, controls,
+      wall: heatPumpWall, markers: rooftopMarkers, modal: equipmentModal });
 
     intro = null;
     ui.setStatus('');
   }
 
   function resetView() {
-    if (!controls) return;
+    if (!controls || systemFlow?.active) return;
     controls.reset();
   }
 
   let pointerStart = null;
   function onPointerDown(event) {
+    if (systemFlow?.active) return;
     pointerStart = event.isPrimary && event.button === 0 ? { x: event.clientX, y: event.clientY } : null;
   }
   function onPointerUp(event) {
     const start = pointerStart;
     pointerStart = null;
+    if (systemFlow?.active) return;
     if (!start || Math.hypot(event.clientX - start.x, event.clientY - start.y) > 5) return;
     const rect = canvas.getBoundingClientRect();
     const id = rooftopMarkers?.pick(camera,
@@ -221,6 +227,7 @@ export async function launchShowroom(options = {}) {
     if (id) equipmentModal.open(id);
   }
   function onPointerMove(event) {
+    if (systemFlow?.active) { canvas.style.cursor = 'default'; return; }
     if (event.pointerType === 'touch') return;
     const rect = canvas.getBoundingClientRect();
     const hovered = rooftopMarkers?.pick(camera,
@@ -249,7 +256,8 @@ export async function launchShowroom(options = {}) {
 
   renderer.setAnimationLoop(() => {
     if (disposed) return;
-    const dt = Math.min(clock.getDelta(), 0.05);
+    const frameDelta = Math.min(clock.getDelta(), 0.25);
+    const dt = Math.min(frameDelta, 0.05);
     if (intro) {
       intro.elapsed += dt;
       const t = Math.min(intro.elapsed / intro.duration, 1);
@@ -264,9 +272,10 @@ export async function launchShowroom(options = {}) {
         intro = null;
       }
     }
-    controls?.update();
+    if (!systemFlow?.active) controls?.update();
+    systemFlow?.update(frameDelta);
     rooftopMarkers?.update(camera, viewportHeight);
-    if (heatPumpWall?.update(camera, dt)) renderer.shadowMap.needsUpdate = true;
+    if (heatPumpWall?.update(camera, systemFlow?.wallDelta(frameDelta) ?? dt)) renderer.shadowMap.needsUpdate = true;
     renderer.render(scene, camera);
   });
 
@@ -276,11 +285,13 @@ export async function launchShowroom(options = {}) {
     camera,
     renderer,
     get controls() { return controls; },
+    get systemFlow() { return systemFlow; },
     resetView,
     dispose() {
       disposed = true;
       renderer.setAnimationLoop(null);
       controls?.dispose();
+      systemFlow?.dispose();
       rooftopMarkers?.dispose();
       equipmentModal.dispose();
       heatPumpWall?.dispose();

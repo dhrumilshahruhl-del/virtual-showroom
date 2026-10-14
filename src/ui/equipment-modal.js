@@ -38,6 +38,7 @@ export function createEquipmentModal(root) {
     if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
   });
   return {
+    close() { dialog.close(); },
     open(id) {
       const equipment = EQUIPMENT[id];
       if (!equipment) return;

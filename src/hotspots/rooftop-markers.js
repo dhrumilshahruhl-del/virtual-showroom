@@ -40,6 +40,7 @@ export function createRooftopMarkers(building) {
   const point = new THREE.Vector3();
   const scale = new THREE.Vector3();
   return {
+    setEnabled(enabled) { group.visible = enabled; },
     update(camera, viewportHeight) {
       camera.updateMatrixWorld();
       group.updateWorldMatrix(true, true);
@@ -54,6 +55,7 @@ export function createRooftopMarkers(building) {
       }
     },
     pick(camera, x, y) {
+      if (!group.visible) return undefined;
       const raycaster = new THREE.Raycaster();
       raycaster.setFromCamera(new THREE.Vector2(x, y), camera);
       const hit = raycaster.intersectObjects(group.children).find(({ object, uv }) =>

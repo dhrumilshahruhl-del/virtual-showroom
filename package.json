@@ -5,6 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "npx http-server . -p 4173 -c-1",
-    "check": "node --check src/main.js && node --check src/showroom.js"
+    "check": "node --check src/main.js && node --check src/showroom.js && node --check src/flow/system-flow.js && node --check src/flow/flow-visuals.js && node --check src/flow/system-flow-data.js && node --check src/flow/pipe-topology.js && node --check src/environment/heat-pump-wall.js"
   }
 }
