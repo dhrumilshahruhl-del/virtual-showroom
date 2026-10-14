@@ -7,6 +7,8 @@ import { EnvironmentManager } from './environment/EnvironmentManager.js';
 import { createStudioLights } from './lighting/studio-lights.js';
 import { cloneSceneFromGltf, loadGltf } from './loaders/model-loader.js';
 import { createShowroomUi } from './ui/showroom-ui.js';
+import { makeHeatPumpWallTranslucent } from './environment/heat-pump-wall.js';
+import { createEquipmentModal } from './ui/equipment-modal.js';
 import { createRooftopMarkers } from './hotspots/rooftop-markers.js';
 
 const DEFAULTS = {
@@ -36,6 +38,7 @@ export async function launchShowroom(options = {}) {
   const canvas = root.querySelector('canvas');
   const state = {};
   const ui = createShowroomUi(root, state);
+  const equipmentModal = createEquipmentModal(root);
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -58,6 +61,7 @@ export async function launchShowroom(options = {}) {
   let buildingObject = null;
   let cityContext = null;
   let rooftopMarkers = null;
+  let heatPumpWall = null;
   let viewportHeight = 1;
   let intro = null;
   let disposed = false;
@@ -177,6 +181,7 @@ export async function launchShowroom(options = {}) {
     prepareMaterials(building);
     enhancePbrMaterials(building);
     applyTransform(building, DEFAULT_VIEW.building);
+    heatPumpWall = makeHeatPumpWallTranslucent(building, root);
     buildingObject = building;
 
     modelRoot.add(building);
@@ -200,6 +205,36 @@ export async function launchShowroom(options = {}) {
     if (!controls) return;
     controls.reset();
   }
+
+  let pointerStart = null;
+  function onPointerDown(event) {
+    pointerStart = event.isPrimary && event.button === 0 ? { x: event.clientX, y: event.clientY } : null;
+  }
+  function onPointerUp(event) {
+    const start = pointerStart;
+    pointerStart = null;
+    if (!start || Math.hypot(event.clientX - start.x, event.clientY - start.y) > 5) return;
+    const rect = canvas.getBoundingClientRect();
+    const id = rooftopMarkers?.pick(camera,
+      ((event.clientX - rect.left) / rect.width) * 2 - 1,
+      -((event.clientY - rect.top) / rect.height) * 2 + 1);
+    if (id) equipmentModal.open(id);
+  }
+  function onPointerMove(event) {
+    if (event.pointerType === 'touch') return;
+    const rect = canvas.getBoundingClientRect();
+    const hovered = rooftopMarkers?.pick(camera,
+      ((event.clientX - rect.left) / rect.width) * 2 - 1,
+      -((event.clientY - rect.top) / rect.height) * 2 + 1);
+    canvas.style.cursor = event.buttons ? 'grabbing' : hovered ? 'pointer' : '';
+  }
+  function onPointerLeave() { canvas.style.cursor = ''; }
+  function onPointerCancel() { pointerStart = null; onPointerLeave(); }
+  canvas.addEventListener('pointermove', onPointerMove);
+  canvas.addEventListener('pointerleave', onPointerLeave);
+  canvas.addEventListener('pointerdown', onPointerDown);
+  canvas.addEventListener('pointerup', onPointerUp);
+  canvas.addEventListener('pointercancel', onPointerCancel);
 
   ui.buttons.reset?.addEventListener('click', resetView);
   ui.buttons.copyView?.addEventListener('click', copyCurrentView);
@@ -231,6 +266,7 @@ export async function launchShowroom(options = {}) {
     }
     controls?.update();
     rooftopMarkers?.update(camera, viewportHeight);
+    if (heatPumpWall?.update(camera, dt)) renderer.shadowMap.needsUpdate = true;
     renderer.render(scene, camera);
   });
 
@@ -246,6 +282,14 @@ export async function launchShowroom(options = {}) {
       renderer.setAnimationLoop(null);
       controls?.dispose();
       rooftopMarkers?.dispose();
+      equipmentModal.dispose();
+      heatPumpWall?.dispose();
+      canvas.style.cursor = '';
+      canvas.removeEventListener('pointermove', onPointerMove);
+      canvas.removeEventListener('pointerleave', onPointerLeave);
+      canvas.removeEventListener('pointerdown', onPointerDown);
+      canvas.removeEventListener('pointerup', onPointerUp);
+      canvas.removeEventListener('pointercancel', onPointerCancel);
       cityContext?.userData?.dispose?.();
       environment.dispose();
       window.removeEventListener('resize', resize);

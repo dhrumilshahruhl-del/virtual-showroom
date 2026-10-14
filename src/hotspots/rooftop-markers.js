@@ -5,7 +5,7 @@ export const ROOFTOP_MARKERS = [
   { id: 'upper-unit-1', position: [3.02027, 13.095, -32.85433], normal: [0, 1, 0] },
   { id: 'upper-unit-2', position: [8.09217, 13.095, -37.95532], normal: [0, 1, 0] },
   { id: 'right-equipment', position: [13.42586, 5.33822, -44.07659], normal: [0, 1, 0] },
-  { id: 'central-structure', position: [10.04157, 8.79009, -30.89224], normal: [0.7071065, 0.0008309, 0.7071065] },
+  { id: 'central-structure', position: [6.565, 8.515, -27.415], normal: [0.7071068, 0, 0.7071068] },
 ];
 
 export function createRooftopMarkers(building) {
@@ -30,6 +30,7 @@ export function createRooftopMarkers(building) {
   for (const anchor of ROOFTOP_MARKERS) {
     const marker = new THREE.Sprite(material);
     marker.name = anchor.id;
+    marker.userData.equipment = anchor.id.startsWith('upper-unit') ? 'supply' : anchor.id === 'central-structure' ? 'heat-pump' : 'extract';
     marker.position.fromArray(anchor.position);
     // A small local-space offset prevents intersection with the equipment surface.
     marker.position.addScaledVector(new THREE.Vector3(...anchor.normal), 0.3);
@@ -51,6 +52,13 @@ export function createRooftopMarkers(building) {
         const size = Math.max(0, depth) * pixelsToWorld;
         marker.scale.set(size / scale.x, size / scale.y, 1);
       }
+    },
+    pick(camera, x, y) {
+      const raycaster = new THREE.Raycaster();
+      raycaster.setFromCamera(new THREE.Vector2(x, y), camera);
+      const hit = raycaster.intersectObjects(group.children).find(({ object, uv }) =>
+        object.visible && uv && Math.hypot(uv.x - 0.5, uv.y - 0.5) <= 44 / 128);
+      return hit?.object.userData.equipment;
     },
     dispose() {
       group.removeFromParent();
