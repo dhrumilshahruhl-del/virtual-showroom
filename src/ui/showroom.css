@@ -345,6 +345,20 @@ button {
 .flow-panel__controls button:disabled { opacity: 0.55; cursor: default; }
 .flow-launch:focus-visible, .flow-panel button:focus-visible { outline: 3px solid #009dc7; outline-offset: 3px; }
 .showroom__toolbar[hidden] { display: none; }
+.flow-equipment { position: absolute; z-index: 4; display: flex; gap: 8px; padding: 7px; border: 1px solid #d7e2e9; border-radius: 9px; background: #fff; box-shadow: 0 3px 10px rgba(0, 35, 58, 0.10); pointer-events: none; animation: equipment-enter 180ms ease-out; }
+.flow-equipment[hidden] { display: none; }
+.flow-equipment-leader { position: absolute; z-index: 3; height: 1px; background: #a9b5bd; transform-origin: left center; pointer-events: none; }
+.flow-equipment-leader::before { content: ''; position: absolute; width: 6px; height: 6px; left: -3px; top: -3px; border: 1px solid #778791; border-radius: 50%; background: #fff; }
+.flow-equipment-leader[hidden] { display: none; }
+.flow-equipment figure { margin: 0; width: 96px; text-align: center; }
+.flow-equipment img { display: block; width: 96px; height: 68px; object-fit: contain; }
+.flow-equipment figcaption { margin-top: 4px; color: #00375a; font-size: 12px; line-height: 16px; font-weight: 700; }
+.flow-equipment.is-compact { padding: 5px; }
+@keyframes equipment-enter { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 600px) { .flow-equipment figure, .flow-equipment img { width: 72px; } .flow-equipment img { height: 48px; } .flow-equipment { padding: 5px; } }
+.flow-equipment.is-compact figure, .flow-equipment.is-compact img { width: 56px; }
+.flow-equipment.is-compact img { height: 36px; }
+@media (prefers-reduced-motion: reduce) { .flow-equipment { animation: none; } }
 .showroom[data-flow-active="true"] .showroom__canvas { cursor: default; }
 @media (max-width: 600px) {
   .flow-panel { padding: 16px; }

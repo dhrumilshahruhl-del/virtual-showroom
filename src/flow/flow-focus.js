@@ -12,6 +12,7 @@ export const FLOW_FOCUS = [
   { active: ['extract-left', 'extract-right: housings and discharge hoods'], relatedZones: [2], obstruction: false },
 ].map((focus, index) => ({ ...focus, pathMask: 1 << index,
   camera: { focus: FLOW_STEPS[index].focus, span: FLOW_STEPS[index].span,
+    frameFill: FLOW_STEPS[index].frameFill,
     viewDirection: FLOW_STEPS[index].viewDirection } }));
 
 // Cache one independent material per source material in each context group.

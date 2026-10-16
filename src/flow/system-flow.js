@@ -3,6 +3,7 @@ import { FLOW_STEPS } from './system-flow-data.js';
 import { createFlowVisuals } from './flow-visuals.js';
 import { FLOW_FOCUS } from './flow-focus.js';
 import { createFlowImpact } from '../ui/flow-impact.js';
+import { createFlowEquipment } from '../ui/flow-equipment.js';
 
 const CAMERA_DURATION = 1.5;
 // Presentation order refers to stable engineering indices used by focus,
@@ -14,6 +15,7 @@ const ease = (t) => t * t * (3 - 2 * t);
 
 export function createSystemFlow({ root, building, city, camera, controls, wall, markers, modal }) {
   const visuals = createFlowVisuals(building, city);
+  const equipment = createFlowEquipment({ root, building, camera, bounds: visuals.identificationBounds });
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const launch = document.createElement('button');
   launch.type = 'button';
@@ -58,12 +60,21 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     targetTo: new THREE.Vector3(), elapsed: 0, duration: CAMERA_DURATION };
   const framing = { x: 0, y: 0 };
   let impactInset = 0;
+  let equipmentLayoutTimer;
+  function scheduleEquipmentLayout() {
+    clearTimeout(equipmentLayoutTimer);
+    equipmentLayoutTimer = setTimeout(() => { if (mode === 'playing' && (!transition || paused)) equipment.layout(); }, 240);
+  }
 
   function handleImpactLayout() {
     impactInset = impact.measure().right;
     // Reuse the existing camera fit only when overlay layout changes. The
     // impact diagrams have no animation-frame or per-frame update function.
-    if (mode === 'playing') frameStep(ORDERED_FOCUS[stepIndex].camera, STEP_ORDER[stepIndex]);
+    if (mode === 'playing') {
+      frameStep(ORDERED_FOCUS[stepIndex].camera, STEP_ORDER[stepIndex]);
+      if (!paused) equipment.suspend();
+    }
+    scheduleEquipmentLayout();
   }
   window.addEventListener('resize', handleImpactLayout);
 
@@ -104,6 +115,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     const usableWidth = root.clientWidth <= 600 ? root.clientWidth : Math.max(1, root.clientWidth - panelRect.width - 48 - impactInset);
     const usableHeight = root.clientWidth <= 600 ? Math.max(1, root.clientHeight - panelRect.height - 48) : root.clientHeight;
     const usableAspect = usableWidth / usableHeight;
+    const frameFill = step.frameFill ?? 0.72;
     let distance = step.span * scale * 0.65 / Math.tan(halfFov) / Math.min(1, usableAspect);
     direction.fromArray(step.viewDirection || [1, 1.25, 1]).normalize();
     // Fit the actual selected surfaces, including both ends of split extract
@@ -122,8 +134,8 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
       const fits = corners.every((p) => {
         projected.copy(p).project(fitCamera);
         return projected.z >= -1 && projected.z <= 1 &&
-          Math.abs(projected.x) < 0.72 * usableWidth / root.clientWidth &&
-          Math.abs(projected.y) < 0.72 * usableHeight / root.clientHeight;
+          Math.abs(projected.x) < frameFill * usableWidth / root.clientWidth &&
+          Math.abs(projected.y) < frameFill * usableHeight / root.clientHeight;
       });
       if (fits) break;
       distance *= 1.10;
@@ -140,6 +152,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     pendingStep = null;
     const sourceIndex = STEP_ORDER[index];
     const step = ORDERED_STEPS[index];
+    equipment.setStep(step, sourceIndex);
     impact.setPaused(false);
     impact.setStep(sourceIndex);
     impactInset = impact.measure().right;
@@ -205,6 +218,8 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     paused = false;
     pendingStep = null;
     visuals.setVisible(false);
+    clearTimeout(equipmentLayoutTimer);
+    equipment.clear();
     impact.clear();
     impactInset = 0;
     wall.setTranslucent(snapshot.wallTranslucent);
@@ -230,6 +245,8 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     else if (button.dataset.flow === 'pause') {
       paused = !paused;
       impact.setPaused(paused);
+      if (!paused && transition) equipment.suspend();
+      else equipment.layout();
       pauseButton.textContent = paused ? 'Resume' : 'Pause';
     } else if (button.dataset.flow === 'restart') {
       paused = false;
@@ -265,6 +282,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
         camera.updateMatrixWorld();
         if (t === 1) {
           transition = null;
+          if (mode === 'playing') { equipment.layout(); scheduleEquipmentLayout(); }
           if (mode === 'returning') {
             camera.fov = snapshot.fov;
             if (snapshot.view) {
@@ -294,6 +312,8 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     },
     wallDelta(dt) { return mode === 'playing' && paused ? 0 : dt; },
     dispose() {
+      clearTimeout(equipmentLayoutTimer);
+      equipment.dispose();
       window.removeEventListener('resize', handleImpactLayout);
       impact.dispose();
       window.removeEventListener('keydown', onKey);

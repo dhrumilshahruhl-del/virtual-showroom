@@ -98,6 +98,7 @@ export function createAirflowSmoke(building) {
   group.name='airflowSmoke'; group.visible=false;
   const plumes=[];
   const bounds=Array.from({length:6},()=>new THREE.Box3());
+  const identificationBounds=Array.from({length:6},()=>[]);
   for(const terminal of AIR_TERMINALS) {
     const direction=new THREE.Vector3(...terminal.direction).normalize();
     const port=new THREE.Vector3(...terminal.port);
@@ -188,6 +189,10 @@ export function createAirflowSmoke(building) {
     group.add(ribbon,mesh);
     const endpoint=origin.clone().addScaledVector(direction,terminal.length);
     const extent=new THREE.Vector3(1,1,1).multiplyScalar(terminal.width*2.2);
+    identificationBounds[terminal.step].push(new THREE.Box3().setFromPoints([
+      origin.clone().sub(extent), origin.clone().add(extent),
+      endpoint.clone().sub(extent), endpoint.clone().add(extent),
+    ]));
     bounds[terminal.step].expandByPoint(origin.clone().sub(extent)).expandByPoint(origin.clone().add(extent));
     bounds[terminal.step].expandByPoint(endpoint.clone().sub(extent)).expandByPoint(endpoint.clone().add(extent));
     plumes.push({terminal,mesh,ribbon,material,ribbonMaterial,uniforms,target:0});
@@ -196,6 +201,7 @@ export function createAirflowSmoke(building) {
   let enabled=false;
   return {
     bounds,
+    identificationBounds,
     setStep(index, restart=false){
       for(const p of plumes){
         p.target=enabled&&p.terminal.step===index?1:0;

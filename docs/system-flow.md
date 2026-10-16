@@ -59,8 +59,8 @@ Energy pulses still make no claim about hydraulic direction.
 | Step | Active surfaces / existing path | Related zones | Obstruction | Existing camera fallback (u, v, height) / span |
 | --- | --- | --- | --- | --- |
 | Fresh Outdoor Air | mask 1: supply intake hoods and intake-side housings | supply housing zone 1, recovery zone 3 | none | (29, -21.7, 12.4) / 16 |
-| Used Indoor Air | mask 2: extract-left/right yellow branches, sleeves and housings | extract zone 2 | none | (24, -21.3, 4.6) / 62 |
-| Energy Recovery | mask 4: upper and lower measured recovery circuits | supply zone 1, room zone 4 | heatPumpEnclosureWall over lower circuits | (29, -19.8, 10.6) / 23 |
+| Used Indoor Air | mask 2: extract-left/right yellow branches, sleeves and housings | extract zone 2 | none | (24, -21.3, 4.6) / 40 |
+| Energy Recovery | mask 4: upper and lower measured recovery circuits | supply zone 1, room zone 4 | heatPumpEnclosureWall over lower circuits | (29, -19.8, 10.6) / 15 |
 | Heat Pump | mask 8: lower assistance circuits and room-equipment | recovery zone 3 | heatPumpEnclosureWall | (31.3, -19.4, 4.45) / 8.5 |
 | Supply Air | mask 16: housings, front connections, magenta branches/header/outlet | supply zone 1, recovery zone 3 | none | (29, -18.9, 12) / 17 |
 | Exhaust | mask 32: extract housings and brown discharge hoods | extract zone 2 | none | (18, -22.2, 4.8) / 51 |

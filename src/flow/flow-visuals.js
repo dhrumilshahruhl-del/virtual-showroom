@@ -15,6 +15,7 @@ export function createFlowVisuals(building, city) {
   let selected = 0, visible = false;
   const resources = [];
   const bounds = Array.from({ length: 6 }, () => new THREE.Box3());
+  const identificationCells = Array.from({ length: 6 }, () => new Map());
   const localPoint = new THREE.Vector3();
   const inverse = building.matrixWorld.clone().invert();
   for (const { node, renderData } of topology.meshes) {
@@ -25,7 +26,13 @@ export function createFlowVisuals(building, city) {
       const mask = renderData[i * 4];
       if (!mask) continue;
       localPoint.fromBufferAttribute(positions, i).applyMatrix4(transform);
-      for (let step = 0; step < 6; step++) if (mask & (1 << step)) bounds[step].expandByPoint(localPoint);
+      for (let step = 0; step < 6; step++) if (mask & (1 << step)) {
+        bounds[step].expandByPoint(localPoint);
+        const key = [localPoint.x, localPoint.y, localPoint.z].map(n => Math.floor(n / 4)).join(',');
+        const cells = identificationCells[step];
+        if (!cells.has(key)) cells.set(key, new THREE.Box3());
+        cells.get(key).expandByPoint(localPoint);
+      }
     }
     const previousAttribute = node.geometry.getAttribute('flowSurface');
     node.geometry.setAttribute('flowSurface', new THREE.BufferAttribute(renderData, 4));
@@ -72,6 +79,7 @@ export function createFlowVisuals(building, city) {
   }
   const context = createContextFocus(building, city);
   const airflow = createAirflowSmoke(building);
+  const equipmentBounds = identificationCells.flatMap(cells => [...cells.values()]);
   for (let i = 0; i < bounds.length; i++) bounds[i].union(airflow.bounds[i]);
   function restore() {
     enabled.value = 0;
@@ -86,6 +94,7 @@ export function createFlowVisuals(building, city) {
     addCity(city) { context.addCity(city); },
     summary: topology.summary,
     bounds,
+    identificationBounds: identificationCells.map((cells, i) => [...equipmentBounds, ...airflow.identificationBounds[i]]),
     get airflow() { return airflow.state; },
     restartAirflow() { airflow.reset(); },
     setStep(step, index) {

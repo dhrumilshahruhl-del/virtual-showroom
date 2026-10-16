@@ -6,8 +6,10 @@ export const ROOFTOP_MARKERS = [
   { id: 'upper-unit-1', position: [3.02027, 13.095, -32.85433], normal: [0, 1, 0] },
   { id: 'upper-unit-2', position: [8.09217, 13.095, -37.95532], normal: [0, 1, 0] },
   { id: 'right-equipment', position: [13.42586, 5.33822, -44.07659], normal: [0, 1, 0] },
-  // First heat pump cabinet in the measured lower-room equipment cluster.
-  { id: 'central-structure', position: fromPlant(29.65, -20.2, 3.65), normal: [Math.SQRT1_2, 0, Math.SQRT1_2] },
+  // Centers of the two measured cabinet front panels (palette 3), not pipe ports.
+  // Keep the offset small so identification dots stay attached to the faces.
+  { id: 'central-structure', position: fromPlant(30.23516, -20.28151, 3.55185), normal: [Math.SQRT1_2, 0, Math.SQRT1_2], offset: 0.02 },
+  { id: 'heat-pump-2', position: fromPlant(31.43937, -20.28151, 3.55185), normal: [Math.SQRT1_2, 0, Math.SQRT1_2], offset: 0.02, flowOnly: true },
 ];
 
 export function createRooftopMarkers(building) {
@@ -32,6 +34,7 @@ export function createRooftopMarkers(building) {
   const group = new THREE.Group();
   group.name = 'rooftopMarkers';
   for (const anchor of ROOFTOP_MARKERS) {
+    if (anchor.flowOnly) continue;
     const isHeatPump = anchor.id === 'central-structure';
     const marker = new THREE.Sprite(isHeatPump ? heatPumpMaterial : material);
     // Draw the heat pump hotspot over the enclosure, including its translucent wall.
@@ -40,7 +43,7 @@ export function createRooftopMarkers(building) {
     marker.userData.equipment = anchor.id.startsWith('upper-unit') ? 'supply' : anchor.id === 'central-structure' ? 'heat-pump' : 'extract';
     marker.position.fromArray(anchor.position);
     // A small local-space offset prevents intersection with the equipment surface.
-    marker.position.addScaledVector(new THREE.Vector3(...anchor.normal), 0.3);
+    marker.position.addScaledVector(new THREE.Vector3(...anchor.normal), anchor.offset ?? 0.3);
     group.add(marker);
   }
   building.add(group);
