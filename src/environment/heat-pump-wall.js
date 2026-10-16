@@ -5,6 +5,7 @@ import * as THREE from 'three';
 // both sides of its thickness, without changing the shared palette material.
 export function makeHeatPumpWallTranslucent(building, root) {
   const progress = { value: 0 };
+  const revealOpacity = { value: 0.28 };
   let target = 0;
   let guided = false;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -53,14 +54,15 @@ export function makeHeatPumpWallTranslucent(building, root) {
       vertices.map((v) => THREE.MathUtils.clamp((v.x - 3.7) / 12.6, 0, 1)), 1));
     material.onBeforeCompile = (shader) => {
       shader.uniforms.wallRevealProgress = progress;
+      shader.uniforms.wallRevealOpacity = revealOpacity;
       shader.vertexShader = 'attribute float wallRevealPosition;\nvarying float vWallRevealPosition;\n' + shader.vertexShader;
       shader.vertexShader = shader.vertexShader.replace('#include <begin_vertex>',
         '#include <begin_vertex>\nvWallRevealPosition = wallRevealPosition;');
-      shader.fragmentShader = 'uniform float wallRevealProgress;\nvarying float vWallRevealPosition;\n' + shader.fragmentShader;
+      shader.fragmentShader = 'uniform float wallRevealProgress;\nuniform float wallRevealOpacity;\nvarying float vWallRevealPosition;\n' + shader.fragmentShader;
       shader.fragmentShader = shader.fragmentShader.replace('#include <opaque_fragment>', `
         float revealed = wallRevealProgress <= 0.0 ? 0.0 : wallRevealProgress >= 1.0 ? 1.0 :
           smoothstep(1.0 - wallRevealProgress - 0.04, 1.0 - wallRevealProgress + 0.04, vWallRevealPosition);
-        diffuseColor.a *= mix(1.0, 0.28, revealed);
+        diffuseColor.a *= mix(1.0, wallRevealOpacity, revealed);
         #include <opaque_fragment>`);
     };
     material.customProgramCacheKey = () => 'heat-pump-wall-wipe-v1';
@@ -98,7 +100,7 @@ export function makeHeatPumpWallTranslucent(building, root) {
     get translucent() { return Boolean(target); },
     get settled() { return progress.value === target; },
     setTranslucent,
-    setGuided(value) { guided = value; button.disabled = value; },
+    setGuided(value) { guided = value; button.disabled = value; revealOpacity.value = value ? 0.20 : 0.28; },
     update(camera, dt) {
       progress.value = reducedMotion.matches ? target : THREE.MathUtils.clamp(
         progress.value + Math.sign(target - progress.value) * dt / 0.7, 0, 1);

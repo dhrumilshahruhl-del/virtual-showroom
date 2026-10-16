@@ -9,15 +9,17 @@ wall state, hotspots, and controls.
 
 The camera frames equipment beside the panel on desktop and above it on mobile.
 The heat pump step frames the actual connected lower-room pipe cluster. Its
-front wall remains at 28% opacity until the user leaves that step; shadows,
+front wall remains at 20% opacity during the recovery and heat pump steps; shadows,
 reflections, and structural edges remain. The wall becomes solid before
 proceeding to the next step. The separate tall cabinet is not given an invented
 pipe connection.
 
 ## Routes and accuracy
 
-There are no added splines, particle clouds, cones, or floating energy tubes.
-Traveling highlights are rendered on the original model surfaces. The source
+Traveling highlights are rendered on the original model surfaces. Lightweight
+outdoor vapor, short center ribbons and sparse particles supplement only the
+Fresh Outdoor Air intake hoods and Exhaust discharge hoods. There are no
+invented internal air connections or floating energy tubes. The source
 palette and building-local bounds distinguish these networks:
 
 - Supply air: both lime intake hoods, supply housings, gray front connections,
@@ -46,9 +48,39 @@ directions. Cabinet/component identities beyond the user's labels remain
 unverified. Internal equipment air passages and building ductwork not modeled
 in the GLB are not fabricated.
 
-One reusable vec4 surface attribute and cloned material per source mesh drive
-all six steps. Step changes update uniforms, not geometry. Exit disables the
-shader effect; disposal restores original materials and releases attributes.
+One reusable vec4 surface attribute and cached materials drive all six steps.
+`flow-focus.js` centralizes masks, related zones, obstruction selection, and
+references to the authoritative measured camera definitions. Step changes blend
+six mask weights and related-zone weights over approximately 0.8 seconds,
+without rebuilding geometry. Active surfaces retain their palette and texture;
+an emissive accent follows the original distance wave with its original sign.
+Energy pulses still make no claim about hydraulic direction.
+
+| Step | Active surfaces / existing path | Related zones | Obstruction | Existing camera fallback (u, v, height) / span |
+| --- | --- | --- | --- | --- |
+| Fresh Outdoor Air | mask 1: supply intake hoods and intake-side housings | supply housing zone 1, recovery zone 3 | none | (29, -21.7, 12.4) / 16 |
+| Used Indoor Air | mask 2: extract-left/right yellow branches, sleeves and housings | extract zone 2 | none | (24, -21.3, 4.6) / 62 |
+| Energy Recovery | mask 4: upper and lower measured recovery circuits | supply zone 1, room zone 4 | heatPumpEnclosureWall over lower circuits | (29, -19.8, 10.6) / 23 |
+| Heat Pump | mask 8: lower assistance circuits and room-equipment | recovery zone 3 | heatPumpEnclosureWall | (31.3, -19.4, 4.45) / 8.5 |
+| Supply Air | mask 16: housings, front connections, magenta branches/header/outlet | supply zone 1, recovery zone 3 | none | (29, -18.9, 12) / 17 |
+| Exhaust | mask 32: extract housings and brown discharge hoods | extract zone 2 | none | (18, -22.2, 4.8) / 51 |
+
+Related prominence is 0.74, inactive classified equipment 0.38, architecture
+0.52, and city context 0.30. These are linear material brightness factors,
+not guaranteed screen luminance percentages. Textures, roughness and palette
+identity remain intact. No blur or postprocessing is used. Outdoor terminal
+effects are described in `docs/airflow-smoke.md`.
+Camera fitting centers the bounds of the actual indexed active surfaces and
+checks their corners against the usable viewport beside/above the existing UI.
+The existing per-step spans, target fallbacks and viewing directions remain the
+starting point; fitting pulls back only as needed to include the active bounds.
+
+Shared source materials remain untouched. Focus materials are cached once,
+including arrays and instanced city context, and original references are restored
+on exit. No scene traversal or material creation occurs in animation updates.
+Pause stops path time, camera and reveal; focus settles at the selected step.
+Exit blends focus out during camera return and restores exact source references
+at completion. Disposal also restores materials and releases temporary resources.
 
 ## Verification
 

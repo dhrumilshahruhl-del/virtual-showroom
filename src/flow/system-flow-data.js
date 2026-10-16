@@ -19,7 +19,9 @@ export const FLOW_STEPS = [
   { title: 'Supply Air', zone: 0, focus: fromPlant(29,-18.9,12), span: 17,
     description: 'The conditioned fresh air is delivered throughout the building to maintain a comfortable indoor environment.',
     detail: 'Blue highlights follow both supply branches into the magenta header and its downward outlet.' },
-  { title: 'Exhaust', zone: 1, focus: fromPlant(18,-22.2,4.8), span: 51,
+  // A higher, slightly oblique view clears the enclosure in front of the right
+  // discharge hood; vapor still respects solid equipment and walls.
+  { title: 'Exhaust', zone: 1, focus: fromPlant(18,-22.2,4.8), span: 51, viewDirection: [1,2.2,0],
     description: 'After its energy has been recovered, the remaining exhaust air is safely discharged outdoors.',
     detail: 'Orange highlights reach the brown discharge hoods at the ends of both extract units.' },
 ];

@@ -88,19 +88,25 @@ button {
 .showroom__toolbar {
   pointer-events: auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.55rem;
   align-self: flex-start;
-  max-width: min(42rem, 100%);
+  width: min(240px, 100%);
+  padding: 12px;
+  border: 1px solid rgba(0, 55, 90, 0.14);
+  border-radius: 18px;
+  background: rgba(241, 247, 250, 0.94);
+  box-shadow: 0 8px 24px rgba(0, 55, 90, 0.12);
+  backdrop-filter: blur(14px);
 }
 
 .showroom__toolbar button {
   min-height: 2.75rem;
   padding: 0 1rem;
   border: 1px solid rgba(0, 55, 90, 0.16);
-  border-radius: 999px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 12px 32px rgba(0, 55, 90, 0.1);
+  box-shadow: none;
   color: #00375a;
   font-size: 0.78rem;
   font-weight: 800;
@@ -121,8 +127,27 @@ button {
 .showroom__toolbar button:hover,
 .showroom__toolbar button:focus-visible {
   border-color: rgba(0, 95, 143, 0.42);
-  outline: none;
 }
+
+.showroom__toolbar button:focus-visible {
+  outline: 3px solid #005f8f;
+  outline-offset: 3px;
+}
+
+.showroom__toolbar button:disabled { opacity: 0.55; cursor: default; }
+
+.showroom__toolbar .flow-launch {
+  position: static;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 12px;
+  border-color: #00375a;
+  background: #00375a;
+  color: #fff;
+}
+
+.showroom__toolbar .flow-launch:hover { background: #005077; }
+.showroom__toolbar .flow-launch span { color: #fcbe00; }
 
 .showroom__status {
   position: absolute;
@@ -159,7 +184,7 @@ button {
   }
 
   .showroom__toolbar {
-    width: 100%;
+    width: min(240px, 100%);
   }
 
   .showroom__toolbar button {
@@ -239,9 +264,6 @@ button {
 .showroom__wall-toggle:focus-visible { outline: 3px solid #005f8f; outline-offset: 3px; }
 
 .flow-launch {
-  position: absolute;
-  right: clamp(16px, 3vw, 40px);
-  bottom: clamp(16px, 3vw, 32px);
   z-index: 15;
   min-height: 46px;
   display: flex;

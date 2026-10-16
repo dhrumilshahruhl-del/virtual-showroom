@@ -1,12 +1,13 @@
 import * as THREE from 'three';
 import { FLOW_STEPS } from './system-flow-data.js';
 import { createFlowVisuals } from './flow-visuals.js';
+import { FLOW_FOCUS } from './flow-focus.js';
 
 const CAMERA_DURATION = 1.5;
 const ease = (t) => t * t * (3 - 2 * t);
 
-export function createSystemFlow({ root, building, camera, controls, wall, markers, modal }) {
-  const visuals = createFlowVisuals(building);
+export function createSystemFlow({ root, building, city, camera, controls, wall, markers, modal }) {
+  const visuals = createFlowVisuals(building, city);
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const launch = document.createElement('button');
   launch.type = 'button';
@@ -27,7 +28,8 @@ export function createSystemFlow({ root, building, camera, controls, wall, marke
     <p class="flow-panel__detail"></p>
     <div class="flow-panel__navigation"><button type="button" data-flow="previous">Previous</button><button type="button" data-flow="next">Next step</button></div>
     <div class="flow-panel__controls"><button type="button" data-flow="pause">Pause</button><button type="button" data-flow="restart">Restart</button><button type="button" data-flow="exit">Exit Flow</button></div>`;
-  root.append(launch, panel);
+  root.querySelector('.showroom__toolbar').append(launch);
+  root.append(panel);
   const heading = panel.querySelector('h2');
   const description = panel.querySelector('.flow-panel__copy p');
   const count = panel.querySelector('.flow-panel__count');
@@ -77,15 +79,43 @@ export function createSystemFlow({ root, building, camera, controls, wall, marke
     transition = cameraMove;
   }
 
-  function frameStep(step) {
+  function frameStep(step, index) {
     target.fromArray(step.focus);
+    const box = visuals.bounds[index];
+    if (!box.isEmpty()) box.getCenter(target);
     building.localToWorld(target);
     // Fit both active units even on portrait screens; camera remains outside
     // the room and views its interior through the translucent front wall.
     const halfFov = THREE.MathUtils.degToRad(camera.fov / 2);
     const scale = building.getWorldScale(projected).x;
-    const distance = step.span * scale * 0.6 / Math.tan(halfFov) / Math.min(1, camera.aspect);
+    const panelRect = panel.getBoundingClientRect();
+    const usableWidth = root.clientWidth <= 600 ? root.clientWidth : Math.max(1, root.clientWidth - panelRect.width - 48);
+    const usableHeight = root.clientWidth <= 600 ? Math.max(1, root.clientHeight - panelRect.height - 48) : root.clientHeight;
+    const usableAspect = usableWidth / usableHeight;
+    let distance = step.span * scale * 0.65 / Math.tan(halfFov) / Math.min(1, usableAspect);
     direction.fromArray(step.viewDirection || [1, 1.25, 1]).normalize();
+    // Fit the actual selected surfaces, including both ends of split extract
+    // networks. A temporary camera avoids changing the live transition pose.
+    const fitCamera = camera.clone();
+    fitCamera.clearViewOffset();
+    const corners = [];
+    if (!box.isEmpty()) for (const x of [box.min.x, box.max.x]) for (const y of [box.min.y, box.max.y]) for (const z of [box.min.z, box.max.z]) {
+      corners.push(building.localToWorld(new THREE.Vector3(x, y, z)));
+    }
+    const worldDirection = direction.clone().transformDirection(building.matrixWorld);
+    for (let attempt = 0; attempt < 24; attempt++) {
+      fitCamera.position.copy(worldDirection).multiplyScalar(distance).add(target);
+      fitCamera.lookAt(target);
+      fitCamera.updateMatrixWorld();
+      const fits = corners.every((p) => {
+        projected.copy(p).project(fitCamera);
+        return projected.z >= -1 && projected.z <= 1 &&
+          Math.abs(projected.x) < 0.72 * usableWidth / root.clientWidth &&
+          Math.abs(projected.y) < 0.72 * usableHeight / root.clientHeight;
+      });
+      if (fits) break;
+      distance *= 1.10;
+    }
     destination.copy(direction);
     destination.transformDirection(building.matrixWorld).multiplyScalar(distance);
     destination.add(target);
@@ -97,9 +127,9 @@ export function createSystemFlow({ root, building, camera, controls, wall, marke
     visitedSteps.add(index);
     pendingStep = null;
     const step = FLOW_STEPS[index];
-    wall.setTranslucent(index === 3);
+    wall.setTranslucent(FLOW_FOCUS[index].obstruction);
     visuals.setStep(step, index);
-    frameStep(step);
+    frameStep(FLOW_FOCUS[index].camera, index);
     heading.textContent = step.title;
     description.textContent = step.description;
     detail.textContent = step.detail;
@@ -117,11 +147,11 @@ export function createSystemFlow({ root, building, camera, controls, wall, marke
 
   function goTo(index) {
     if (mode !== 'playing' || index < 0 || index >= FLOW_STEPS.length) return;
-    // Finish closing the room before proceeding from the heat pump step.
-    if (stepIndex === 3 && index !== 3 && !wall.settled) {
+    // Close only when the next focus no longer needs the lower-room cutaway.
+    if (FLOW_FOCUS[stepIndex].obstruction && !FLOW_FOCUS[index].obstruction && !wall.settled) {
       wall.setTranslucent(false);
       pendingStep = index;
-    } else if (stepIndex === 3 && index !== 3 && wall.translucent) {
+    } else if (FLOW_FOCUS[stepIndex].obstruction && !FLOW_FOCUS[index].obstruction && wall.translucent) {
       wall.setTranslucent(false);
       pendingStep = index;
     } else showStep(index);
@@ -184,6 +214,7 @@ export function createSystemFlow({ root, building, camera, controls, wall, marke
     } else if (button.dataset.flow === 'restart') {
       paused = false;
       visitedSteps.clear();
+      visuals.restartAirflow();
       goTo(0);
     } else if (button.dataset.flow === 'exit') exit();
   });
@@ -194,6 +225,7 @@ export function createSystemFlow({ root, building, camera, controls, wall, marke
     get active() { return mode !== 'idle'; },
     get state() { return { mode, paused, step: stepIndex, pendingStep, transitioning: Boolean(transition) }; },
     get topology() { return visuals.summary; },
+    get airflow() { return visuals.airflow; },
     update(dt) {
       if (mode === 'idle') {
         projected.set(5.5, 11.5, -35);
@@ -203,6 +235,8 @@ export function createSystemFlow({ root, building, camera, controls, wall, marke
         launch.hidden = cameraLocal.y < 14 || projected.z < -1 || projected.z > 1 || Math.abs(projected.x) > 0.95 || Math.abs(projected.y) > 0.95;
         return;
       }
+      // Focus settles even while motion is paused; pause freezes camera, waves and reveal.
+      visuals.update(dt, reducedMotion.matches, paused);
       if (paused) return;
       frameBesidePanel(dt);
       if (transition) {
@@ -231,6 +265,7 @@ export function createSystemFlow({ root, building, camera, controls, wall, marke
             if (reset) reset.disabled = false;
             delete root.dataset.flowActive;
             mode = 'idle';
+            visuals.restore();
             launch.hidden = false;
             launch.focus({ preventScroll: true });
             return;
@@ -238,7 +273,6 @@ export function createSystemFlow({ root, building, camera, controls, wall, marke
         }
       }
       if (mode !== 'playing') return;
-      visuals.update(dt, reducedMotion.matches);
       if (pendingStep !== null) {
         if (wall.settled) showStep(pendingStep);
         return;

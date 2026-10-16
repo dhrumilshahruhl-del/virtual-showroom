@@ -47,8 +47,13 @@ async function screenshot(name) {
   console.log('Screenshot:', filename);
 }
 try {
+  await send('Network.enable');
+  await send('Network.setCacheDisabled', { cacheDisabled: true });
   await send('Runtime.enable');
   await send('Log.enable');
+  await send('Runtime.discardConsoleEntries');
+  await send('Log.clear');
+  errors.length = 0;
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false });
   await send('Page.navigate', { url: 'http://localhost:4173/' });
   for (let attempt = 0; attempt < 60; attempt++) {
@@ -63,6 +68,17 @@ try {
   assert(await evaluate(`(() => { let valid=true, selected=0; qaApp.scene.traverse(n=>{const a=n.geometry?.attributes.flowSurface; if(!a)return; for(let i=0;i<a.count;i++){if(a.getX(i)){selected++; if(!Number.isFinite(a.getY(i)))valid=false;}}}); return valid && selected>10000; })()`), 'Invalid topology distances');
   assert(await evaluate(`(() => { let valid=true; qaApp.scene.traverse(n=>{ const a=n.geometry?.attributes.flowSurface, uv=n.geometry?.attributes.uv; if(!a||!uv)return; for(let i=0;i<a.count;i++){const palette=Math.round((uv.getX(i)-0.015625)*32),mask=a.getX(i); if([2,13,14,15,16,17,18].includes(palette)&&(mask&(1|2|16|32)))valid=false; if([9,10,12].includes(palette)&&(mask&(4|8)))valid=false; }}); return valid; })()`), 'Air and energy networks mixed');
   assert(await evaluate(`!document.querySelector('.flow-launch').hidden`), 'Launch button not visible on rooftop');
+  await evaluate(`window.qaOriginalMaterials = []; qaApp.scene.traverse(node => {
+    if (!node.material) return;
+    const materials = Array.isArray(node.material) ? node.material : [node.material];
+    qaOriginalMaterials.push({node, reference: node.material, visible: node.visible, order: node.renderOrder,
+      values: materials.map(m => JSON.stringify({color:m.color?.toArray(), emissive:m.emissive?.toArray(),
+        intensity:m.emissiveIntensity, opacity:m.opacity, transparent:m.transparent, depthWrite:m.depthWrite}))});
+  }); window.qaRestored = () => qaOriginalMaterials.every(e => e.node.material === e.reference &&
+    e.node.visible === e.visible && e.node.renderOrder === e.order &&
+    (Array.isArray(e.node.material) ? e.node.material : [e.node.material]).every((m,i) =>
+      e.values[i] === JSON.stringify({color:m.color?.toArray(), emissive:m.emissive?.toArray(),
+        intensity:m.emissiveIntensity, opacity:m.opacity, transparent:m.transparent, depthWrite:m.depthWrite})));`);
   await evaluate(`window.qaSnapshot = { position: qaApp.camera.position.toArray(), target: qaApp.controls.target.toArray() }; document.querySelector('.flow-launch').click()`);
   await wait(6500);
   assert(await evaluate(`qaApp.systemFlow.state.step === 0 && !document.querySelector('.flow-panel__timeline')`), 'Automatic timing remains');
@@ -101,6 +117,36 @@ try {
   await evaluate(`document.querySelector('[data-flow="exit"]').click()`);
   await wait(1500);
   assert(await evaluate(`!qaApp.systemFlow.active && qaApp.controls.enabled && qaApp.scene.getObjectByName('rooftopMarkers').visible && qaApp.camera.position.distanceTo({ x: qaSnapshot.position[0], y: qaSnapshot.position[1], z: qaSnapshot.position[2] }) < 0.00001`), 'Exit did not restore showroom state');
+  assert(await evaluate(`qaRestored()`), 'Original material references or values changed after exit');
+  // Reverse traversal, restart/pause at every step, exit each step, and re-enter.
+  await evaluate(`document.querySelector('.flow-launch').click()`);
+  for (const i of [0,1,2,3,4,5,4,3,2,1,0]) {
+    await evaluate(`document.querySelector('[data-step="${i}"]').click()`);
+    await wait(i === 3 || i === 4 || i === 2 ? 2400 : 1800);
+    assert(await evaluate(`qaApp.systemFlow.state.step === ${i}`), 'Traversal failed at ' + i);
+  }
+  for (let i=0; i<6; i++) {
+    await evaluate(`document.querySelector('[data-step="${i}"]').click()`);
+    await wait(2400);
+    await evaluate(`document.querySelector('[data-flow="pause"]').click(); window.qaFrozen=qaFlowTime.value`);
+    await wait(150);
+    assert(await evaluate(`qaFlowTime.value === qaFrozen`), 'Paused pulses moved at ' + i);
+    await evaluate(`document.querySelector('[data-flow="pause"]').click(); document.querySelector('[data-flow="restart"]').click()`);
+    await wait(2400);
+    assert(await evaluate(`qaApp.systemFlow.state.step === 0`), 'Restart failed from ' + i);
+    await evaluate(`document.querySelector('[data-step="${i}"]').click()`);
+    await wait(1800);
+    await evaluate(`document.querySelector('[data-flow="exit"]').click()`);
+    await wait(1600);
+    assert(await evaluate(`!qaApp.systemFlow.active && qaRestored()`), 'Exit material restoration failed at ' + i);
+    await evaluate(`document.querySelector('.flow-launch').click()`);
+  }
+  await evaluate(`for (const i of [3,1,5,2,3,0,4,1]) document.querySelector('[data-step="'+i+'"]').click()`);
+  await wait(2600);
+  assert(await evaluate(`qaApp.systemFlow.state.step === 1 && qaApp.systemFlow.state.pendingStep === null`), 'Rapid navigation did not settle on latest step');
+  await evaluate(`document.querySelector('[data-flow="exit"]').click()`);
+  await wait(1600);
+  assert(await evaluate(`qaRestored()`), 'Rapid navigation left material residue');
   await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
   await wait(300);
   await evaluate(`document.querySelector('.flow-launch').click()`);

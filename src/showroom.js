@@ -198,7 +198,7 @@ export async function launchShowroom(options = {}) {
 
     controls = createShowroomControls(camera, canvas, defaultTarget);
     controls.saveState();
-    systemFlow = createSystemFlow({ root, building, camera, controls,
+    systemFlow = createSystemFlow({ root, building, city: cityContext, camera, controls,
       wall: heatPumpWall, markers: rooftopMarkers, modal: equipmentModal });
 
     intro = null;

@@ -1,11 +1,13 @@
 import * as THREE from 'three';
+import { fromPlant } from '../flow/system-flow-data.js';
 
 export const ROOFTOP_MARKERS = [
   { id: 'left-equipment', position: [-17.29753, 5.33822, -13.98721], normal: [0, 1, 0] },
   { id: 'upper-unit-1', position: [3.02027, 13.095, -32.85433], normal: [0, 1, 0] },
   { id: 'upper-unit-2', position: [8.09217, 13.095, -37.95532], normal: [0, 1, 0] },
   { id: 'right-equipment', position: [13.42586, 5.33822, -44.07659], normal: [0, 1, 0] },
-  { id: 'central-structure', position: [6.565, 8.515, -27.415], normal: [0.7071068, 0, 0.7071068] },
+  // First heat pump cabinet in the measured lower-room equipment cluster.
+  { id: 'central-structure', position: fromPlant(29.65, -20.2, 3.65), normal: [Math.SQRT1_2, 0, Math.SQRT1_2] },
 ];
 
 export function createRooftopMarkers(building) {
@@ -25,10 +27,15 @@ export function createRooftopMarkers(building) {
     map: texture, transparent: true, depthTest: true, depthWrite: false,
     toneMapped: false, fog: false,
   });
+  const heatPumpMaterial = material.clone();
+  heatPumpMaterial.depthTest = false;
   const group = new THREE.Group();
   group.name = 'rooftopMarkers';
   for (const anchor of ROOFTOP_MARKERS) {
-    const marker = new THREE.Sprite(material);
+    const isHeatPump = anchor.id === 'central-structure';
+    const marker = new THREE.Sprite(isHeatPump ? heatPumpMaterial : material);
+    // Draw the heat pump hotspot over the enclosure, including its translucent wall.
+    if (isHeatPump) marker.renderOrder = 10;
     marker.name = anchor.id;
     marker.userData.equipment = anchor.id.startsWith('upper-unit') ? 'supply' : anchor.id === 'central-structure' ? 'heat-pump' : 'extract';
     marker.position.fromArray(anchor.position);
@@ -65,6 +72,7 @@ export function createRooftopMarkers(building) {
     dispose() {
       group.removeFromParent();
       material.dispose();
+      heatPumpMaterial.dispose();
       texture.dispose();
     },
   };
