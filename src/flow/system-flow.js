@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { FLOW_STEPS } from './system-flow-data.js';
 import { createFlowVisuals } from './flow-visuals.js';
 import { FLOW_FOCUS } from './flow-focus.js';
+import { createFlowImpact } from '../ui/flow-impact.js';
 
 const CAMERA_DURATION = 1.5;
 const ease = (t) => t * t * (3 - 2 * t);
@@ -30,6 +31,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     <div class="flow-panel__controls"><button type="button" data-flow="pause">Pause</button><button type="button" data-flow="restart">Restart</button><button type="button" data-flow="exit">Exit Flow</button></div>`;
   root.querySelector('.showroom__toolbar').append(launch);
   root.append(panel);
+  const impact = createFlowImpact(root, panel, handleImpactLayout);
   const heading = panel.querySelector('h2');
   const description = panel.querySelector('.flow-panel__copy p');
   const count = panel.querySelector('.flow-panel__count');
@@ -54,6 +56,15 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
   const cameraMove = { from: new THREE.Vector3(), to: new THREE.Vector3(), targetFrom: new THREE.Vector3(),
     targetTo: new THREE.Vector3(), elapsed: 0, duration: CAMERA_DURATION };
   const framing = { x: 0, y: 0 };
+  let impactInset = 0;
+
+  function handleImpactLayout() {
+    impactInset = impact.measure().right;
+    // Reuse the existing camera fit only when overlay layout changes. The
+    // impact diagrams have no animation-frame or per-frame update function.
+    if (mode === 'playing') frameStep(FLOW_FOCUS[stepIndex].camera, stepIndex);
+  }
+  window.addEventListener('resize', handleImpactLayout);
 
   function frameBesidePanel(dt) {
     const bounds = root.getBoundingClientRect();
@@ -61,7 +72,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     let x = 0, y = 0;
     if (mode === 'playing') {
       if (root.clientWidth <= 600) y = (root.clientHeight - (rect.top - bounds.top - 16)) / 2;
-      else x = -(rect.right - bounds.left + 24) / 2;
+      else x = (impactInset - (rect.right - bounds.left + 24)) / 2;
     }
     const amount = reducedMotion.matches ? 1 : 1 - Math.exp(-dt * 8);
     framing.x = THREE.MathUtils.lerp(framing.x, x, amount);
@@ -89,7 +100,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     const halfFov = THREE.MathUtils.degToRad(camera.fov / 2);
     const scale = building.getWorldScale(projected).x;
     const panelRect = panel.getBoundingClientRect();
-    const usableWidth = root.clientWidth <= 600 ? root.clientWidth : Math.max(1, root.clientWidth - panelRect.width - 48);
+    const usableWidth = root.clientWidth <= 600 ? root.clientWidth : Math.max(1, root.clientWidth - panelRect.width - 48 - impactInset);
     const usableHeight = root.clientWidth <= 600 ? Math.max(1, root.clientHeight - panelRect.height - 48) : root.clientHeight;
     const usableAspect = usableWidth / usableHeight;
     let distance = step.span * scale * 0.65 / Math.tan(halfFov) / Math.min(1, usableAspect);
@@ -127,6 +138,9 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     visitedSteps.add(index);
     pendingStep = null;
     const step = FLOW_STEPS[index];
+    impact.setPaused(false);
+    impact.setStep(index);
+    impactInset = impact.measure().right;
     wall.setTranslucent(FLOW_FOCUS[index].obstruction);
     visuals.setStep(step, index);
     frameStep(FLOW_FOCUS[index].camera, index);
@@ -147,6 +161,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
 
   function goTo(index) {
     if (mode !== 'playing' || index < 0 || index >= FLOW_STEPS.length) return;
+    impact.setPaused(false);
     // Close only when the next focus no longer needs the lower-room cutaway.
     if (FLOW_FOCUS[stepIndex].obstruction && !FLOW_FOCUS[index].obstruction && !wall.settled) {
       wall.setTranslucent(false);
@@ -188,6 +203,8 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     paused = false;
     pendingStep = null;
     visuals.setVisible(false);
+    impact.clear();
+    impactInset = 0;
     wall.setTranslucent(snapshot.wallTranslucent);
     moveCamera(snapshot.position, snapshot.target, 1.2);
     panel.hidden = true;
@@ -210,6 +227,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     }
     else if (button.dataset.flow === 'pause') {
       paused = !paused;
+      impact.setPaused(paused);
       pauseButton.textContent = paused ? 'Resume' : 'Pause';
     } else if (button.dataset.flow === 'restart') {
       paused = false;
@@ -280,6 +298,8 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     },
     wallDelta(dt) { return mode === 'playing' && paused ? 0 : dt; },
     dispose() {
+      window.removeEventListener('resize', handleImpactLayout);
+      impact.dispose();
       window.removeEventListener('keydown', onKey);
       launch.remove();
       panel.remove();
