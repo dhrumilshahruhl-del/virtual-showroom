@@ -9,15 +9,16 @@
     <script type="importmap">
       {
         "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+          "three": "./src/vendor/three/build/three.module.js",
+          "three/addons/": "./src/vendor/three/examples/jsm/"
         }
       }
     </script>
   </head>
   <body>
     <main id="rooftop-showroom" class="showroom" data-building-model="./assets/models/200-water-building.opt.glb">
-      <canvas class="showroom__canvas" aria-label="Interactive 200 Water Street building model"></canvas>
+      <canvas class="showroom__canvas" tabindex="0" aria-label="Interactive 200 Water Street building model" aria-describedby="showroom-keyboard-help"></canvas>
+      <p id="showroom-keyboard-help" class="showroom__sr-only">Keyboard controls: use the arrow keys to rotate the model, plus or equals to zoom in, minus to zoom out, and R to reset the view. Tab to Explore System Flow to use the guided six-step walkthrough with buttons. Press Escape to exit System Flow.</p>
       <div class="showroom__hud">
         <div class="showroom__toolbar" aria-label="Showroom controls" hidden>
           <button type="button" data-action="reset">Reset view</button>
@@ -30,6 +31,7 @@
         <span class="showroom__progress-value" aria-hidden="true">0%</span>
       </div>
     </main>
+    <a class="showroom__legal-link" href="./THIRD-PARTY-NOTICES.txt">Legal &amp; credits</a>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>

@@ -16,8 +16,8 @@ Presentation order follows the existing `STEP_ORDER`, not the underlying enginee
 
 | Display step | Identification | Preferred marker | Other candidates |
 | --- | --- | --- | --- |
-| 1 Return Air | AHU | left-equipment | right-equipment |
-| 2 Energy Recovery | AHU | upper-unit-1 | upper-unit-2, left-equipment, right-equipment |
+| 1 Return Air | None | — | — |
+| 2 Energy Recovery | AHU | left-equipment | right-equipment |
 | 3 Exhaust | AHU | left-equipment | right-equipment |
 | 4 Fresh Outdoor Air | AHU | upper-unit-1 | upper-unit-2 |
 | 5 Heat Pump | Heat Pump | central-structure | heat-pump-2 |
@@ -33,7 +33,7 @@ The existing topology setup caches small building-local bounds for selected surf
 
 At camera settling and layout events, the popup projects these cached bounds and first searches for a shared label position between the two equipment markers, then positions beside either marker, including diagonal candidates. It tries a compact size if needed. It never changes camera framing or scene transforms. If no safe position exists in an unusually constrained viewport, identification is hidden instead of covering the visualization.
 
-Every equipment step shows one label with two white marker dots and two neutral HTML leader lines, one from each relevant unit. Return Air and Exhaust connect left-equipment and right-equipment. Energy Recovery, Fresh Outdoor Air, and Supply Air connect upper-unit-1 and upper-unit-2. Heat Pump connects central-structure and heat-pump-2 at the measured centers of the two adjacent cabinet fronts, using a 0.02-unit surface offset instead of the pipe seed location. Lines reach separate attachment points on the label edge without length caps or distance-based hiding. The two connector elements are reused and hide together on exit or camera transitions.
+Return Air has no equipment label, dots, or leader lines. Every other equipment step shows one label with two white marker dots and two neutral HTML leader lines, one from each relevant unit. Energy Recovery and Exhaust connect left-equipment and right-equipment beside the exhausts. Fresh Outdoor Air and Supply Air connect upper-unit-1 and upper-unit-2. Heat Pump connects central-structure and heat-pump-2 at the measured centers of the two adjacent cabinet fronts, using a 0.02-unit surface offset instead of the pipe seed location. Lines reach separate attachment points on the label edge without length caps or distance-based hiding. The two connector elements are reused and hide together on exit or camera transitions.
 
 Navigation replaces the contents of the same container. Pending wall transitions retain the current step's identification until the step changes. Exit hides the popup and connector immediately. Restart and re-entry use the existing step lifecycle. Pause retains identification; resume does not duplicate DOM. During camera movement, identification waits for a safe settled placement. A 180 ms entrance fade respects reduced motion. Resize and impact expansion trigger placement through the existing layout hooks. There is no added animation loop, scene traversal per frame, texture, mesh, sprite, canvas, or render target.
 
@@ -64,8 +64,8 @@ Marker connections in every tested viewport:
 
 | Step | White marker(s) connected to the single label |
 | --- | --- |
-| Return Air | left-equipment + right-equipment |
-| Energy Recovery | upper-unit-1 + upper-unit-2 |
+| Return Air | None |
+| Energy Recovery | left-equipment + right-equipment |
 | Exhaust | left-equipment + right-equipment |
 | Fresh Outdoor Air | upper-unit-1 + upper-unit-2 |
 | Heat Pump | central-structure + heat-pump-2 |

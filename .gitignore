@@ -1,5 +1,6 @@
 # Local tooling and generated QA captures
 node_modules/
+/dist/
 docs/environment-*.png
 docs/environment-validation.json
 

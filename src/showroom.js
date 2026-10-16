@@ -297,6 +297,29 @@ export async function launchShowroom(options = {}) {
   }
   function onPointerLeave() { canvas.style.cursor = ''; }
   function onPointerCancel() { pointerStart = null; onPointerLeave(); }
+  function onCanvasKeyDown(event) {
+    if (!controls || systemFlow?.active) return;
+    const key = event.key;
+    if (key.toLowerCase() === 'r') {
+      event.preventDefault();
+      controls?.reset();
+      return;
+    }
+    const spherical = new THREE.Spherical().setFromVector3(camera.position.clone().sub(controls.target));
+    const increment = Math.PI / 36;
+    if (key === 'ArrowLeft') spherical.theta -= increment;
+    else if (key === 'ArrowRight') spherical.theta += increment;
+    else if (key === 'ArrowUp') spherical.phi = Math.max(controls.minPolarAngle, spherical.phi - increment);
+    else if (key === 'ArrowDown') spherical.phi = Math.min(controls.maxPolarAngle, spherical.phi + increment);
+    else if (key === '+' || key === '=') spherical.radius = Math.max(controls.minDistance, spherical.radius * 0.9);
+    else if (key === '-' || key === '_') spherical.radius = Math.min(controls.maxDistance, spherical.radius / 0.9);
+    else return;
+    event.preventDefault();
+    camera.position.copy(controls.target).add(new THREE.Vector3().setFromSpherical(spherical));
+    camera.lookAt(controls.target);
+    controls.update();
+  }
+  canvas.addEventListener('keydown', onCanvasKeyDown);
   canvas.addEventListener('pointermove', onPointerMove);
   canvas.addEventListener('pointerleave', onPointerLeave);
   canvas.addEventListener('pointerdown', onPointerDown);
@@ -369,6 +392,7 @@ export async function launchShowroom(options = {}) {
       equipmentModal.dispose();
       heatPumpWall?.dispose();
       canvas.style.cursor = '';
+      canvas.removeEventListener('keydown', onCanvasKeyDown);
       canvas.removeEventListener('pointermove', onPointerMove);
       canvas.removeEventListener('pointerleave', onPointerLeave);
       canvas.removeEventListener('pointerdown', onPointerDown);

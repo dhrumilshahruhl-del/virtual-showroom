@@ -1,10 +1,12 @@
+import { SHOW_APPROVED_IMPACT_CLAIMS } from '../config.js';
+
 // Keys are the existing zero-based System Flow indices; no engineering steps
 // are renamed. Final metrics describe the ventilation retrofit as a whole.
-export const IMPACT_CONFIG = Object.freeze({
+export const IMPACT_CONFIG = Object.freeze(SHOW_APPROVED_IMPACT_CLAIMS ? {
   1: { type: 'balance', title: 'Airflow rebalanced' },
   2: { type: 'recovery', title: 'Recover energy, not air' },
   5: { type: 'final', title: 'Ventilation impact' },
-});
+} : {});
 
 const svg = (content, viewBox = '0 0 248 72', className = '', label = '') =>
   `<svg class="${className}" viewBox="${viewBox}" ${label ? `role="img" aria-label="${label}"` : 'aria-hidden="true"'} focusable="false">${content}</svg>`;

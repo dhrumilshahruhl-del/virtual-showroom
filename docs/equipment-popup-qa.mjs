@@ -65,15 +65,17 @@ try {
       await settle();
       const state = await evaluate(`(()=>{const p=document.querySelector('.flow-equipment'),r=p.getBoundingClientRect();return {step:qaApp.systemFlow.state.step,hidden:p.hidden,equipment:p.dataset.equipment,anchor:p.dataset.anchor,compact:p.classList.contains('is-compact'),rect:{x:r.x,y:r.y,width:r.width,height:r.height},images:[...p.querySelectorAll('img')].every(i=>i.complete&&i.naturalWidth>0),overlap:[...document.querySelectorAll('.flow-panel,.flow-impact,.showroom__toolbar')].filter(n=>!n.hidden).some(n=>{const b=n.getBoundingClientRect();return r.left<b.right&&r.right>b.left&&r.top<b.bottom&&r.bottom>b.top})}})()`);
       rows.push({ width, ...state });
-      assert(state.step === step && state.equipment === (step === 4 ? 'heat-pump' : 'ahu') && state.images, 'Wrong equipment/image');
+      assert(state.step === step && state.equipment === (step === 0 ? '' : step === 4 ? 'heat-pump' : 'ahu') && state.images, 'Wrong equipment/image');
       const connections = await evaluate(`(()=>{const r=document.querySelector('.flow-equipment').getBoundingClientRect();return [...document.querySelectorAll('.flow-equipment-leader')].filter(l=>!l.hidden).map(l=>{const m=new DOMMatrix(getComputedStyle(l).transform),w=parseFloat(l.style.width),x=parseFloat(l.style.left)+w*m.a,y=parseFloat(l.style.top)+w*m.b;return {anchor:l.dataset.anchor,reaches:x>=r.left-1&&x<=r.right+1&&y>=r.top-1&&y<=r.bottom+1}})})()`);
-      const expectedAnchors = step === 4 ? ['central-structure','heat-pump-2'] : [0,2].includes(step) ? ['left-equipment','right-equipment'] : ['upper-unit-1','upper-unit-2'];
+      const expectedAnchors = step === 0 ? [] : step === 4 ? ['central-structure','heat-pump-2'] : [1,2].includes(step) ? ['left-equipment','right-equipment'] : ['upper-unit-1','upper-unit-2'];
       assert(JSON.stringify(connections.map(c=>c.anchor))===JSON.stringify(expectedAnchors)&&connections.every(c=>c.reaches), 'Both markers must connect to the shared label: '+JSON.stringify(connections));
-      assert(await evaluate(`document.querySelectorAll('.flow-equipment').length===1&&document.querySelectorAll('.flow-equipment figure').length===1`),'Duplicate label');
+      assert(await evaluate(`document.querySelectorAll('.flow-equipment').length===1&&document.querySelectorAll('.flow-equipment figure').length===${step===0?0:1}`),'Wrong label count');
       await capture(`${width}-${step}`);
-      assert(!state.hidden && !state.overlap, 'Popup hidden or overlapping UI: ' + JSON.stringify(rows.at(-1)));
+      assert(step===0 ? state.hidden : !state.hidden && !state.overlap, 'Incorrect popup visibility or overlapping UI: ' + JSON.stringify(rows.at(-1)));
     }
   }
+  await evaluate(`document.querySelector('[data-step="1"]').click()`);
+  await settle();
   await evaluate(`document.querySelector('[data-flow="pause"]').click()`);
   assert(await evaluate(`!document.querySelector('.flow-equipment').hidden`), 'Pause hid popup');
   await evaluate(`document.querySelector('[data-flow="pause"]').click(); document.querySelector('[data-flow="restart"]').click()`);
@@ -89,7 +91,7 @@ try {
   await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
   await evaluate(`document.querySelector('.flow-launch').click()`);
   await settle();
-  assert(await evaluate(`qaApp.systemFlow.state.step===0 && !document.querySelector('.flow-equipment').hidden && getComputedStyle(document.querySelector('.flow-equipment')).animationName==='none'`), 'Reentry/reduced motion');
+  assert(await evaluate(`qaApp.systemFlow.state.step===0 && document.querySelector('.flow-equipment').hidden && [...document.querySelectorAll('.flow-equipment-leader')].every(l=>l.hidden)`), 'Reentry retained step 1 marking');
   const finalMemory = await evaluate(`({...qaApp.renderer.info.memory})`);
   assert(finalMemory.textures <= memory.textures && finalMemory.geometries <= memory.geometries, 'WebGL resource growth: ' + JSON.stringify({memory,finalMemory}));
   for (const mode of ['late', 'failure']) {
@@ -99,7 +101,7 @@ try {
     for(let i=0;i<160;i++) {if(await evaluate(`!!document.querySelector('.flow-launch')`))break;await wait(250);}
     await evaluate(`(async()=>{window.qaApp=await(await import('/src/main.js')).showroom;document.querySelector('.flow-launch').click()})()`);
     await settle();
-    assert(cityRequests.length===3 && await evaluate(`!qaApp.scene.getObjectByName('cityContext') && !document.querySelector('.flow-equipment').hidden`), 'Flow blocked by pending city');
+    assert(cityRequests.length===3 && await evaluate(`!qaApp.scene.getObjectByName('cityContext') && qaApp.systemFlow.active && document.querySelector('.flow-equipment').hidden`), 'Flow blocked by pending city');
     for(const requestId of cityRequests) await send(mode==='late'?'Fetch.continueRequest':'Fetch.failRequest', mode==='late'?{requestId}:{requestId,errorReason:'Failed'});
     await send('Fetch.disable');
     if(mode==='late') {
@@ -108,7 +110,7 @@ try {
     }
     for(let step=0;step<6;step++) {
       await evaluate(`document.querySelector('[data-step="${step}"]').click()`);await settle();
-      assert(await evaluate(`!document.querySelector('.flow-equipment').hidden && document.querySelector('.flow-equipment').dataset.equipment==='${step===4?'heat-pump':'ahu'}'`),mode+' city popup at '+step);
+      assert(await evaluate(`document.querySelector('.flow-equipment').hidden===${step===0} && document.querySelector('.flow-equipment').dataset.equipment==='${step===0?'':step===4?'heat-pump':'ahu'}'`),mode+' city popup at '+step);
     }
     await evaluate(`document.querySelector('[data-flow="next"]').click()`);await settle();
     assert(await evaluate(`!qaApp.systemFlow.active&&document.querySelector('.flow-equipment').hidden&&document.querySelector('.flow-impact').hidden`),'Finish cleanup');

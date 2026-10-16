@@ -3,7 +3,7 @@ import { ROOFTOP_MARKERS } from '../hotspots/rooftop-markers.js';
 
 export const FLOW_EQUIPMENT = {
   ahu: { id: 'ahu', name: 'AHU', alt: 'Air handling unit', image: './assets/equipments/ahu-popup.webp', preferredAnchor: 'upper-unit-1' },
-  'heat-pump': { id: 'heat-pump', name: 'Heat Pump', alt: 'Water-source heat pump', image: './assets/equipments/heat_pump-popup.webp', preferredAnchor: 'central-structure' },
+  'heat-pump': { id: 'heat-pump', name: 'Heat Pump', alt: 'Heat pump equipment illustration', image: './assets/equipments/heat_pump-popup.webp', preferredAnchor: 'central-structure' },
 };
 const overlaps = (a, b) => a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
 

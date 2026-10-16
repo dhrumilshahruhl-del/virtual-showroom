@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npx http-server . -p 4173 -c-1",
+    "build": "node scripts/build-production.mjs",
     "check": "node --check src/main.js && node --check src/showroom.js && node --check src/ui/flow-impact.js && node --check src/flow/system-flow.js && node --check src/flow/flow-visuals.js && node --check src/flow/flow-focus.js && node --check src/flow/airflow-smoke.js && node --check src/flow/system-flow-data.js && node --check src/flow/pipe-topology.js && node --check src/environment/heat-pump-wall.js && node --check src/loaders/city-assets.js && node --check src/environment/city-context.js && node --check src/environment/city-infill.js && node --check src/environment/site-landscaping.js"
   }
 }
