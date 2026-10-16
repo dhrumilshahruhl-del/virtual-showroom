@@ -19,12 +19,16 @@
     <main id="rooftop-showroom" class="showroom" data-building-model="./assets/models/200-water-building.opt.glb">
       <canvas class="showroom__canvas" aria-label="Interactive 200 Water Street building model"></canvas>
       <div class="showroom__hud">
-        <div class="showroom__toolbar" aria-label="Showroom controls">
+        <div class="showroom__toolbar" aria-label="Showroom controls" hidden>
           <button type="button" data-action="reset">Reset view</button>
          <!-- <button type="button" data-action="copy-view">Copy view</button>-->
         </div>
       </div>
-      <p class="showroom__status" role="status" aria-live="polite">Loading building model...</p>
+      <div class="showroom__status" role="status" aria-live="polite">
+        <span class="showroom__status-message">Loading Virtual Showroom...</span>
+        <progress class="showroom__progress" max="100" value="0" aria-label="Loading virtual showroom"></progress>
+        <span class="showroom__progress-value" aria-hidden="true">0%</span>
+      </div>
     </main>
     <script type="module" src="./src/main.js"></script>
   </body>

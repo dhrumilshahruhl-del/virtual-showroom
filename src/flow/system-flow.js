@@ -19,7 +19,6 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
   launch.type = 'button';
   launch.className = 'flow-launch';
   launch.innerHTML = '<span aria-hidden="true">▶</span> Explore System Flow';
-  launch.hidden = true;
   const panel = document.createElement('section');
   panel.className = 'flow-panel';
   panel.hidden = true;
@@ -52,7 +51,6 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
   let pendingStep = null;
   const visitedSteps = new Set();
   const projected = new THREE.Vector3();
-  const cameraLocal = new THREE.Vector3();
   const target = new THREE.Vector3();
   const destination = new THREE.Vector3();
   const direction = new THREE.Vector3(1, 1.25, 1).normalize();
@@ -195,7 +193,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     paused = false;
     visitedSteps.clear();
     visuals.setVisible(true);
-    launch.hidden = true;
+    launch.disabled = true;
     panel.hidden = false;
     showStep(0);
     pauseButton.focus({ preventScroll: true });
@@ -250,14 +248,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     get topology() { return visuals.summary; },
     get airflow() { return visuals.airflow; },
     update(dt) {
-      if (mode === 'idle') {
-        projected.set(5.5, 11.5, -35);
-        building.localToWorld(projected).project(camera);
-        cameraLocal.copy(camera.position);
-        building.worldToLocal(cameraLocal);
-        launch.hidden = cameraLocal.y < 14 || projected.z < -1 || projected.z > 1 || Math.abs(projected.x) > 0.95 || Math.abs(projected.y) > 0.95;
-        return;
-      }
+      if (mode === 'idle') return;
       // Focus settles even while motion is paused; pause freezes camera, waves and reveal.
       visuals.update(dt, reducedMotion.matches, paused);
       if (paused) return;
@@ -289,7 +280,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
             delete root.dataset.flowActive;
             mode = 'idle';
             visuals.restore();
-            launch.hidden = false;
+            launch.disabled = false;
             launch.focus({ preventScroll: true });
             return;
           }

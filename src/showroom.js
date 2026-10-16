@@ -208,7 +208,19 @@ export async function launchShowroom(options = {}) {
 
   async function load() {
     const buildingModel = root.dataset.buildingModel || config.buildingModel;
-    const [, buildingGltf] = await Promise.all([environment.load(), loadGltf(buildingModel)]);
+    const loadingProgress = [0, 0];
+    const reportProgress = (index, value) => {
+      loadingProgress[index] = value;
+      // Reserve the final 10% for preparing the scene and controls.
+      ui.setLoadingProgress((loadingProgress[0] + loadingProgress[1]) * 45);
+    };
+    const trackDownload = (index) => (event) => {
+      if (event.total > 0) reportProgress(index, event.loaded / event.total);
+    };
+    const [, buildingGltf] = await Promise.all([
+      environment.load(trackDownload(0)).then((result) => { reportProgress(0, 1); return result; }),
+      loadGltf(buildingModel, trackDownload(1)).then((result) => { reportProgress(1, 1); return result; }),
+    ]);
     if (disposed) return;
 
     const building = cloneSceneFromGltf(buildingGltf);
@@ -233,7 +245,9 @@ export async function launchShowroom(options = {}) {
       wall: heatPumpWall, markers: rooftopMarkers, modal: equipmentModal });
 
     intro = null;
+    ui.setLoadingProgress(100);
     ui.setStatus('');
+    root.querySelector('.showroom__toolbar').hidden = false;
     // Optional context must never hold up controls or guided flow.
     void loadProgressiveCityContext(new THREE.Box3().setFromObject(building));
   }

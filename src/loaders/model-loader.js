@@ -10,10 +10,10 @@ export function resolveAssetUrl(path) {
   return new URL(path, document.baseURI).href;
 }
 
-export function loadGltf(path) {
+export function loadGltf(path, onProgress) {
   const url = resolveAssetUrl(path);
   if (!cache.has(url)) {
-    cache.set(url, loader.loadAsync(url).catch((error) => {
+    cache.set(url, loader.loadAsync(url, onProgress).catch((error) => {
       cache.delete(url);
       throw error;
     }));

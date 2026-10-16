@@ -3,6 +3,7 @@ import { acquireCityAssets } from '../loaders/city-assets.js';
 import { createCitySite, positionCityBuilding } from './city-site.js';
 import { addSiteLandscaping } from './site-landscaping.js';
 import { addCityInfill } from './city-infill.js';
+import { refineBrickFacades } from './city-facades.js';
 
 const CITY_LAYOUT = [
   { asset: 0, x: -1.55, z: -0.9, scale: 0.78, rotation: 0 },
@@ -207,6 +208,7 @@ export async function createCityContext(heroBox) {
     CITY_LAYOUT.forEach((item, index) => {
       const instance = assets[item.asset].clone(true);
       instance.name = `cityContextBuilding_${index + 1}`;
+      if (item.asset === 0 || item.asset === 1) refineBrickFacades(instance);
       instance.scale.setScalar(baseScale * item.scale);
       instance.rotation.y = item.rotation;
       const placedBounds = positionCityBuilding(instance, item, site, heroBox);

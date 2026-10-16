@@ -21,8 +21,8 @@ export class EnvironmentManager {
     this.disposed = false;
   }
 
-  async load() {
-    const texture = await new RGBELoader().loadAsync(this.config.hdriPath);
+  async load(onProgress) {
+    const texture = await new RGBELoader().loadAsync(this.config.hdriPath, onProgress);
     if (this.disposed) { texture.dispose(); return null; }
     texture.mapping = THREE.EquirectangularReflectionMapping;
 
