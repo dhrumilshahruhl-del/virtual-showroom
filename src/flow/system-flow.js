@@ -5,6 +5,11 @@ import { FLOW_FOCUS } from './flow-focus.js';
 import { createFlowImpact } from '../ui/flow-impact.js';
 
 const CAMERA_DURATION = 1.5;
+// Presentation order refers to stable engineering indices used by focus,
+// topology, smoke, and impact content: previous steps 2, 3, 6, 1, 4, 5.
+const STEP_ORDER = [1, 2, 5, 0, 3, 4];
+const ORDERED_STEPS = STEP_ORDER.map((index) => FLOW_STEPS[index]);
+const ORDERED_FOCUS = STEP_ORDER.map((index) => FLOW_FOCUS[index]);
 const ease = (t) => t * t * (3 - 2 * t);
 
 export function createSystemFlow({ root, building, city, camera, controls, wall, markers, modal }) {
@@ -21,11 +26,9 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
   panel.setAttribute('aria-label', 'Guided system flow');
   panel.innerHTML = `
     <div class="flow-panel__top"><span class="flow-panel__eyebrow">System Flow</span><span class="flow-panel__count"></span></div>
-    <nav class="flow-panel__steps" aria-label="System flow steps">${FLOW_STEPS.map((step, i) =>
+    <nav class="flow-panel__steps" aria-label="System flow steps">${ORDERED_STEPS.map((step, i) =>
       `<button type="button" data-step="${i}" aria-label="Step ${i + 1}: ${step.title}" title="${step.title}">${i + 1}</button>`).join('')}</nav>
     <div class="flow-panel__copy" aria-live="polite" aria-atomic="true"><h2></h2><p></p></div>
-    <div class="flow-panel__legend"><span data-kind="fresh">Fresh air</span><span data-kind="exhaust">Exhaust air</span><span data-kind="energy">Energy only</span></div>
-    <p class="flow-panel__principle">Air stays separate. Only energy is recovered.</p>
     <p class="flow-panel__detail"></p>
     <div class="flow-panel__navigation"><button type="button" data-flow="previous">Previous</button><button type="button" data-flow="next">Next step</button></div>
     <div class="flow-panel__controls"><button type="button" data-flow="pause">Pause</button><button type="button" data-flow="restart">Restart</button><button type="button" data-flow="exit">Exit Flow</button></div>`;
@@ -62,7 +65,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     impactInset = impact.measure().right;
     // Reuse the existing camera fit only when overlay layout changes. The
     // impact diagrams have no animation-frame or per-frame update function.
-    if (mode === 'playing') frameStep(FLOW_FOCUS[stepIndex].camera, stepIndex);
+    if (mode === 'playing') frameStep(ORDERED_FOCUS[stepIndex].camera, STEP_ORDER[stepIndex]);
   }
   window.addEventListener('resize', handleImpactLayout);
 
@@ -137,13 +140,14 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     stepIndex = index;
     visitedSteps.add(index);
     pendingStep = null;
-    const step = FLOW_STEPS[index];
+    const sourceIndex = STEP_ORDER[index];
+    const step = ORDERED_STEPS[index];
     impact.setPaused(false);
-    impact.setStep(index);
+    impact.setStep(sourceIndex);
     impactInset = impact.measure().right;
-    wall.setTranslucent(FLOW_FOCUS[index].obstruction);
-    visuals.setStep(step, index);
-    frameStep(FLOW_FOCUS[index].camera, index);
+    wall.setTranslucent(ORDERED_FOCUS[index].obstruction);
+    visuals.setStep(step, sourceIndex);
+    frameStep(ORDERED_FOCUS[index].camera, sourceIndex);
     heading.textContent = step.title;
     description.textContent = step.description;
     detail.textContent = step.detail;
@@ -163,10 +167,10 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
     if (mode !== 'playing' || index < 0 || index >= FLOW_STEPS.length) return;
     impact.setPaused(false);
     // Close only when the next focus no longer needs the lower-room cutaway.
-    if (FLOW_FOCUS[stepIndex].obstruction && !FLOW_FOCUS[index].obstruction && !wall.settled) {
+    if (ORDERED_FOCUS[stepIndex].obstruction && !ORDERED_FOCUS[index].obstruction && !wall.settled) {
       wall.setTranslucent(false);
       pendingStep = index;
-    } else if (FLOW_FOCUS[stepIndex].obstruction && !FLOW_FOCUS[index].obstruction && wall.translucent) {
+    } else if (ORDERED_FOCUS[stepIndex].obstruction && !ORDERED_FOCUS[index].obstruction && wall.translucent) {
       wall.setTranslucent(false);
       pendingStep = index;
     } else showStep(index);

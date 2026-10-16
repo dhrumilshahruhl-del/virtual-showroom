@@ -161,7 +161,10 @@ export function buildPipeTopology(building) {
   }
   for (const mesh of meshes) {
     mesh.records.forEach((record, i) => {
-      if (record) mesh.renderData[i * 4 + 1] = record.graph.vertices[record.id].distance;
+      if (record) {
+        mesh.renderData[i * 4 + 1] = record.graph.vertices[record.id].distance;
+        mesh.renderData[i * 4 + 3] = record.network === 'extract-right' && (record.mask & 32) ? 1 : 0;
+      }
     });
     delete mesh.records;
   }

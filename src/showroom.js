@@ -102,6 +102,38 @@ export async function launchShowroom(options = {}) {
     });
   }
 
+  function removeUnusedRoomCabinet(building) {
+    building.updateWorldMatrix(true, true);
+    const inverse = building.matrixWorld.clone().invert();
+    const point = new THREE.Vector3();
+    building.traverse((node) => {
+      const geometry = node.geometry;
+      if (!node.isMesh || !geometry?.index || !geometry.attributes.uv) return;
+      const transform = inverse.clone().multiply(node.matrixWorld);
+      const positions = geometry.attributes.position, uv = geometry.attributes.uv;
+      const cabinetVertices = new Set();
+      for (let i = 0; i < positions.count; i++) {
+        if (Math.round((uv.getX(i) - 0.015625) * 32) !== 5) continue;
+        point.fromBufferAttribute(positions, i).applyMatrix4(transform);
+        const u = (point.x - point.z) / Math.SQRT2;
+        const v = (point.x + point.z) / Math.SQRT2;
+        // Measured bounds of the isolated grey cabinet, above the lower pipes.
+        if (u >= 23.66 && u <= 25.38 && v >= -17.60 && v <= -15.22 &&
+            point.y >= 7.17 && point.y <= 9.86) cabinetVertices.add(i);
+      }
+      const kept = [];
+      let removed = 0;
+      for (let i = 0; i < geometry.index.count; i += 3) {
+        const triangle = [0, 1, 2].map((offset) => geometry.index.getX(i + offset));
+        if (triangle.every((vertex) => cabinetVertices.has(vertex))) removed++;
+        else kept.push(...triangle);
+      }
+      if (!removed) return;
+      node.geometry = geometry.clone();
+      node.geometry.setIndex(kept);
+    });
+  }
+
   function applyTransform(object, transform) {
     object.position.set(transform.position.x, transform.position.y, transform.position.z);
     object.rotation.set(transform.rotation.x, transform.rotation.y, transform.rotation.z);
@@ -180,6 +212,7 @@ export async function launchShowroom(options = {}) {
     if (disposed) return;
 
     const building = cloneSceneFromGltf(buildingGltf);
+    removeUnusedRoomCabinet(building);
     prepareMaterials(building);
     enhancePbrMaterials(building);
     applyTransform(building, DEFAULT_VIEW.building);

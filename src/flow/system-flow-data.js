@@ -5,13 +5,13 @@ export function fromPlant(u, v, h) {
 }
 export const FLOW_STEPS = [
   { title: 'Fresh Outdoor Air', zone: 0, focus: fromPlant(29,-21.7,12.4), span: 16,
-    description: 'Fresh outdoor air enters the ventilation system to replace the used air being removed from the building.',
+    description: 'Fresh outdoor air enters the system to replace the used indoor air. Recovered energy helps bring it closer to the temperature needed indoors.',
     detail: 'Blue highlights follow the green intake hoods and the supply units.' },
-  { title: 'Used Indoor Air', zone: 1, focus: fromPlant(24,-21.3,4.6), span: 62,
-    description: 'Used indoor air is collected and carries valuable heating or cooling energy.',
+  { title: 'Return Air', zone: 1, focus: fromPlant(24,-21.3,4.6), span: 62,
+    description: 'Return Air is combined and carries valuable heating or cooling energy.',
     detail: 'Orange highlights follow the yellow duct branches into each extract unit.' },
   { title: 'Energy Recovery', zone: 2, focus: fromPlant(29,-19.8,10.6), span: 23,
-    description: 'The remaining warmth or coolness is transferred to the incoming fresh air without mixing the two air streams.',
+    description: 'The warmth or coolness is transferred to the incoming fresh air without mixing the two air streams.',
     detail: 'Cyan highlights show energy on the actual pipe circuits. Air stays in separate ducts.' },
   { title: 'Heat Pump', zone: 3, focus: fromPlant(31.3,-19.4,4.45), span: 8.5, viewDirection: [1,0.85,1],
     description: 'When recovered energy is not enough, the heat pump provides the additional heating or cooling needed to reach the desired temperature.',

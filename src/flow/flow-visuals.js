@@ -45,7 +45,8 @@ export function createFlowVisuals(building, city) {
           for (int i = 0; i < 6; i++) activeWeight += mod(floor(flowSurface.x / exp2(float(i))), 2.0) * flowWeights[i];
           float related = 0.0;
           for (int i = 0; i < 4; i++) related += float(abs(flowSurface.z - float(i + 1)) < 0.1) * flowRelated[i];
-          vFlowSurface = vec4(flowSurface.y, clamp(activeWeight, 0.0, 1.0), clamp(related, 0.0, 1.0),
+          float flowDistance = flowSurface.y * (1.0 - 2.0 * flowSurface.w * flowWeights[5]);
+          vFlowSurface = vec4(flowDistance, clamp(activeWeight, 0.0, 1.0), clamp(related, 0.0, 1.0),
             float(flowSurface.x > 0.5));`);
         shader.fragmentShader = 'uniform float flowEnabled;\nuniform float flowTime;\nuniform vec3 flowColor;\nvarying vec4 vFlowSurface;\n' + shader.fragmentShader;
         shader.fragmentShader = shader.fragmentShader.replace('#include <emissivemap_fragment>', `

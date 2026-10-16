@@ -9,11 +9,11 @@ export const AIR_TERMINALS = [
     direction: fromPlant(0, 1, 0), length: 4.2, width: 0.70, color: '#319ee9' },
   { id: 'fresh-right', step: 0, intake: true, port: fromPlant(32.677, -23.554, 12.476),
     direction: fromPlant(0, 1, 0), length: 4.2, width: 0.70, color: '#319ee9' },
-  // Existing verified negative-u discharge seeds (palette 11), unchanged.
+  // The first hood discharges sideways; the second hood rises toward -v.
   { id: 'exhaust-left', step: 5, intake: false, port: FLOW_NETWORKS['extract-left'].seeds[0],
     direction: fromPlant(-1, 0, 0), length: 4.5, width: 0.80, color: '#f39435' },
-  { id: 'exhaust-right', step: 5, intake: false, port: FLOW_NETWORKS['extract-right'].seeds[0],
-    direction: fromPlant(-1, 0, 0), length: 4.5, width: 0.80, color: '#f39435' },
+  { id: 'exhaust-right', step: 5, intake: false, port: fromPlant(38.60, -23.76, 6.32),
+    direction: fromPlant(0, -0.8, 0.6), length: 4.5, width: 0.80, color: '#f39435' },
 ];
 
 function vaporTexture() {
