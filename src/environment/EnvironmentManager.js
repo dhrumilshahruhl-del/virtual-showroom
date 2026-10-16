@@ -18,10 +18,12 @@ export class EnvironmentManager {
     this.environmentMap = null;
     this.backgroundTexture = null;
     this.pmremTarget = null;
+    this.disposed = false;
   }
 
   async load() {
     const texture = await new RGBELoader().loadAsync(this.config.hdriPath);
+    if (this.disposed) { texture.dispose(); return null; }
     texture.mapping = THREE.EquirectangularReflectionMapping;
 
     this.pmremTarget = this.pmremGenerator.fromEquirectangular(texture);
@@ -44,6 +46,7 @@ export class EnvironmentManager {
   }
 
   dispose() {
+    this.disposed = true;
     this.backgroundTexture?.dispose();
     this.pmremTarget?.dispose();
     this.pmremGenerator?.dispose();

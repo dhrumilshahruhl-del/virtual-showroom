@@ -62,7 +62,13 @@ try {
     if(await evaluate(`!!document.querySelector('.flow-launch')`))break;
     if(i===99)throw new Error('Showroom did not load');await wait(500);
   }
-  await evaluate(`(async()=>{window.qaApp=await(await import('/src/main.js')).showroom;window.qaSceneObjects=0;qaApp.scene.traverse(()=>qaSceneObjects++);document.querySelector('.flow-launch').click();})()`);
+  await evaluate(`(async()=>{window.qaApp=await(await import('/src/main.js')).showroom})()`);
+  // Optional progressive city insertion is expected; count objects after it settles.
+  for(let i=0;i<120;i++) {
+    if(await evaluate(`!!qaApp.scene.getObjectByName('cityContext')`))break;
+    if(i===119)throw new Error('City did not finish loading');await wait(250);
+  }
+  await evaluate(`window.qaSceneObjects=0;qaApp.scene.traverse(()=>qaSceneObjects++);document.querySelector('.flow-launch').click()`);
   await settle();
   for(let index=0;index<6;index++) {
     await step(index);

@@ -1,0 +1,3661 @@
+{
+  "beforeCity": {
+    "geometries": 33,
+    "textures": 8,
+    "programs": 14,
+    "calls": 13,
+    "triangles": 568790,
+    "cityContexts": 0,
+    "smokePools": 1,
+    "city": {
+      "meshes": 0,
+      "materials": 0,
+      "geometryBytes": 0,
+      "textureObjects": 0,
+      "textureBytes": 0,
+      "rows": []
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 1000,
+      "dpr": 1
+    },
+    "environment": {
+      "background": "5e68cfd3-6ecc-4c91-88ff-28eb33d4ff03",
+      "environment": "607b2a03-7d0e-4698-961a-20c462fd976c"
+    },
+    "heap": {
+      "usedSize": 37909204,
+      "totalSize": 40329216,
+      "embedderHeapUsedSize": 1260904,
+      "backingStorageSize": 121346516
+    }
+  },
+  "fullyLoaded": {
+    "geometries": 58,
+    "textures": 35,
+    "programs": 24,
+    "calls": 65,
+    "triangles": 656894,
+    "cityContexts": 1,
+    "smokePools": 1,
+    "city": {
+      "meshes": 127,
+      "materials": 50,
+      "geometryBytes": 7361628,
+      "textureObjects": 28,
+      "textureBytes": 61516424,
+      "rows": [
+        {
+          "uuid": "bea60119-fbfa-4d75-9070-d0fb276d9f00",
+          "source": null,
+          "width": 256,
+          "height": 256,
+          "bytes": 349524,
+          "refs": 1,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            40,
+            40
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 4,
+          "uploaded": true
+        },
+        {
+          "uuid": "6dee63ab-340b-446d-8af2-fceeb2839e06",
+          "source": null,
+          "width": 256,
+          "height": 256,
+          "bytes": 349524,
+          "refs": 5,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            32,
+            32
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 4,
+          "uploaded": true
+        },
+        {
+          "uuid": "32429a84-1173-48ba-a90a-d19f0b14175c",
+          "source": "http://localhost:4173/assets/city-context/textures/T_MarbleFloor_BaseColor.png",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 5592404,
+          "refs": 6,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "690de1f8-3b05-4fda-805d-452eddc071e1",
+          "source": "http://localhost:4173/assets/city-context/textures/T_MarbleFloor_Normal.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 6,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "87d21670-2fde-4301-baed-da4df4e18c37",
+          "source": "http://localhost:4173/assets/city-context/textures/T_MarbleFloor_ORM.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 12,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "ac7ee4fc-781d-4334-abea-bd90c90e8fa0",
+          "source": "http://localhost:4173/assets/city-context/textures/T_Trim_BaseColor.png",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 5592404,
+          "refs": 14,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "68f7ff9c-54f7-499e-b476-d8cb846e0df3",
+          "source": "http://localhost:4173/assets/city-context/textures/T_Trim_Normal.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 14,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "26b2052c-a47c-42bb-b236-d0722af3496a",
+          "source": "http://localhost:4173/assets/city-context/textures/T_Trim_ORM.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 28,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "3842496f-ce6a-4a7c-9f65-dce761a4aa53",
+          "source": "http://localhost:4173/assets/city-context/textures/T_MetalConcrete_BaseColor.png",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 5592404,
+          "refs": 4,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "fcc23d17-d0d9-47c1-9636-392c73c621a2",
+          "source": "http://localhost:4173/assets/city-context/textures/T_MetalConcrete_Normal.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 4,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "3efa8333-0b50-4dba-abc6-c2e674619312",
+          "source": "http://localhost:4173/assets/city-context/textures/T_MetalConcrete_ORM.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "fc95d3d6-0e2c-4a76-a06c-98a410c08b26",
+          "source": "http://localhost:4173/assets/city-context/textures/T_RedBrick_BaseColor.png",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 5592404,
+          "refs": 12,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "b2c4779a-fa56-4d3b-a312-723b33608d86",
+          "source": "http://localhost:4173/assets/city-context/textures/T_RedBrick_Normal.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 12,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "2d3c24d2-c652-4fb5-b385-01bad0084c89",
+          "source": "http://localhost:4173/assets/city-context/textures/T_RedBrick_ORM.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 24,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "ef2106dd-8a13-4103-80ed-f61eaa0bd9d7",
+          "source": "http://localhost:4173/assets/city-context/textures/T_lit_interior_2.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 6,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "bfa2218b-94da-48f4-8647-0b09d18f2ad8",
+          "source": "http://localhost:4173/assets/city-context/textures/T_lit_interior_1.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 12,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "8c62d492-b307-4a46-99cc-25fd9d80fddd",
+          "source": "http://localhost:4173/assets/city-context/textures/T_dark_interior.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 6,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "b72a68c9-2368-404e-9ef0-fee954f3d735",
+          "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_Asphalt_BaseColor.png",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 5592404,
+          "refs": 6,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "21240398-bfb1-49ff-848c-c059416f09bb",
+          "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_Normal.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "287ecd2e-2eb6-460f-9c25-90ed466eefe4",
+          "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_ORM.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 16,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "4fc58b23-2da4-4708-9d82-7e2c10ed654b",
+          "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_BaseColor.png",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 5592404,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "d5bf17af-7f43-4892-91c4-89d2c830767f",
+          "source": null,
+          "width": 512,
+          "height": 256,
+          "bytes": 699052,
+          "refs": 1,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 4,
+          "uploaded": true
+        },
+        {
+          "uuid": "5bb14b88-85cb-4370-902b-e059a4d3e92c",
+          "source": null,
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 4,
+          "uploaded": true
+        },
+        {
+          "uuid": "01dbc323-5562-4e2b-9170-628c3a3aec8b",
+          "source": null,
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "roughnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "b9cfa7cb-e7d7-470d-badc-479e723205d5",
+          "source": null,
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 4,
+          "uploaded": true
+        },
+        {
+          "uuid": "97ebdfdf-6203-466a-a208-a1ce5c9fcf17",
+          "source": null,
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "roughnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "f3ebfd04-6922-4c69-b0ab-115e875c1600",
+          "source": null,
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 4,
+          "uploaded": true
+        },
+        {
+          "uuid": "c5e19644-41d6-41b2-9e98-cf90b5638fb7",
+          "source": null,
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "roughnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        }
+      ]
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 1000,
+      "dpr": 1
+    },
+    "environment": {
+      "background": "5e68cfd3-6ecc-4c91-88ff-28eb33d4ff03",
+      "environment": "607b2a03-7d0e-4698-961a-20c462fd976c"
+    },
+    "heap": {
+      "usedSize": 39872916,
+      "totalSize": 40853504,
+      "embedderHeapUsedSize": 1236592,
+      "backingStorageSize": 128809374
+    }
+  },
+  "cycles": [
+    {
+      "geometries": 87,
+      "textures": 37,
+      "programs": 29,
+      "calls": 65,
+      "triangles": 656894,
+      "cityContexts": 1,
+      "smokePools": 1,
+      "city": {
+        "meshes": 127,
+        "materials": 50,
+        "geometryBytes": 7361628,
+        "textureObjects": 28,
+        "textureBytes": 61516424,
+        "rows": [
+          {
+            "uuid": "bea60119-fbfa-4d75-9070-d0fb276d9f00",
+            "source": null,
+            "width": 256,
+            "height": 256,
+            "bytes": 349524,
+            "refs": 1,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              40,
+              40
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "6dee63ab-340b-446d-8af2-fceeb2839e06",
+            "source": null,
+            "width": 256,
+            "height": 256,
+            "bytes": 349524,
+            "refs": 5,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              32,
+              32
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "32429a84-1173-48ba-a90a-d19f0b14175c",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MarbleFloor_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "690de1f8-3b05-4fda-805d-452eddc071e1",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MarbleFloor_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 6,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "87d21670-2fde-4301-baed-da4df4e18c37",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MarbleFloor_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 12,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "ac7ee4fc-781d-4334-abea-bd90c90e8fa0",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Trim_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 14,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "68f7ff9c-54f7-499e-b476-d8cb846e0df3",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Trim_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 14,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "26b2052c-a47c-42bb-b236-d0722af3496a",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Trim_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 28,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "3842496f-ce6a-4a7c-9f65-dce761a4aa53",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MetalConcrete_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 4,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "fcc23d17-d0d9-47c1-9636-392c73c621a2",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MetalConcrete_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 4,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "3efa8333-0b50-4dba-abc6-c2e674619312",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MetalConcrete_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "fc95d3d6-0e2c-4a76-a06c-98a410c08b26",
+            "source": "http://localhost:4173/assets/city-context/textures/T_RedBrick_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 12,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "b2c4779a-fa56-4d3b-a312-723b33608d86",
+            "source": "http://localhost:4173/assets/city-context/textures/T_RedBrick_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 12,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "2d3c24d2-c652-4fb5-b385-01bad0084c89",
+            "source": "http://localhost:4173/assets/city-context/textures/T_RedBrick_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 24,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "ef2106dd-8a13-4103-80ed-f61eaa0bd9d7",
+            "source": "http://localhost:4173/assets/city-context/textures/T_lit_interior_2.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "bfa2218b-94da-48f4-8647-0b09d18f2ad8",
+            "source": "http://localhost:4173/assets/city-context/textures/T_lit_interior_1.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 12,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "8c62d492-b307-4a46-99cc-25fd9d80fddd",
+            "source": "http://localhost:4173/assets/city-context/textures/T_dark_interior.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "b72a68c9-2368-404e-9ef0-fee954f3d735",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_Asphalt_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "21240398-bfb1-49ff-848c-c059416f09bb",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "287ecd2e-2eb6-460f-9c25-90ed466eefe4",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 16,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "4fc58b23-2da4-4708-9d82-7e2c10ed654b",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "d5bf17af-7f43-4892-91c4-89d2c830767f",
+            "source": null,
+            "width": 512,
+            "height": 256,
+            "bytes": 699052,
+            "refs": 1,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "5bb14b88-85cb-4370-902b-e059a4d3e92c",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "01dbc323-5562-4e2b-9170-628c3a3aec8b",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "b9cfa7cb-e7d7-470d-badc-479e723205d5",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "97ebdfdf-6203-466a-a208-a1ce5c9fcf17",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "f3ebfd04-6922-4c69-b0ab-115e875c1600",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "c5e19644-41d6-41b2-9e98-cf90b5638fb7",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          }
+        ]
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1
+      },
+      "environment": {
+        "background": "5e68cfd3-6ecc-4c91-88ff-28eb33d4ff03",
+        "environment": "607b2a03-7d0e-4698-961a-20c462fd976c"
+      },
+      "heap": {
+        "usedSize": 41111240,
+        "totalSize": 42164224,
+        "embedderHeapUsedSize": 1479768,
+        "backingStorageSize": 128809702
+      }
+    },
+    {
+      "geometries": 87,
+      "textures": 37,
+      "programs": 29,
+      "calls": 65,
+      "triangles": 656894,
+      "cityContexts": 1,
+      "smokePools": 1,
+      "city": {
+        "meshes": 127,
+        "materials": 50,
+        "geometryBytes": 7361628,
+        "textureObjects": 28,
+        "textureBytes": 61516424,
+        "rows": [
+          {
+            "uuid": "bea60119-fbfa-4d75-9070-d0fb276d9f00",
+            "source": null,
+            "width": 256,
+            "height": 256,
+            "bytes": 349524,
+            "refs": 1,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              40,
+              40
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "6dee63ab-340b-446d-8af2-fceeb2839e06",
+            "source": null,
+            "width": 256,
+            "height": 256,
+            "bytes": 349524,
+            "refs": 5,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              32,
+              32
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "32429a84-1173-48ba-a90a-d19f0b14175c",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MarbleFloor_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "690de1f8-3b05-4fda-805d-452eddc071e1",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MarbleFloor_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 6,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "87d21670-2fde-4301-baed-da4df4e18c37",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MarbleFloor_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 12,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "ac7ee4fc-781d-4334-abea-bd90c90e8fa0",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Trim_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 14,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "68f7ff9c-54f7-499e-b476-d8cb846e0df3",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Trim_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 14,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "26b2052c-a47c-42bb-b236-d0722af3496a",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Trim_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 28,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "3842496f-ce6a-4a7c-9f65-dce761a4aa53",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MetalConcrete_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 4,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "fcc23d17-d0d9-47c1-9636-392c73c621a2",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MetalConcrete_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 4,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "3efa8333-0b50-4dba-abc6-c2e674619312",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MetalConcrete_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "fc95d3d6-0e2c-4a76-a06c-98a410c08b26",
+            "source": "http://localhost:4173/assets/city-context/textures/T_RedBrick_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 12,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "b2c4779a-fa56-4d3b-a312-723b33608d86",
+            "source": "http://localhost:4173/assets/city-context/textures/T_RedBrick_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 12,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "2d3c24d2-c652-4fb5-b385-01bad0084c89",
+            "source": "http://localhost:4173/assets/city-context/textures/T_RedBrick_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 24,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "ef2106dd-8a13-4103-80ed-f61eaa0bd9d7",
+            "source": "http://localhost:4173/assets/city-context/textures/T_lit_interior_2.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "bfa2218b-94da-48f4-8647-0b09d18f2ad8",
+            "source": "http://localhost:4173/assets/city-context/textures/T_lit_interior_1.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 12,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "8c62d492-b307-4a46-99cc-25fd9d80fddd",
+            "source": "http://localhost:4173/assets/city-context/textures/T_dark_interior.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "b72a68c9-2368-404e-9ef0-fee954f3d735",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_Asphalt_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "21240398-bfb1-49ff-848c-c059416f09bb",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "287ecd2e-2eb6-460f-9c25-90ed466eefe4",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 16,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "4fc58b23-2da4-4708-9d82-7e2c10ed654b",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "d5bf17af-7f43-4892-91c4-89d2c830767f",
+            "source": null,
+            "width": 512,
+            "height": 256,
+            "bytes": 699052,
+            "refs": 1,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "5bb14b88-85cb-4370-902b-e059a4d3e92c",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "01dbc323-5562-4e2b-9170-628c3a3aec8b",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "b9cfa7cb-e7d7-470d-badc-479e723205d5",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "97ebdfdf-6203-466a-a208-a1ce5c9fcf17",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "f3ebfd04-6922-4c69-b0ab-115e875c1600",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "c5e19644-41d6-41b2-9e98-cf90b5638fb7",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          }
+        ]
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1
+      },
+      "environment": {
+        "background": "5e68cfd3-6ecc-4c91-88ff-28eb33d4ff03",
+        "environment": "607b2a03-7d0e-4698-961a-20c462fd976c"
+      },
+      "heap": {
+        "usedSize": 41242716,
+        "totalSize": 42426368,
+        "embedderHeapUsedSize": 1524712,
+        "backingStorageSize": 128809702
+      }
+    },
+    {
+      "geometries": 87,
+      "textures": 37,
+      "programs": 29,
+      "calls": 65,
+      "triangles": 656894,
+      "cityContexts": 1,
+      "smokePools": 1,
+      "city": {
+        "meshes": 127,
+        "materials": 50,
+        "geometryBytes": 7361628,
+        "textureObjects": 28,
+        "textureBytes": 61516424,
+        "rows": [
+          {
+            "uuid": "bea60119-fbfa-4d75-9070-d0fb276d9f00",
+            "source": null,
+            "width": 256,
+            "height": 256,
+            "bytes": 349524,
+            "refs": 1,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              40,
+              40
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "6dee63ab-340b-446d-8af2-fceeb2839e06",
+            "source": null,
+            "width": 256,
+            "height": 256,
+            "bytes": 349524,
+            "refs": 5,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              32,
+              32
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "32429a84-1173-48ba-a90a-d19f0b14175c",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MarbleFloor_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "690de1f8-3b05-4fda-805d-452eddc071e1",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MarbleFloor_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 6,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "87d21670-2fde-4301-baed-da4df4e18c37",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MarbleFloor_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 12,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "ac7ee4fc-781d-4334-abea-bd90c90e8fa0",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Trim_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 14,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "68f7ff9c-54f7-499e-b476-d8cb846e0df3",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Trim_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 14,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "26b2052c-a47c-42bb-b236-d0722af3496a",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Trim_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 28,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "3842496f-ce6a-4a7c-9f65-dce761a4aa53",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MetalConcrete_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 4,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "fcc23d17-d0d9-47c1-9636-392c73c621a2",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MetalConcrete_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 4,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "3efa8333-0b50-4dba-abc6-c2e674619312",
+            "source": "http://localhost:4173/assets/city-context/textures/T_MetalConcrete_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "fc95d3d6-0e2c-4a76-a06c-98a410c08b26",
+            "source": "http://localhost:4173/assets/city-context/textures/T_RedBrick_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 12,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "b2c4779a-fa56-4d3b-a312-723b33608d86",
+            "source": "http://localhost:4173/assets/city-context/textures/T_RedBrick_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 12,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "2d3c24d2-c652-4fb5-b385-01bad0084c89",
+            "source": "http://localhost:4173/assets/city-context/textures/T_RedBrick_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 24,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "ef2106dd-8a13-4103-80ed-f61eaa0bd9d7",
+            "source": "http://localhost:4173/assets/city-context/textures/T_lit_interior_2.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "bfa2218b-94da-48f4-8647-0b09d18f2ad8",
+            "source": "http://localhost:4173/assets/city-context/textures/T_lit_interior_1.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 12,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "8c62d492-b307-4a46-99cc-25fd9d80fddd",
+            "source": "http://localhost:4173/assets/city-context/textures/T_dark_interior.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "b72a68c9-2368-404e-9ef0-fee954f3d735",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_Asphalt_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "21240398-bfb1-49ff-848c-c059416f09bb",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_Normal.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "287ecd2e-2eb6-460f-9c25-90ed466eefe4",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_ORM.png",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 16,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "4fc58b23-2da4-4708-9d82-7e2c10ed654b",
+            "source": "http://localhost:4173/assets/city-context/textures/T_Concrete_BaseColor.png",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "d5bf17af-7f43-4892-91c4-89d2c830767f",
+            "source": null,
+            "width": 512,
+            "height": 256,
+            "bytes": 699052,
+            "refs": 1,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "5bb14b88-85cb-4370-902b-e059a4d3e92c",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "01dbc323-5562-4e2b-9170-628c3a3aec8b",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "b9cfa7cb-e7d7-470d-badc-479e723205d5",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "97ebdfdf-6203-466a-a208-a1ce5c9fcf17",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "f3ebfd04-6922-4c69-b0ab-115e875c1600",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "c5e19644-41d6-41b2-9e98-cf90b5638fb7",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          }
+        ]
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1
+      },
+      "environment": {
+        "background": "5e68cfd3-6ecc-4c91-88ff-28eb33d4ff03",
+        "environment": "607b2a03-7d0e-4698-961a-20c462fd976c"
+      },
+      "heap": {
+        "usedSize": 41215272,
+        "totalSize": 42426368,
+        "embedderHeapUsedSize": 1492472,
+        "backingStorageSize": 128809702
+      }
+    }
+  ],
+  "errors": []
+}

@@ -18,8 +18,10 @@ export const FLOW_FOCUS = [
 // Restore the exact original references; never mutate shared source materials.
 export function createContextFocus(building, city) {
   const entries = [];
-  for (const [root, brightness] of [[building, 0.52], [city, 0.30]]) {
-    if (!root) continue;
+  let amount = 0;
+  let attached = false;
+  function addRoot(root, brightness) {
+    if (!root) return;
     const cache = new Map();
     root.traverse((node) => {
       if (!node.isMesh || node.geometry?.getAttribute('flowSurface') || node.name === 'heatPumpEnclosureWall') return;
@@ -37,12 +39,16 @@ export function createContextFocus(building, city) {
         return cache.get(source).material;
       });
       entries.push({ node, original, focused: Array.isArray(original) ? materials : materials[0] });
+      if (attached) node.material = entries[entries.length - 1].focused;
     });
     entries.push({ cache, brightness });
+    const current = amount;
+    amount = -1;
+    api.update(current);
   }
-  let amount = 0;
-  return {
-    attach() { for (const e of entries) if (e.node) e.node.material = e.focused; },
+  const api = {
+    addCity(root) { addRoot(root, 0.30); },
+    attach() { attached = true; for (const e of entries) if (e.node) e.node.material = e.focused; },
     update(value) {
       if (value === amount) return;
       amount = value;
@@ -53,7 +59,10 @@ export function createContextFocus(building, city) {
         if (source.emissive) material.emissive.copy(source.emissive).multiplyScalar(1 - value * 0.7);
       }
     },
-    restore() { for (const e of entries) if (e.node) e.node.material = e.original; amount = -1; this.update(0); },
+    restore() { attached = false; for (const e of entries) if (e.node) e.node.material = e.original; amount = -1; this.update(0); },
     dispose() { this.restore(); for (const e of entries) if (e.cache) for (const { material } of e.cache.values()) material.dispose(); },
   };
+  addRoot(building, 0.52);
+  addRoot(city, 0.30);
+  return api;
 }

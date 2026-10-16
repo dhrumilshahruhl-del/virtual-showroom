@@ -1,0 +1,3913 @@
+{
+  "beforeCity": {
+    "geometries": 33,
+    "textures": 8,
+    "programs": 14,
+    "calls": 13,
+    "triangles": 568790,
+    "cityContexts": 0,
+    "smokePools": 1,
+    "city": {
+      "meshes": 0,
+      "materials": 0,
+      "geometryBytes": 0,
+      "textureObjects": 0,
+      "textureBytes": 0,
+      "rows": []
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 1000,
+      "dpr": 1
+    },
+    "environment": {
+      "background": "6e41aac6-9e8c-4f14-9a56-668fd1c45d4e",
+      "environment": "bbbfeb0e-5124-4a6e-b547-07be0c39682a"
+    },
+    "heap": {
+      "usedSize": 38387948,
+      "totalSize": 41377792,
+      "embedderHeapUsedSize": 1203736,
+      "backingStorageSize": 121340885
+    }
+  },
+  "fullyLoaded": {
+    "geometries": 58,
+    "textures": 41,
+    "programs": 24,
+    "calls": 65,
+    "triangles": 656894,
+    "cityContexts": 1,
+    "smokePools": 1,
+    "city": {
+      "meshes": 127,
+      "materials": 50,
+      "geometryBytes": 7361628,
+      "textureObjects": 61,
+      "textureBytes": 883599964,
+      "rows": [
+        {
+          "uuid": "e4f8c1e1-a3a3-4585-b07b-a92823da0a81",
+          "source": null,
+          "width": 256,
+          "height": 256,
+          "bytes": 349524,
+          "refs": 1,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            40,
+            40
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 4,
+          "uploaded": true
+        },
+        {
+          "uuid": "9d3a5eb8-8d3d-428f-af00-e7a905d8cadf",
+          "source": null,
+          "width": 256,
+          "height": 256,
+          "bytes": 349524,
+          "refs": 5,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            32,
+            32
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 4,
+          "uploaded": true
+        },
+        {
+          "uuid": "882af86f-4e0e-4205-b7d8-92509ca3dd71",
+          "source": "T_MarbleFloor_BaseColor",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 5592404,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "8606009b-2167-4d7d-900a-d6a3d3665595",
+          "source": "T_MarbleFloor_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "0e97ec97-7a09-4b96-8dd5-d98512b8d62d",
+          "source": "T_MarbleFloor_ORM",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 5592404,
+          "refs": 4,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "73538866-aa1d-499c-8cd2-4e70b9a153fe",
+          "source": "T_Trim_BaseColor",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "17e3492e-5289-4a62-ba03-1fc06110a434",
+          "source": "T_Trim_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "7597a3c9-1bb3-44d3-b19a-96c8f62ec286",
+          "source": "T_Trim_ORM",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 8,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "920e0db4-591f-48a6-844a-5d3c6a005867",
+          "source": "T_MetalConcrete_BaseColor",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "3f585cb1-40bd-44a1-a500-10102603010e",
+          "source": "T_MetalConcrete_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "b4cacb6d-ad45-48e9-af8b-ace18f49cee1",
+          "source": "T_MetalConcrete_ORM",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "2bf0a029-1a9b-4996-8e07-aa9935983ba5",
+          "source": "T_RedBrick_BaseColor",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "4c7abd13-ced8-4c8c-bfd7-9790bf3bb95c",
+          "source": "T_RedBrick_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "c8d28c09-f61f-4c9a-9838-8cf58b60ea85",
+          "source": "T_RedBrick_ORM",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 8,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "807296b6-37d3-46f2-b1ad-2afcc1a81075",
+          "source": "T_lit_interior_2",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "6a49bc39-f589-46ec-b1d7-cf4555b59764",
+          "source": "T_lit_interior_1",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 4,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "127cfd23-9838-419b-aae4-807d5d74d696",
+          "source": "T_dark_interior",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "577ca84b-3143-4d82-b088-2d0b1d5b6020",
+          "source": "T_Concrete_Asphalt_BaseColor",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "41c61234-c4de-4e03-939f-afa85848b603",
+          "source": "T_Concrete_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "d5587295-929f-42d3-99c3-d3a988631bf0",
+          "source": "T_Concrete_ORM",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "c0245e3c-7259-4710-98b7-9874b610e92c",
+          "source": "T_MarbleFloor_BaseColor",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 5592404,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "1d0e7212-723a-4754-99f6-322b3b68623f",
+          "source": "T_MarbleFloor_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "e1195f44-8e67-4bdf-aaec-bb0bb4e7dd73",
+          "source": "T_MarbleFloor_ORM",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 5592404,
+          "refs": 4,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "9fd10480-1cdd-4aac-b1a3-001ca8c330c1",
+          "source": "T_Trim_BaseColor",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 6,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "bb1628e4-7df8-4762-a912-91ace6145ec3",
+          "source": "T_Trim_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 6,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "c629b1d4-1b8b-4625-95fd-8334a5936489",
+          "source": "T_Trim_ORM",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 12,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "646c094a-3597-4647-b296-05ccfdd73829",
+          "source": "T_lit_interior_1",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 4,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "7b36e1fa-b325-41c2-aafd-4006c8e3e665",
+          "source": "T_lit_interior_2",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "3776a647-b413-4658-8813-d62479e6e881",
+          "source": "T_dark_interior",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "a75ba9bf-6563-4b86-9acb-cf1a03a83627",
+          "source": "T_RedBrick_BaseColor",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "529f7e1e-e713-466f-84c0-53ca34ddcee6",
+          "source": "T_RedBrick_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "f35c9c01-5d38-4709-a3d9-148258abf84d",
+          "source": "T_RedBrick_ORM",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 8,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "26adf474-d6ae-4a15-b03d-f4338848218b",
+          "source": "T_Concrete_Asphalt_BaseColor",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "84d6e073-9d97-4965-85e1-aa2e79582019",
+          "source": "T_Concrete_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "d8907272-caa1-4906-bd9b-9320b7fb80f5",
+          "source": "T_Concrete_ORM",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "86c4ecfe-1f72-4313-b364-c1d7e40ff6b4",
+          "source": "T_RedBrick_BaseColor",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "4ab71285-ff90-4df8-9bb7-8dde6b39ff67",
+          "source": "T_RedBrick_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "eb0c9835-470e-4695-83b5-d9d54698ac64",
+          "source": "T_RedBrick_ORM",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 8,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "409fe1d3-b561-4ef2-8c0c-957f117da0b0",
+          "source": "T_Trim_BaseColor",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "9165c8b6-c690-4a68-b3e2-96faf65f82fd",
+          "source": "T_Trim_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "53b00d8f-c8bb-4f44-99fd-0c0b78795caa",
+          "source": "T_Trim_ORM",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 8,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "a8f79595-ddb8-40c6-818f-3b0dfce6c8b5",
+          "source": "T_MetalConcrete_BaseColor",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "a9fa45f8-b4db-4d3b-8af9-d2de2263b97d",
+          "source": "T_MetalConcrete_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "296cbf2c-fffc-4fba-8f18-049bf1f5fd5f",
+          "source": "T_MetalConcrete_ORM",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "6b2145b8-ad9c-45a5-a1f5-998a72c9879c",
+          "source": "T_lit_interior_2",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "fac04915-de0b-4341-a1b4-85b199d1885f",
+          "source": "T_lit_interior_1",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 4,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "d5716de7-c455-48f3-aaa2-6df9ceb005f0",
+          "source": "T_Concrete_BaseColor",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "5545bead-b21a-409a-9775-bcc576dcc344",
+          "source": "T_Concrete_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 4,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "91f118c0-20be-4f0c-9c06-4062cd11f084",
+          "source": "T_Concrete_ORM",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 8,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "e92dec91-e380-4100-92d8-c7777a2661e5",
+          "source": "T_dark_interior",
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "531e5c27-df63-4346-afb5-8f082844a5d2",
+          "source": "T_Concrete_Asphalt_BaseColor",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "ee061b60-d11b-4dc5-a051-a1dd1750bb29",
+          "source": "T_MarbleFloor_BaseColor",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 5592404,
+          "refs": 2,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "f7e954b3-d669-447f-a8e8-46d0049d7f44",
+          "source": "T_MarbleFloor_Normal",
+          "width": 2048,
+          "height": 2048,
+          "bytes": 22369620,
+          "refs": 2,
+          "slots": [
+            "normalMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "f9383aeb-c4d8-4686-9220-a120f05e12f8",
+          "source": "T_MarbleFloor_ORM",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 5592404,
+          "refs": 4,
+          "slots": [
+            "roughnessMap",
+            "metalnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": false,
+          "wrapS": 1000,
+          "wrapT": 1000,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": false
+        },
+        {
+          "uuid": "e0864c9f-e8b4-42c1-8c70-f5b2b0b6d27c",
+          "source": null,
+          "width": 512,
+          "height": 256,
+          "bytes": 699052,
+          "refs": 1,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 4,
+          "uploaded": true
+        },
+        {
+          "uuid": "10b73777-d748-4a5f-b499-d15f2e44b854",
+          "source": null,
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 4,
+          "uploaded": true
+        },
+        {
+          "uuid": "701c5112-8d17-41ce-9e3b-aa041100e75e",
+          "source": null,
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "roughnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "d2aa7c76-ed7e-49b2-baf6-f3b32a351e74",
+          "source": null,
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 4,
+          "uploaded": true
+        },
+        {
+          "uuid": "5af85b08-390a-4baa-b85e-6731da23bee7",
+          "source": null,
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "roughnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        },
+        {
+          "uuid": "9ab12fdd-f2dd-4df6-9206-012ffdced23e",
+          "source": null,
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "map"
+          ],
+          "colorSpace": "srgb",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 4,
+          "uploaded": true
+        },
+        {
+          "uuid": "0e1a9fee-7454-4c5e-9b91-b76780d7e43f",
+          "source": null,
+          "width": 512,
+          "height": 512,
+          "bytes": 1398100,
+          "refs": 8,
+          "slots": [
+            "roughnessMap"
+          ],
+          "colorSpace": "",
+          "type": 1009,
+          "flipY": true,
+          "wrapS": 1001,
+          "wrapT": 1001,
+          "repeat": [
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "rotation": 0,
+          "channel": 0,
+          "minFilter": 1008,
+          "magFilter": 1006,
+          "mipmaps": true,
+          "anisotropy": 1,
+          "uploaded": true
+        }
+      ]
+    },
+    "viewport": {
+      "width": 1440,
+      "height": 1000,
+      "dpr": 1
+    },
+    "environment": {
+      "background": "6e41aac6-9e8c-4f14-9a56-668fd1c45d4e",
+      "environment": "bbbfeb0e-5124-4a6e-b547-07be0c39682a"
+    },
+    "heap": {
+      "usedSize": 40173620,
+      "totalSize": 40853504,
+      "embedderHeapUsedSize": 1151488,
+      "backingStorageSize": 136146911
+    }
+  },
+  "cycles": [
+    {
+      "geometries": 87,
+      "textures": 70,
+      "programs": 29,
+      "calls": 65,
+      "triangles": 656894,
+      "cityContexts": 1,
+      "smokePools": 1,
+      "city": {
+        "meshes": 127,
+        "materials": 50,
+        "geometryBytes": 7361628,
+        "textureObjects": 61,
+        "textureBytes": 883599964,
+        "rows": [
+          {
+            "uuid": "e4f8c1e1-a3a3-4585-b07b-a92823da0a81",
+            "source": null,
+            "width": 256,
+            "height": 256,
+            "bytes": 349524,
+            "refs": 1,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              40,
+              40
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "9d3a5eb8-8d3d-428f-af00-e7a905d8cadf",
+            "source": null,
+            "width": 256,
+            "height": 256,
+            "bytes": 349524,
+            "refs": 5,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              32,
+              32
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "882af86f-4e0e-4205-b7d8-92509ca3dd71",
+            "source": "T_MarbleFloor_BaseColor",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "8606009b-2167-4d7d-900a-d6a3d3665595",
+            "source": "T_MarbleFloor_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "0e97ec97-7a09-4b96-8dd5-d98512b8d62d",
+            "source": "T_MarbleFloor_ORM",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 4,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "73538866-aa1d-499c-8cd2-4e70b9a153fe",
+            "source": "T_Trim_BaseColor",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "17e3492e-5289-4a62-ba03-1fc06110a434",
+            "source": "T_Trim_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "7597a3c9-1bb3-44d3-b19a-96c8f62ec286",
+            "source": "T_Trim_ORM",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 8,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "920e0db4-591f-48a6-844a-5d3c6a005867",
+            "source": "T_MetalConcrete_BaseColor",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "3f585cb1-40bd-44a1-a500-10102603010e",
+            "source": "T_MetalConcrete_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "b4cacb6d-ad45-48e9-af8b-ace18f49cee1",
+            "source": "T_MetalConcrete_ORM",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "2bf0a029-1a9b-4996-8e07-aa9935983ba5",
+            "source": "T_RedBrick_BaseColor",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "4c7abd13-ced8-4c8c-bfd7-9790bf3bb95c",
+            "source": "T_RedBrick_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "c8d28c09-f61f-4c9a-9838-8cf58b60ea85",
+            "source": "T_RedBrick_ORM",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 8,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "807296b6-37d3-46f2-b1ad-2afcc1a81075",
+            "source": "T_lit_interior_2",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "6a49bc39-f589-46ec-b1d7-cf4555b59764",
+            "source": "T_lit_interior_1",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 4,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "127cfd23-9838-419b-aae4-807d5d74d696",
+            "source": "T_dark_interior",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "577ca84b-3143-4d82-b088-2d0b1d5b6020",
+            "source": "T_Concrete_Asphalt_BaseColor",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "41c61234-c4de-4e03-939f-afa85848b603",
+            "source": "T_Concrete_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "d5587295-929f-42d3-99c3-d3a988631bf0",
+            "source": "T_Concrete_ORM",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "c0245e3c-7259-4710-98b7-9874b610e92c",
+            "source": "T_MarbleFloor_BaseColor",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "1d0e7212-723a-4754-99f6-322b3b68623f",
+            "source": "T_MarbleFloor_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "e1195f44-8e67-4bdf-aaec-bb0bb4e7dd73",
+            "source": "T_MarbleFloor_ORM",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 4,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "9fd10480-1cdd-4aac-b1a3-001ca8c330c1",
+            "source": "T_Trim_BaseColor",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 6,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "bb1628e4-7df8-4762-a912-91ace6145ec3",
+            "source": "T_Trim_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 6,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "c629b1d4-1b8b-4625-95fd-8334a5936489",
+            "source": "T_Trim_ORM",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 12,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "646c094a-3597-4647-b296-05ccfdd73829",
+            "source": "T_lit_interior_1",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 4,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "7b36e1fa-b325-41c2-aafd-4006c8e3e665",
+            "source": "T_lit_interior_2",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "3776a647-b413-4658-8813-d62479e6e881",
+            "source": "T_dark_interior",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "a75ba9bf-6563-4b86-9acb-cf1a03a83627",
+            "source": "T_RedBrick_BaseColor",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "529f7e1e-e713-466f-84c0-53ca34ddcee6",
+            "source": "T_RedBrick_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "f35c9c01-5d38-4709-a3d9-148258abf84d",
+            "source": "T_RedBrick_ORM",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 8,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "26adf474-d6ae-4a15-b03d-f4338848218b",
+            "source": "T_Concrete_Asphalt_BaseColor",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "84d6e073-9d97-4965-85e1-aa2e79582019",
+            "source": "T_Concrete_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "d8907272-caa1-4906-bd9b-9320b7fb80f5",
+            "source": "T_Concrete_ORM",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "86c4ecfe-1f72-4313-b364-c1d7e40ff6b4",
+            "source": "T_RedBrick_BaseColor",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "4ab71285-ff90-4df8-9bb7-8dde6b39ff67",
+            "source": "T_RedBrick_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "eb0c9835-470e-4695-83b5-d9d54698ac64",
+            "source": "T_RedBrick_ORM",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 8,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "409fe1d3-b561-4ef2-8c0c-957f117da0b0",
+            "source": "T_Trim_BaseColor",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "9165c8b6-c690-4a68-b3e2-96faf65f82fd",
+            "source": "T_Trim_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "53b00d8f-c8bb-4f44-99fd-0c0b78795caa",
+            "source": "T_Trim_ORM",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 8,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "a8f79595-ddb8-40c6-818f-3b0dfce6c8b5",
+            "source": "T_MetalConcrete_BaseColor",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "a9fa45f8-b4db-4d3b-8af9-d2de2263b97d",
+            "source": "T_MetalConcrete_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "296cbf2c-fffc-4fba-8f18-049bf1f5fd5f",
+            "source": "T_MetalConcrete_ORM",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "6b2145b8-ad9c-45a5-a1f5-998a72c9879c",
+            "source": "T_lit_interior_2",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "fac04915-de0b-4341-a1b4-85b199d1885f",
+            "source": "T_lit_interior_1",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 4,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "d5716de7-c455-48f3-aaa2-6df9ceb005f0",
+            "source": "T_Concrete_BaseColor",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "5545bead-b21a-409a-9775-bcc576dcc344",
+            "source": "T_Concrete_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 4,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "91f118c0-20be-4f0c-9c06-4062cd11f084",
+            "source": "T_Concrete_ORM",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 8,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "e92dec91-e380-4100-92d8-c7777a2661e5",
+            "source": "T_dark_interior",
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "531e5c27-df63-4346-afb5-8f082844a5d2",
+            "source": "T_Concrete_Asphalt_BaseColor",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "ee061b60-d11b-4dc5-a051-a1dd1750bb29",
+            "source": "T_MarbleFloor_BaseColor",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 2,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "f7e954b3-d669-447f-a8e8-46d0049d7f44",
+            "source": "T_MarbleFloor_Normal",
+            "width": 2048,
+            "height": 2048,
+            "bytes": 22369620,
+            "refs": 2,
+            "slots": [
+              "normalMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "f9383aeb-c4d8-4686-9220-a120f05e12f8",
+            "source": "T_MarbleFloor_ORM",
+            "width": 1024,
+            "height": 1024,
+            "bytes": 5592404,
+            "refs": 4,
+            "slots": [
+              "roughnessMap",
+              "metalnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": false,
+            "wrapS": 1000,
+            "wrapT": 1000,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "e0864c9f-e8b4-42c1-8c70-f5b2b0b6d27c",
+            "source": null,
+            "width": 512,
+            "height": 256,
+            "bytes": 699052,
+            "refs": 1,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "10b73777-d748-4a5f-b499-d15f2e44b854",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "701c5112-8d17-41ce-9e3b-aa041100e75e",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "d2aa7c76-ed7e-49b2-baf6-f3b32a351e74",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "5af85b08-390a-4baa-b85e-6731da23bee7",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          },
+          {
+            "uuid": "9ab12fdd-f2dd-4df6-9206-012ffdced23e",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "map"
+            ],
+            "colorSpace": "srgb",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 4,
+            "uploaded": true
+          },
+          {
+            "uuid": "0e1a9fee-7454-4c5e-9b91-b76780d7e43f",
+            "source": null,
+            "width": 512,
+            "height": 512,
+            "bytes": 1398100,
+            "refs": 8,
+            "slots": [
+              "roughnessMap"
+            ],
+            "colorSpace": "",
+            "type": 1009,
+            "flipY": true,
+            "wrapS": 1001,
+            "wrapT": 1001,
+            "repeat": [
+              1,
+              1
+            ],
+            "offset": [
+              0,
+              0
+            ],
+            "rotation": 0,
+            "channel": 0,
+            "minFilter": 1008,
+            "magFilter": 1006,
+            "mipmaps": true,
+            "anisotropy": 1,
+            "uploaded": true
+          }
+        ]
+      },
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1
+      },
+      "environment": {
+        "background": "6e41aac6-9e8c-4f14-9a56-668fd1c45d4e",
+        "environment": "bbbfeb0e-5124-4a6e-b547-07be0c39682a"
+      },
+      "heap": {
+        "usedSize": 41248936,
+        "totalSize": 41902080,
+        "embedderHeapUsedSize": 1425184,
+        "backingStorageSize": 136147141
+      }
+    }
+  ],
+  "errors": []
+}

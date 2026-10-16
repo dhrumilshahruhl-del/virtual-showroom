@@ -3,9 +3,9 @@ import { overlaps, roadRectangles } from './city-site.js';
 
 function facadeMaterial(index) {
   const palettes = [
-    { wall: '#77665e', trim: '#9c9990', glass: '#384d55' },
-    { wall: '#9a9d99', trim: '#b9bbb7', glass: '#455963' },
-    { wall: '#686c70', trim: '#8f9597', glass: '#344953' },
+    { wall: '#7e746d', trim: '#94928b', glass: '#4e5b60' },
+    { wall: '#939794', trim: '#a9aca8', glass: '#5b6970' },
+    { wall: '#73787b', trim: '#8b9192', glass: '#4e5e66' },
   ];
   const palette = palettes[index];
   const canvas = document.createElement('canvas');
@@ -26,13 +26,13 @@ function facadeMaterial(index) {
       const x = 8 + col * 64;
       ctx.fillStyle = palette.trim;
       ctx.fillRect(x - 2, y - 2, 48, 29);
-      ctx.fillStyle = (row * 7 + col * 3 + index) % 13 === 0 ? '#73786e' : palette.glass;
+      ctx.fillStyle = (row * 7 + col * 3 + index) % 13 === 0 ? '#797d76' : palette.glass;
       ctx.fillRect(x, y, 44, 25);
       ctx.fillStyle = 'rgba(174, 193, 196, 0.16)';
       ctx.fillRect(x, y, 44, 6);
       ctx.fillStyle = palette.trim;
       ctx.fillRect(x + 21, y, 1, 25);
-      roughness.fillStyle = '#555555';
+      roughness.fillStyle = '#777777';
       roughness.fillRect(x, y, 44, 25);
     }
   }
@@ -41,7 +41,7 @@ function facadeMaterial(index) {
   map.anisotropy = 4;
   const roughnessMap = new THREE.CanvasTexture(roughnessCanvas);
   return new THREE.MeshStandardMaterial({ map, roughnessMap, roughness: 1,
-    metalness: 0, envMapIntensity: 0.65 });
+    metalness: 0, envMapIntensity: 0.45 });
 }
 
 export function addCityInfill(group, site, materials) {

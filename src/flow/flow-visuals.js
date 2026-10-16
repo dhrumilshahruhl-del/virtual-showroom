@@ -82,6 +82,7 @@ export function createFlowVisuals(building, city) {
   }
   restore();
   return {
+    addCity(city) { context.addCity(city); },
     summary: topology.summary,
     bounds,
     get airflow() { return airflow.state; },

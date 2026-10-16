@@ -43,7 +43,7 @@ export async function launchShowroom(options = {}) {
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 0.85;
   renderer.shadowMap.enabled = true;
@@ -176,8 +176,8 @@ export async function launchShowroom(options = {}) {
 
   async function load() {
     const buildingModel = root.dataset.buildingModel || config.buildingModel;
-    await environment.load();
-    const buildingGltf = await loadGltf(buildingModel);
+    const [, buildingGltf] = await Promise.all([environment.load(), loadGltf(buildingModel)]);
+    if (disposed) return;
 
     const building = cloneSceneFromGltf(buildingGltf);
     prepareMaterials(building);
@@ -190,8 +190,6 @@ export async function launchShowroom(options = {}) {
 
     applyDefaultCamera();
     const defaultTarget = vectorFromSnapshot(DEFAULT_VIEW.camera.target);
-    cityContext = await createCityContext(new THREE.Box3().setFromObject(building));
-    modelRoot.add(cityContext);
     rooftopMarkers = createRooftopMarkers(building);
     renderer.shadowMap.autoUpdate = false;
     renderer.shadowMap.needsUpdate = true;
@@ -203,6 +201,21 @@ export async function launchShowroom(options = {}) {
 
     intro = null;
     ui.setStatus('');
+    // Optional context must never hold up controls or guided flow.
+    void loadProgressiveCityContext(new THREE.Box3().setFromObject(building));
+  }
+
+  async function loadProgressiveCityContext(bounds) {
+    try {
+      const city = await createCityContext(bounds);
+      if (disposed) { city.userData.dispose(); return; }
+      cityContext = city;
+      systemFlow.addCity(city);
+      modelRoot.add(city);
+      renderer.shadowMap.needsUpdate = true;
+    } catch (error) {
+      console.warn('Optional city context could not be loaded; rooftop remains available.', error);
+    }
   }
 
   function resetView() {
@@ -250,12 +263,13 @@ export async function launchShowroom(options = {}) {
   resize();
 
   load().catch((error) => {
+    if (disposed) return;
     console.error(error);
     ui.setStatus('Unable to load the rooftop showroom assets.', 'error');
   });
 
-  renderer.setAnimationLoop(() => {
-    if (disposed) return;
+  function renderFrame() {
+    if (disposed || document.hidden) return;
     const frameDelta = Math.min(clock.getDelta(), 0.25);
     const dt = Math.min(frameDelta, 0.05);
     if (intro) {
@@ -277,7 +291,18 @@ export async function launchShowroom(options = {}) {
     rooftopMarkers?.update(camera, viewportHeight);
     if (heatPumpWall?.update(camera, systemFlow?.wallDelta(frameDelta) ?? dt)) renderer.shadowMap.needsUpdate = true;
     renderer.render(scene, camera);
-  });
+  }
+
+  function handleVisibilityChange() {
+    clock.stop();
+    if (document.hidden || disposed) renderer.setAnimationLoop(null);
+    else {
+      clock.start();
+      renderer.setAnimationLoop(renderFrame);
+    }
+  }
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+  handleVisibilityChange();
 
   return {
     root,
@@ -289,6 +314,7 @@ export async function launchShowroom(options = {}) {
     resetView,
     dispose() {
       disposed = true;
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       renderer.setAnimationLoop(null);
       controls?.dispose();
       systemFlow?.dispose();
@@ -303,6 +329,8 @@ export async function launchShowroom(options = {}) {
       canvas.removeEventListener('pointercancel', onPointerCancel);
       cityContext?.userData?.dispose?.();
       environment.dispose();
+      ui.buttons.reset?.removeEventListener('click', resetView);
+      ui.buttons.copyView?.removeEventListener('click', copyCurrentView);
       window.removeEventListener('resize', resize);
       renderer.dispose();
     },

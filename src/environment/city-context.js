@@ -1,16 +1,8 @@
 import * as THREE from 'three';
-import { cloneSceneFromGltf, loadGltf } from '../loaders/model-loader.js';
+import { acquireCityAssets } from '../loaders/city-assets.js';
 import { createCitySite, positionCityBuilding } from './city-site.js';
 import { addSiteLandscaping } from './site-landscaping.js';
 import { addCityInfill } from './city-infill.js';
-
-const CITY_BASE = './assets/models/Downtown City MegaKit[Standard]/Exports/glTF (Godot)';
-
-const CITY_BUILDING_ASSETS = [
-  'Building_Large_2.gltf',
-  'Building_Medium_2_001.gltf',
-  'Building_Small_1.gltf',
-];
 
 const CITY_LAYOUT = [
   { asset: 0, x: -1.55, z: -0.9, scale: 0.78, rotation: 0 },
@@ -21,14 +13,6 @@ const CITY_LAYOUT = [
   { asset: 2, x: 0.4, z: 1.9, scale: 0.58, rotation: Math.PI },
 ];
 
-function disposeMaterial(material) {
-  if (!material) return;
-  Object.values(material).forEach((value) => {
-    if (value?.isTexture) value.dispose();
-  });
-  material.dispose?.();
-}
-
 function prepareCityMaterials(object) {
   const prepared = new Set();
   object.traverse((node) => {
@@ -38,20 +22,21 @@ function prepareCityMaterials(object) {
     oldMaterials.forEach((material) => {
       if (!material || prepared.has(material)) return;
       prepared.add(material);
-      material.envMapIntensity = 0.7;
+      material.envMapIntensity = 0.48;
+      material.normalScale?.multiplyScalar(0.45);
       const name = material.name.toLowerCase();
       if (name.includes('glass')) {
         material.color.set(0x53666f);
-        material.roughness = 0.18;
+        material.roughness = 0.25;
         material.metalness = 0.15;
         material.opacity = 0.9;
         material.depthWrite = false;
       } else {
-        material.roughness = Math.max(material.roughness, 0.55);
+        material.roughness = Math.max(material.roughness, 0.68);
         material.metalness = Math.min(material.metalness, 0.25);
       }
     });
-    node.castShadow = true;
+    node.castShadow = false;
     node.receiveShadow = true;
     node.frustumCulled = true;
     node.renderOrder = -4;
@@ -94,14 +79,14 @@ function createSharedCityMaterials() {
   return {
     ground: new THREE.MeshStandardMaterial({
       color: 0xffffff,
-      map: surfaceTexture([126, 128, 124], 16, 40, true),
+      map: surfaceTexture([126, 128, 124], 10, 40, true),
       roughness: 0.92,
       metalness: 0,
       envMapIntensity: 0.08,
     }),
     road: new THREE.MeshStandardMaterial({
       color: 0xffffff,
-      map: surfaceTexture([49, 51, 53], 20, 32),
+      map: surfaceTexture([49, 51, 53], 12, 32),
       roughness: 0.88,
       metalness: 0,
       envMapIntensity: 0.06,
@@ -155,7 +140,7 @@ function addGroundContext(group, site, materials) {
   pavement.position.set(ground.position.x, groundY + 0.03, ground.position.z);
   pavement.receiveShadow = true;
   group.add(pavement);
-  const markingMaterial = new THREE.MeshStandardMaterial({ color: 0xd9d2b4, roughness: 0.95 });
+  const markingMaterial = new THREE.MeshStandardMaterial({ color: 0xbfc0b0, roughness: 0.95 });
   materials.marking = markingMaterial;
   const dashGeometry = new THREE.PlaneGeometry(0.025, 0.22);
   const transform = new THREE.Object3D();
@@ -181,6 +166,9 @@ function addGroundContext(group, site, materials) {
 }
 
 export async function createCityContext(heroBox) {
+  // Do not allocate procedural GPU resources until optional downloads succeed.
+  const lease = await acquireCityAssets();
+  const { assets } = lease;
   const heroSize = heroBox.getSize(new THREE.Vector3());
   const site = createCitySite(heroBox);
   const baseScale = Math.max(0.075, Math.min(0.28, (heroSize.y / 28) * 1.05));
@@ -188,46 +176,59 @@ export async function createCityContext(heroBox) {
   group.name = 'cityContext';
   group.renderOrder = -10;
 
-  const materials = createSharedCityMaterials();
-  addGroundContext(group, site, materials);
-  const assets = await Promise.all(
-    CITY_BUILDING_ASSETS.map((file) => loadGltf(`${CITY_BASE}/${file}`).then(cloneSceneFromGltf))
-  );
-
-  assets.forEach(prepareCityMaterials);
-
-  const cityBounds = [];
-  CITY_LAYOUT.forEach((item, index) => {
-    const instance = assets[item.asset].clone(true);
-    instance.name = `cityContextBuilding_${index + 1}`;
-    instance.scale.setScalar(baseScale * item.scale);
-    instance.rotation.y = item.rotation;
-    const placedBounds = positionCityBuilding(instance, item, site, heroBox);
-    group.add(instance);
-    cityBounds.push(placedBounds);
-    const footprint = placedBounds.getSize(new THREE.Vector3());
-    const placedCenter = placedBounds.getCenter(new THREE.Vector3());
-    const sidewalk = new THREE.Mesh(
-      new THREE.BoxGeometry(footprint.x + 0.24, 0.04, footprint.z + 0.24), materials.sidewalk
-    );
-    sidewalk.position.set(placedCenter.x, site.groundY, placedCenter.z);
-    sidewalk.receiveShadow = true;
-    group.add(sidewalk);
-  });
-  addSiteLandscaping(group, site, heroBox, cityBounds, materials);
-  addCityInfill(group, site, materials);
-
+  const materials = {};
+  let disposed = false;
   group.userData.dispose = () => {
-    const geometries = new Set();
+    if (disposed) return;
+    disposed = true;
+    const geometries = new Set(), textures = new Set();
     const usedMaterials = new Set(Object.values(materials));
     group.traverse((node) => {
       if (!node.isMesh) return;
       geometries.add(node.geometry);
-      (Array.isArray(node.material) ? node.material : [node.material]).forEach((m) => usedMaterials.add(m));
+      (Array.isArray(node.material) ? node.material : [node.material]).forEach(m => usedMaterials.add(m));
     });
-    geometries.forEach((geometry) => geometry.dispose());
-    usedMaterials.forEach(disposeMaterial);
+    for (const geometry of geometries) if (!lease.geometries.has(geometry)) geometry.dispose();
+    for (const material of usedMaterials) {
+      if (lease.materials.has(material)) continue;
+      for (const value of Object.values(material)) if (value?.isTexture && !lease.textures.has(value)) textures.add(value);
+      material.dispose();
+    }
+    textures.forEach(texture => texture.dispose());
+    lease.release();
   };
+  try {
+    Object.assign(materials, createSharedCityMaterials());
+    addGroundContext(group, site, materials);
 
-  return group;
+    assets.forEach(prepareCityMaterials);
+
+    const cityBounds = [];
+    CITY_LAYOUT.forEach((item, index) => {
+      const instance = assets[item.asset].clone(true);
+      instance.name = `cityContextBuilding_${index + 1}`;
+      instance.scale.setScalar(baseScale * item.scale);
+      instance.rotation.y = item.rotation;
+      const placedBounds = positionCityBuilding(instance, item, site, heroBox);
+      group.add(instance);
+      cityBounds.push(placedBounds);
+      const footprint = placedBounds.getSize(new THREE.Vector3());
+      const placedCenter = placedBounds.getCenter(new THREE.Vector3());
+      const sidewalk = new THREE.Mesh(
+        new THREE.BoxGeometry(footprint.x + 0.24, 0.04, footprint.z + 0.24), materials.sidewalk
+      );
+      sidewalk.position.set(placedCenter.x, site.groundY, placedCenter.z);
+      sidewalk.receiveShadow = true;
+      group.add(sidewalk);
+    });
+    addSiteLandscaping(group, site, heroBox, cityBounds, materials);
+    addCityInfill(group, site, materials);
+    // Context receives shadows, but never contributes to the hero shadow map.
+    group.traverse((node) => { if (node.isMesh) node.castShadow = false; });
+
+    return group;
+  } catch (error) {
+    group.userData.dispose();
+    throw error;
+  }
 }

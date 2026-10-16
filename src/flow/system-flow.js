@@ -240,6 +240,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
   window.addEventListener('keydown', onKey);
 
   return {
+    addCity(city) { visuals.addCity(city); },
     get active() { return mode !== 'idle'; },
     get state() { return { mode, paused, step: stepIndex, pendingStep, transitioning: Boolean(transition) }; },
     get topology() { return visuals.summary; },

@@ -8,7 +8,7 @@ function parkingTexture() {
   const ctx = canvas.getContext('2d');
   ctx.fillStyle = '#3d4041';
   ctx.fillRect(0, 0, 512, 256);
-  ctx.strokeStyle = '#d4d2c5';
+  ctx.strokeStyle = '#b2b3aa';
   ctx.lineWidth = 3;
   for (const y of [12, 170]) {
     ctx.beginPath();
@@ -70,7 +70,7 @@ function addParking(group, site, materials, obstacles) {
 function addTrees(group, positions, site, materials) {
   if (!positions.length) return;
   materials.bark = new THREE.MeshStandardMaterial({ color: 0x51483e, roughness: 1 });
-  materials.foliage = new THREE.MeshStandardMaterial({ color: 0x486642, roughness: 0.92 });
+  materials.foliage = new THREE.MeshStandardMaterial({ color: 0x556651, roughness: 0.95 });
   materials.soil = new THREE.MeshStandardMaterial({ color: 0x454438, roughness: 1 });
   const trunkGeometry = new THREE.CylinderGeometry(0.035, 0.05, 0.7, 6);
   const crownGeometry = new THREE.SphereGeometry(1, 12, 9);
@@ -106,7 +106,7 @@ function addTrees(group, positions, site, materials) {
       transform.scale.set(height * 0.26, height * 0.3, height * 0.25);
       transform.updateMatrix();
       crowns.setMatrixAt(index * 3 + lobe, transform.matrix);
-      crowns.setColorAt(index * 3 + lobe, new THREE.Color().setHSL(0.27 + (index % 3) * 0.012, 0.23, 0.4 + lobe * 0.025));
+      crowns.setColorAt(index * 3 + lobe, new THREE.Color().setHSL(0.27 + (index % 3) * 0.012, 0.17, 0.4 + lobe * 0.025));
     }
   });
   for (const mesh of [trunks, crowns, beds]) {
