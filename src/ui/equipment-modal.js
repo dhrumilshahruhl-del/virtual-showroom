@@ -32,12 +32,20 @@ export function createEquipmentModal(root) {
       <p class="equipment-modal__summary"><strong>In simple terms:</strong> <span></span></p>
     </div>`;
   root.append(dialog);
+  const equipmentMenu = document.createElement('details');
+  equipmentMenu.className = 'equipment-menu';
+  equipmentMenu.innerHTML = '<summary>Equipment details</summary>' + Object.entries(EQUIPMENT).map(([id, item]) => `<button type="button" data-equipment="${id}">${item.title}</button>`).join('');
+  root.querySelector('.showroom__toolbar').append(equipmentMenu);
+  equipmentMenu.addEventListener('click', event => {
+    const id = event.target.closest('[data-equipment]')?.dataset.equipment;
+    if (id) api.open(id);
+  });
   dialog.querySelector('button').addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', (event) => {
     const rect = dialog.getBoundingClientRect();
     if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
   });
-  return {
+  const api = {
     close() { dialog.close(); },
     open(id) {
       const equipment = EQUIPMENT[id];
@@ -50,6 +58,7 @@ export function createEquipmentModal(root) {
       dialog.querySelector('.equipment-modal__summary span').textContent = equipment.summary;
       if (!dialog.open) dialog.showModal();
     },
-    dispose() { dialog.close(); dialog.remove(); },
+    dispose() { dialog.close(); dialog.remove(); equipmentMenu.remove(); },
   };
+  return api;
 }

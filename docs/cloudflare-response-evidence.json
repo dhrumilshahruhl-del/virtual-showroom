@@ -1,0 +1,205 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "cache": "public, max-age=0, must-revalidate",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "cf-cache-status": "HIT",
+      "connection": "close",
+      "content-encoding": "gzip",
+      "content-security-policy": "default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:",
+      "content-type": "text/html; charset=utf-8",
+      "etag": "\"c420df1cddff34e7127bb3e4ebd6f69f\"",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/src/camera/rooftop-camera.js",
+    "status": 200,
+    "type": "text/javascript; charset=utf-8",
+    "cache": "public, max-age=0, must-revalidate",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "cf-cache-status": "HIT",
+      "connection": "close",
+      "content-encoding": "gzip",
+      "content-security-policy": "default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:",
+      "content-type": "text/javascript; charset=utf-8",
+      "etag": "\"c60301e687b583b44532e41bbd00d5ae\"",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/production-files.json",
+    "status": 200,
+    "type": "application/json",
+    "cache": "public, max-age=0, must-revalidate",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "cf-cache-status": "HIT",
+      "connection": "close",
+      "content-encoding": "gzip",
+      "content-security-policy": "default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:",
+      "content-type": "application/json",
+      "etag": "\"cd32a7d3eeff315ef540000dce43ca2e\"",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/assets/models/200-water-building.opt.glb",
+    "status": 200,
+    "type": "model/gltf-binary",
+    "cache": "public, max-age=0, must-revalidate",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "cf-cache-status": "HIT",
+      "connection": "close",
+      "content-security-policy": "default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:",
+      "content-type": "model/gltf-binary",
+      "etag": "\"0f3cbc1cf9f4286fa096d46f9a8e6d55\"",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/assets/city-context/Building_Large_2.gltf",
+    "status": 200,
+    "type": "model/gltf+json",
+    "cache": "public, max-age=0, must-revalidate",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "cf-cache-status": "HIT",
+      "connection": "close",
+      "content-security-policy": "default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:",
+      "content-type": "model/gltf+json",
+      "etag": "\"863dc0737a389750cbf5b741171877c0\"",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/assets/city-context/Building_Large_2.bin",
+    "status": 200,
+    "type": "application/octet-stream",
+    "cache": "public, max-age=0, must-revalidate",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "cf-cache-status": "HIT",
+      "connection": "close",
+      "content-security-policy": "default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:",
+      "content-type": "application/octet-stream",
+      "etag": "\"418d75fb3d0a82d8e3aa0111871891a7\"",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/assets/canary_wharf_4k.hdr",
+    "status": 200,
+    "type": "application/octet-stream",
+    "cache": "public, max-age=0, must-revalidate",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "cf-cache-status": "HIT",
+      "connection": "close",
+      "content-security-policy": "default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:",
+      "content-type": "application/octet-stream",
+      "etag": "\"e2637bc1cb9bf5f3a80459a212b8b57d\"",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/assets/city-context/textures/T_Concrete_Asphalt_BaseColor.png",
+    "status": 200,
+    "type": "image/png",
+    "cache": "public, max-age=0, must-revalidate",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "cf-cache-status": "HIT",
+      "connection": "close",
+      "content-security-policy": "default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:",
+      "content-type": "image/png",
+      "etag": "\"0699cf8ea1a1e1b7faee510a2802bfbd\"",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/assets/equipments/ahu-popup.webp",
+    "status": 200,
+    "type": "image/webp",
+    "cache": "public, max-age=0, must-revalidate",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "cf-cache-status": "HIT",
+      "connection": "close",
+      "content-security-policy": "default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:",
+      "content-type": "image/webp",
+      "etag": "\"e4fbe344a64b6f00b32ac30a367ea17f\"",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/src/ui/showroom.css",
+    "status": 200,
+    "type": "text/css; charset=utf-8",
+    "cache": "public, max-age=0, must-revalidate",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "cf-cache-status": "HIT",
+      "connection": "close",
+      "content-encoding": "gzip",
+      "content-security-policy": "default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:",
+      "content-type": "text/css; charset=utf-8",
+      "etag": "\"4e81f12c4d4cbd95fbc17a66ce4b8c8a\"",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000",
+      "x-content-type-options": "nosniff"
+    }
+  },
+  {
+    "path": "/THIRD-PARTY-NOTICES.txt",
+    "status": 200,
+    "type": "text/plain; charset=utf-8",
+    "cache": "public, max-age=0, must-revalidate",
+    "headers": {
+      "cache-control": "public, max-age=0, must-revalidate",
+      "cf-cache-status": "HIT",
+      "connection": "close",
+      "content-encoding": "gzip",
+      "content-security-policy": "default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:",
+      "content-type": "text/plain; charset=utf-8",
+      "etag": "\"32be7d21515c1fc7a81c0a4151726882\"",
+      "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=()",
+      "referrer-policy": "strict-origin-when-cross-origin",
+      "strict-transport-security": "max-age=31536000",
+      "x-content-type-options": "nosniff"
+    }
+  }
+]

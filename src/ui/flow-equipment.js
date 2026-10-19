@@ -13,7 +13,8 @@ export function createFlowEquipment({ root, building, camera, bounds }) {
   const popup = document.createElement('div');
   popup.className = 'flow-equipment';
   popup.hidden = true;
-  popup.setAttribute('aria-live', 'polite');
+  popup.setAttribute('role', 'group');
+  popup.setAttribute('aria-label', 'Equipment in this step');
   root.append(popup);
   const leaders = Array.from({ length: 2 }, () => {
     const leader = document.createElement('div');

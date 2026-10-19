@@ -1,0 +1,1268 @@
+{
+  "date": "2026-10-19",
+  "checks": [
+    {
+      "check": "Production loads",
+      "pass": true
+    },
+    {
+      "check": "ARIA references, IDs and hidden focus integrity",
+      "pass": true
+    },
+    {
+      "check": "Canvas keyboard rotate zoom reset",
+      "pass": true
+    },
+    {
+      "check": "Dialog opens by keyboard and receives focus",
+      "pass": true
+    },
+    {
+      "check": "Modal excludes background tab targets",
+      "pass": true
+    },
+    {
+      "check": "Modal excludes background tab targets",
+      "pass": true
+    },
+    {
+      "check": "Modal excludes background tab targets",
+      "pass": true
+    },
+    {
+      "check": "Modal excludes background tab targets",
+      "pass": true
+    },
+    {
+      "check": "Modal excludes background tab targets",
+      "pass": true
+    },
+    {
+      "check": "Dialog Escape restores opener",
+      "pass": true
+    },
+    {
+      "check": "Flow receives focus",
+      "pass": true
+    },
+    {
+      "check": "Pause",
+      "pass": true
+    },
+    {
+      "check": "Resume",
+      "pass": true
+    },
+    {
+      "check": "Shift Tab order",
+      "pass": true
+    },
+    {
+      "check": "Active step 0",
+      "pass": true
+    },
+    {
+      "check": "Active step 1",
+      "pass": true
+    },
+    {
+      "check": "Active step 2",
+      "pass": true
+    },
+    {
+      "check": "Active step 3",
+      "pass": true
+    },
+    {
+      "check": "Active step 4",
+      "pass": true
+    },
+    {
+      "check": "Active step 5",
+      "pass": true
+    },
+    {
+      "check": "Six-step keyboard completion",
+      "pass": true
+    },
+    {
+      "check": "Flow exit restores opener",
+      "pass": true
+    },
+    {
+      "check": "Flow receives focus",
+      "pass": true
+    },
+    {
+      "check": "Active step 0",
+      "pass": true
+    },
+    {
+      "check": "Active step 1",
+      "pass": true
+    },
+    {
+      "check": "Active step 2",
+      "pass": true
+    },
+    {
+      "check": "Active step 3",
+      "pass": true
+    },
+    {
+      "check": "Active step 4",
+      "pass": true
+    },
+    {
+      "check": "Active step 5",
+      "pass": true
+    },
+    {
+      "check": "Six-step keyboard completion",
+      "pass": true
+    },
+    {
+      "check": "Flow exit restores opener",
+      "pass": true
+    },
+    {
+      "check": "Flow receives focus",
+      "pass": true
+    },
+    {
+      "check": "Active step 0",
+      "pass": true
+    },
+    {
+      "check": "Active step 1",
+      "pass": true
+    },
+    {
+      "check": "Active step 2",
+      "pass": true
+    },
+    {
+      "check": "Active step 3",
+      "pass": true
+    },
+    {
+      "check": "Active step 4",
+      "pass": true
+    },
+    {
+      "check": "Active step 5",
+      "pass": true
+    },
+    {
+      "check": "Six-step keyboard completion",
+      "pass": true
+    },
+    {
+      "check": "Flow exit restores opener",
+      "pass": true
+    },
+    {
+      "check": "Reduced motion functional",
+      "pass": true
+    },
+    {
+      "check": "Actual browser zoom 200 percent",
+      "pass": true
+    },
+    {
+      "check": "Zoom next reachable 0",
+      "pass": true
+    },
+    {
+      "check": "Zoom next reachable 1",
+      "pass": true
+    },
+    {
+      "check": "Zoom next reachable 2",
+      "pass": true
+    },
+    {
+      "check": "Zoom next reachable 3",
+      "pass": true
+    },
+    {
+      "check": "Zoom next reachable 4",
+      "pass": true
+    },
+    {
+      "check": "Zoom next reachable 5",
+      "pass": true
+    },
+    {
+      "check": "Narrow flow no horizontal overflow",
+      "pass": true
+    },
+    {
+      "check": "Hidden-tab render suspension",
+      "pass": true
+    },
+    {
+      "check": "Excluded artifacts return 404",
+      "pass": true
+    },
+    {
+      "check": "Axe all scanned states",
+      "pass": true
+    },
+    {
+      "check": "No console or network errors",
+      "pass": true
+    }
+  ],
+  "zoom": {
+    "dpr": 2,
+    "width": 709,
+    "height": 401,
+    "outerWidth": 1440,
+    "visualScale": 1
+  },
+  "mobile": {
+    "width": 390,
+    "scroll": 390
+  },
+  "privacy": {
+    "cookie": "",
+    "localStorage": 0,
+    "sessionStorage": 0
+  },
+  "hidden": true,
+  "cycles": [
+    {
+      "geometries": 91,
+      "textures": 37,
+      "programs": 29,
+      "panels": 1,
+      "popups": 1,
+      "cityLoaded": true
+    },
+    {
+      "geometries": 91,
+      "textures": 37,
+      "programs": 29,
+      "panels": 1,
+      "popups": 1,
+      "cityLoaded": true
+    },
+    {
+      "geometries": 91,
+      "textures": 37,
+      "programs": 29,
+      "panels": 1,
+      "popups": 1,
+      "cityLoaded": true
+    }
+  ],
+  "scans": [
+    {
+      "state": "initial",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "button[data-action=\"reset\"]"
+            ],
+            [
+              ".showroom__wall-toggle"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 22
+    },
+    {
+      "state": "modal",
+      "violations": [],
+      "incomplete": [],
+      "passes": 13
+    },
+    {
+      "state": "flow-open",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".flow-panel__eyebrow"
+            ],
+            [
+              ".flow-panel__count"
+            ],
+            [
+              "button[data-step=\"1\"]"
+            ],
+            [
+              "button[data-step=\"2\"]"
+            ],
+            [
+              "button[data-step=\"3\"]"
+            ],
+            [
+              "button[data-step=\"4\"]"
+            ],
+            [
+              "button[data-step=\"5\"]"
+            ],
+            [
+              ".flow-panel__copy > h2"
+            ],
+            [
+              ".flow-panel__copy > p"
+            ],
+            [
+              ".flow-panel__detail"
+            ],
+            [
+              ".flow-impact__eyebrow"
+            ],
+            [
+              ".flow-impact__content > h2"
+            ],
+            [
+              ".impact-row-label:nth-child(1) > span"
+            ],
+            [
+              ".impact-row-label:nth-child(1) > strong"
+            ],
+            [
+              ".impact-row-label:nth-child(1) > strong > small"
+            ],
+            [
+              ".impact-row-label:nth-child(3) > span"
+            ],
+            [
+              ".impact-row-label:nth-child(3) > strong"
+            ],
+            [
+              ".impact-row-label:nth-child(3) > strong > small"
+            ],
+            [
+              ".impact-callout"
+            ],
+            [
+              ".impact-callout > strong"
+            ],
+            [
+              "h3"
+            ],
+            [
+              "div:nth-child(1) > .impact-state-label"
+            ],
+            [
+              ".impact-pressure__states > div:nth-child(1) > strong"
+            ],
+            [
+              "div:nth-child(1) > span:nth-child(4)"
+            ],
+            [
+              ".impact-pressure__after > .impact-state-label"
+            ],
+            [
+              ".impact-pressure__after > strong"
+            ],
+            [
+              ".impact-pressure__after > span:nth-child(4)"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 22
+    },
+    {
+      "state": "paused",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".flow-panel__eyebrow"
+            ],
+            [
+              ".flow-panel__count"
+            ],
+            [
+              "button[data-step=\"1\"]"
+            ],
+            [
+              "button[data-step=\"2\"]"
+            ],
+            [
+              "button[data-step=\"3\"]"
+            ],
+            [
+              "button[data-step=\"4\"]"
+            ],
+            [
+              "button[data-step=\"5\"]"
+            ],
+            [
+              ".flow-panel__copy > h2"
+            ],
+            [
+              ".flow-panel__copy > p"
+            ],
+            [
+              ".flow-panel__detail"
+            ],
+            [
+              ".flow-impact__eyebrow"
+            ],
+            [
+              ".flow-impact__content > h2"
+            ],
+            [
+              ".impact-row-label:nth-child(1) > span"
+            ],
+            [
+              ".impact-row-label:nth-child(1) > strong"
+            ],
+            [
+              ".impact-row-label:nth-child(1) > strong > small"
+            ],
+            [
+              ".impact-row-label:nth-child(3) > span"
+            ],
+            [
+              ".impact-row-label:nth-child(3) > strong"
+            ],
+            [
+              ".impact-row-label:nth-child(3) > strong > small"
+            ],
+            [
+              ".impact-callout"
+            ],
+            [
+              ".impact-callout > strong"
+            ],
+            [
+              "h3"
+            ],
+            [
+              "div:nth-child(1) > .impact-state-label"
+            ],
+            [
+              ".impact-pressure__states > div:nth-child(1) > strong"
+            ],
+            [
+              "div:nth-child(1) > span:nth-child(4)"
+            ],
+            [
+              ".impact-pressure__after > .impact-state-label"
+            ],
+            [
+              ".impact-pressure__after > strong"
+            ],
+            [
+              ".impact-pressure__after > span:nth-child(4)"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 22
+    },
+    {
+      "state": "Return Air",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".flow-panel__eyebrow"
+            ],
+            [
+              ".flow-panel__count"
+            ],
+            [
+              "button[data-step=\"1\"]"
+            ],
+            [
+              "button[data-step=\"2\"]"
+            ],
+            [
+              "button[data-step=\"3\"]"
+            ],
+            [
+              "button[data-step=\"4\"]"
+            ],
+            [
+              "button[data-step=\"5\"]"
+            ],
+            [
+              ".flow-panel__copy > h2"
+            ],
+            [
+              ".flow-panel__copy > p"
+            ],
+            [
+              ".flow-panel__detail"
+            ],
+            [
+              ".flow-impact__eyebrow"
+            ],
+            [
+              ".flow-impact__content > h2"
+            ],
+            [
+              ".impact-row-label:nth-child(1) > span"
+            ],
+            [
+              ".impact-row-label:nth-child(1) > strong"
+            ],
+            [
+              ".impact-row-label:nth-child(1) > strong > small"
+            ],
+            [
+              ".impact-row-label:nth-child(3) > span"
+            ],
+            [
+              ".impact-row-label:nth-child(3) > strong"
+            ],
+            [
+              ".impact-row-label:nth-child(3) > strong > small"
+            ],
+            [
+              ".impact-callout"
+            ],
+            [
+              ".impact-callout > strong"
+            ],
+            [
+              "h3"
+            ],
+            [
+              "div:nth-child(1) > .impact-state-label"
+            ],
+            [
+              ".impact-pressure__states > div:nth-child(1) > strong"
+            ],
+            [
+              "div:nth-child(1) > span:nth-child(4)"
+            ],
+            [
+              ".impact-pressure__after > .impact-state-label"
+            ],
+            [
+              ".impact-pressure__after > strong"
+            ],
+            [
+              ".impact-pressure__after > span:nth-child(4)"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 22
+    },
+    {
+      "state": "Energy Recovery",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ],
+            [
+              ".flow-panel__eyebrow"
+            ],
+            [
+              ".flow-panel__count"
+            ],
+            [
+              "button[data-step=\"2\"]"
+            ],
+            [
+              "button[data-step=\"3\"]"
+            ],
+            [
+              "button[data-step=\"4\"]"
+            ],
+            [
+              "button[data-step=\"5\"]"
+            ],
+            [
+              ".flow-panel__copy > h2"
+            ],
+            [
+              ".flow-panel__copy > p"
+            ],
+            [
+              ".flow-panel__detail"
+            ],
+            [
+              ".flow-impact__eyebrow"
+            ],
+            [
+              ".flow-impact__content > h2"
+            ],
+            [
+              "text[y=\"18\"]"
+            ],
+            [
+              "text[y=\"60\"]"
+            ],
+            [
+              "text[y=\"73\"]"
+            ],
+            [
+              "text[y=\"125\"]"
+            ],
+            [
+              ".impact-metric > strong"
+            ],
+            [
+              ".impact-metric > span"
+            ],
+            [
+              ".impact-consequence"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 23
+    },
+    {
+      "state": "Exhaust",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".flow-panel__eyebrow"
+            ],
+            [
+              ".flow-panel__count"
+            ],
+            [
+              "button[data-step=\"3\"]"
+            ],
+            [
+              "button[data-step=\"4\"]"
+            ],
+            [
+              "button[data-step=\"5\"]"
+            ],
+            [
+              ".flow-panel__copy > h2"
+            ],
+            [
+              ".flow-panel__copy > p"
+            ],
+            [
+              ".flow-panel__detail"
+            ],
+            [
+              ".flow-impact__eyebrow"
+            ],
+            [
+              ".flow-impact__content > h2"
+            ],
+            [
+              ".impact-metric > strong"
+            ],
+            [
+              ".impact-metric > span"
+            ],
+            [
+              "h3"
+            ],
+            [
+              ".impact-row-label:nth-child(2) > span"
+            ],
+            [
+              ".impact-row-label:nth-child(4) > span"
+            ],
+            [
+              ".impact-reduction-note"
+            ],
+            [
+              "div:nth-child(1) > p > strong"
+            ],
+            [
+              "div:nth-child(1) > p > strong > small"
+            ],
+            [
+              "div:nth-child(1) > p > span"
+            ],
+            [
+              "div:nth-child(2) > p > strong"
+            ],
+            [
+              "div:nth-child(2) > p > strong > small"
+            ],
+            [
+              "div:nth-child(2) > p > span"
+            ],
+            [
+              ".impact-consequence"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 21
+    },
+    {
+      "state": "Fresh Outdoor Air",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ],
+            [
+              ".flow-panel__eyebrow"
+            ],
+            [
+              ".flow-panel__count"
+            ],
+            [
+              "button[data-step=\"4\"]"
+            ],
+            [
+              "button[data-step=\"5\"]"
+            ],
+            [
+              ".flow-panel__copy > h2"
+            ],
+            [
+              ".flow-panel__copy > p"
+            ],
+            [
+              ".flow-panel__detail"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 22
+    },
+    {
+      "state": "Heat Pump",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "figcaption"
+            ],
+            [
+              ".flow-panel__eyebrow"
+            ],
+            [
+              ".flow-panel__count"
+            ],
+            [
+              "button[data-step=\"5\"]"
+            ],
+            [
+              ".flow-panel__copy > h2"
+            ],
+            [
+              ".flow-panel__copy > p"
+            ],
+            [
+              ".flow-panel__detail"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 22
+    },
+    {
+      "state": "Supply Air",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".flow-panel__eyebrow"
+            ],
+            [
+              ".flow-panel__count"
+            ],
+            [
+              ".flow-panel__copy > h2"
+            ],
+            [
+              ".flow-panel__copy > p"
+            ],
+            [
+              ".flow-panel__detail"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 21
+    },
+    {
+      "state": "flow-exited",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "button[data-action=\"reset\"]"
+            ],
+            [
+              ".showroom__wall-toggle"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 22
+    },
+    {
+      "state": "200-percent-dialog",
+      "violations": [],
+      "incomplete": [],
+      "passes": 14
+    },
+    {
+      "state": "200-percent-flow",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "button[data-step=\"1\"]"
+            ],
+            [
+              "button[data-step=\"2\"]"
+            ],
+            [
+              "button[data-step=\"3\"]"
+            ],
+            [
+              "button[data-step=\"4\"]"
+            ],
+            [
+              "button[data-step=\"5\"]"
+            ],
+            [
+              ".flow-panel__copy > h2"
+            ],
+            [
+              ".flow-panel__copy > p"
+            ],
+            [
+              ".flow-panel__detail"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 23
+    },
+    {
+      "state": "200-percent-impact",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".flow-panel__eyebrow"
+            ],
+            [
+              ".flow-panel__count"
+            ],
+            [
+              "button[data-step=\"1\"]"
+            ],
+            [
+              "button[data-step=\"2\"]"
+            ],
+            [
+              "button[data-step=\"3\"]"
+            ],
+            [
+              "button[data-step=\"4\"]"
+            ],
+            [
+              "button[data-step=\"5\"]"
+            ],
+            [
+              ".flow-panel__copy > h2"
+            ],
+            [
+              ".flow-panel__copy > p"
+            ],
+            [
+              ".flow-panel__detail"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 24
+    },
+    {
+      "state": "200-percent-exited",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              "button[data-action=\"reset\"]"
+            ],
+            [
+              ".showroom__wall-toggle"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 22
+    },
+    {
+      "state": "narrow-flow",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "nodes": [
+            [
+              ".flow-panel__eyebrow"
+            ],
+            [
+              ".flow-panel__count"
+            ],
+            [
+              "button[data-step=\"1\"]"
+            ],
+            [
+              "button[data-step=\"2\"]"
+            ],
+            [
+              "button[data-step=\"3\"]"
+            ],
+            [
+              "button[data-step=\"4\"]"
+            ],
+            [
+              "button[data-step=\"5\"]"
+            ],
+            [
+              ".flow-panel__copy > h2"
+            ],
+            [
+              ".flow-panel__copy > p"
+            ],
+            [
+              ".flow-panel__detail"
+            ],
+            [
+              "a"
+            ]
+          ]
+        }
+      ],
+      "passes": 22
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "hosts": [
+    "127.0.0.1:4175"
+  ],
+  "runtimeRequests": [
+    "http://127.0.0.1:4175/",
+    "http://127.0.0.1:4175/src/ui/showroom.css",
+    "http://127.0.0.1:4175/assets/models/200-water-building.opt.glb",
+    "http://127.0.0.1:4175/src/main.js",
+    "http://127.0.0.1:4175/src/showroom.js",
+    "http://127.0.0.1:4175/src/vendor/three/build/three.module.js",
+    "http://127.0.0.1:4175/src/camera/rooftop-camera.js",
+    "http://127.0.0.1:4175/src/controls/showroom-controls.js",
+    "http://127.0.0.1:4175/src/environment/studio-environment.js",
+    "http://127.0.0.1:4175/src/environment/city-context.js",
+    "http://127.0.0.1:4175/src/environment/EnvironmentManager.js",
+    "http://127.0.0.1:4175/src/lighting/studio-lights.js",
+    "http://127.0.0.1:4175/src/loaders/model-loader.js",
+    "http://127.0.0.1:4175/src/ui/showroom-ui.js",
+    "http://127.0.0.1:4175/src/environment/heat-pump-wall.js",
+    "http://127.0.0.1:4175/src/ui/equipment-modal.js",
+    "http://127.0.0.1:4175/src/hotspots/rooftop-markers.js",
+    "http://127.0.0.1:4175/src/flow/system-flow.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/controls/OrbitControls.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/loaders/RGBELoader.js",
+    "http://127.0.0.1:4175/src/loaders/city-assets.js",
+    "http://127.0.0.1:4175/src/environment/city-site.js",
+    "http://127.0.0.1:4175/src/environment/site-landscaping.js",
+    "http://127.0.0.1:4175/src/environment/city-infill.js",
+    "http://127.0.0.1:4175/src/environment/city-facades.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/loaders/GLTFLoader.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/libs/meshopt_decoder.module.js",
+    "http://127.0.0.1:4175/src/flow/system-flow-data.js",
+    "http://127.0.0.1:4175/src/flow/flow-visuals.js",
+    "http://127.0.0.1:4175/src/flow/flow-focus.js",
+    "http://127.0.0.1:4175/src/ui/flow-impact.js",
+    "http://127.0.0.1:4175/src/ui/flow-equipment.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+    "http://127.0.0.1:4175/src/flow/pipe-topology.js",
+    "http://127.0.0.1:4175/src/flow/airflow-smoke.js",
+    "http://127.0.0.1:4175/src/config.js",
+    "http://127.0.0.1:4175/assets/canary_wharf_4k.hdr",
+    "http://127.0.0.1:4175/assets/city-context/Building_Large_2.gltf",
+    "http://127.0.0.1:4175/assets/city-context/Building_Medium_2_001.gltf",
+    "http://127.0.0.1:4175/assets/city-context/Building_Small_1.gltf",
+    "http://127.0.0.1:4175/assets/city-context/Building_Large_2.bin",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MarbleFloor_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MarbleFloor_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MarbleFloor_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Trim_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Trim_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Trim_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MetalConcrete_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MetalConcrete_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MetalConcrete_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_RedBrick_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_RedBrick_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_RedBrick_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_lit_interior_2.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_lit_interior_1.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_dark_interior.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Concrete_Asphalt_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Concrete_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Concrete_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/Building_Medium_2_001.bin",
+    "http://127.0.0.1:4175/assets/city-context/Building_Small_1.bin",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Concrete_BaseColor.png",
+    "http://127.0.0.1:4175/assets/equipments/heat_pump.png",
+    "http://127.0.0.1:4175/assets/equipments/ahu-popup.webp",
+    "http://127.0.0.1:4175/assets/equipments/heat_pump-popup.webp",
+    "http://127.0.0.1:4175/",
+    "http://127.0.0.1:4175/src/ui/showroom.css",
+    "http://127.0.0.1:4175/assets/models/200-water-building.opt.glb",
+    "http://127.0.0.1:4175/src/main.js",
+    "http://127.0.0.1:4175/src/showroom.js",
+    "http://127.0.0.1:4175/src/vendor/three/build/three.module.js",
+    "http://127.0.0.1:4175/src/camera/rooftop-camera.js",
+    "http://127.0.0.1:4175/src/controls/showroom-controls.js",
+    "http://127.0.0.1:4175/src/environment/studio-environment.js",
+    "http://127.0.0.1:4175/src/environment/city-context.js",
+    "http://127.0.0.1:4175/src/environment/EnvironmentManager.js",
+    "http://127.0.0.1:4175/src/lighting/studio-lights.js",
+    "http://127.0.0.1:4175/src/loaders/model-loader.js",
+    "http://127.0.0.1:4175/src/ui/showroom-ui.js",
+    "http://127.0.0.1:4175/src/environment/heat-pump-wall.js",
+    "http://127.0.0.1:4175/src/ui/equipment-modal.js",
+    "http://127.0.0.1:4175/src/hotspots/rooftop-markers.js",
+    "http://127.0.0.1:4175/src/flow/system-flow.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/controls/OrbitControls.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/loaders/RGBELoader.js",
+    "http://127.0.0.1:4175/src/loaders/city-assets.js",
+    "http://127.0.0.1:4175/src/environment/city-site.js",
+    "http://127.0.0.1:4175/src/environment/site-landscaping.js",
+    "http://127.0.0.1:4175/src/environment/city-infill.js",
+    "http://127.0.0.1:4175/src/environment/city-facades.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/loaders/GLTFLoader.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/libs/meshopt_decoder.module.js",
+    "http://127.0.0.1:4175/src/flow/system-flow-data.js",
+    "http://127.0.0.1:4175/src/flow/flow-visuals.js",
+    "http://127.0.0.1:4175/src/flow/flow-focus.js",
+    "http://127.0.0.1:4175/src/ui/flow-impact.js",
+    "http://127.0.0.1:4175/src/ui/flow-equipment.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+    "http://127.0.0.1:4175/src/flow/pipe-topology.js",
+    "http://127.0.0.1:4175/src/flow/airflow-smoke.js",
+    "http://127.0.0.1:4175/src/config.js",
+    "http://127.0.0.1:4175/assets/canary_wharf_4k.hdr",
+    "http://127.0.0.1:4175/assets/city-context/Building_Large_2.gltf",
+    "http://127.0.0.1:4175/assets/city-context/Building_Medium_2_001.gltf",
+    "http://127.0.0.1:4175/assets/city-context/Building_Small_1.gltf",
+    "http://127.0.0.1:4175/assets/city-context/Building_Large_2.bin",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MarbleFloor_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MarbleFloor_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MarbleFloor_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Trim_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Trim_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Trim_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MetalConcrete_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MetalConcrete_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MetalConcrete_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_RedBrick_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_RedBrick_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_RedBrick_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_lit_interior_2.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_lit_interior_1.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_dark_interior.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Concrete_Asphalt_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Concrete_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Concrete_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/Building_Medium_2_001.bin",
+    "http://127.0.0.1:4175/assets/city-context/Building_Small_1.bin",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Concrete_BaseColor.png",
+    "http://127.0.0.1:4175/assets/equipments/heat_pump.png",
+    "http://127.0.0.1:4175/assets/equipments/ahu-popup.webp",
+    "http://127.0.0.1:4175/assets/equipments/heat_pump-popup.webp",
+    "http://127.0.0.1:4175/",
+    "http://127.0.0.1:4175/src/ui/showroom.css",
+    "http://127.0.0.1:4175/assets/models/200-water-building.opt.glb",
+    "http://127.0.0.1:4175/src/main.js",
+    "http://127.0.0.1:4175/src/showroom.js",
+    "http://127.0.0.1:4175/src/vendor/three/build/three.module.js",
+    "http://127.0.0.1:4175/src/camera/rooftop-camera.js",
+    "http://127.0.0.1:4175/src/controls/showroom-controls.js",
+    "http://127.0.0.1:4175/src/environment/studio-environment.js",
+    "http://127.0.0.1:4175/src/environment/city-context.js",
+    "http://127.0.0.1:4175/src/environment/EnvironmentManager.js",
+    "http://127.0.0.1:4175/src/lighting/studio-lights.js",
+    "http://127.0.0.1:4175/src/loaders/model-loader.js",
+    "http://127.0.0.1:4175/src/ui/showroom-ui.js",
+    "http://127.0.0.1:4175/src/environment/heat-pump-wall.js",
+    "http://127.0.0.1:4175/src/ui/equipment-modal.js",
+    "http://127.0.0.1:4175/src/hotspots/rooftop-markers.js",
+    "http://127.0.0.1:4175/src/flow/system-flow.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/controls/OrbitControls.js",
+    "http://127.0.0.1:4175/src/loaders/city-assets.js",
+    "http://127.0.0.1:4175/src/environment/city-site.js",
+    "http://127.0.0.1:4175/src/environment/site-landscaping.js",
+    "http://127.0.0.1:4175/src/environment/city-infill.js",
+    "http://127.0.0.1:4175/src/environment/city-facades.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/loaders/RGBELoader.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/loaders/GLTFLoader.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/libs/meshopt_decoder.module.js",
+    "http://127.0.0.1:4175/src/flow/system-flow-data.js",
+    "http://127.0.0.1:4175/src/flow/flow-visuals.js",
+    "http://127.0.0.1:4175/src/flow/flow-focus.js",
+    "http://127.0.0.1:4175/src/ui/flow-impact.js",
+    "http://127.0.0.1:4175/src/ui/flow-equipment.js",
+    "http://127.0.0.1:4175/src/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+    "http://127.0.0.1:4175/src/flow/pipe-topology.js",
+    "http://127.0.0.1:4175/src/flow/airflow-smoke.js",
+    "http://127.0.0.1:4175/src/config.js",
+    "http://127.0.0.1:4175/assets/canary_wharf_4k.hdr",
+    "http://127.0.0.1:4175/assets/city-context/Building_Large_2.gltf",
+    "http://127.0.0.1:4175/assets/city-context/Building_Medium_2_001.gltf",
+    "http://127.0.0.1:4175/assets/city-context/Building_Small_1.gltf",
+    "http://127.0.0.1:4175/assets/city-context/Building_Large_2.bin",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MarbleFloor_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MarbleFloor_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MarbleFloor_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Trim_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Trim_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Trim_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MetalConcrete_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MetalConcrete_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_MetalConcrete_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_RedBrick_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_RedBrick_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_RedBrick_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_lit_interior_2.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_lit_interior_1.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_dark_interior.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Concrete_Asphalt_BaseColor.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Concrete_ORM.png",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Concrete_Normal.png",
+    "http://127.0.0.1:4175/assets/city-context/Building_Medium_2_001.bin",
+    "http://127.0.0.1:4175/assets/city-context/Building_Small_1.bin",
+    "http://127.0.0.1:4175/assets/city-context/textures/T_Concrete_BaseColor.png",
+    "http://127.0.0.1:4175/assets/equipments/ahu-popup.webp",
+    "http://127.0.0.1:4175/assets/equipments/heat_pump-popup.webp"
+  ],
+  "artifact": [
+    {
+      "path": "/docs/launch-legal-audit.md",
+      "status": 404
+    },
+    {
+      "path": "/scripts/build-production.mjs",
+      "status": 404
+    },
+    {
+      "path": "/README.md",
+      "status": 404
+    },
+    {
+      "path": "/.git/config",
+      "status": 404
+    },
+    {
+      "path": "/.env",
+      "status": 404
+    },
+    {
+      "path": "/src/main.js.map",
+      "status": 404
+    },
+    {
+      "path": "/migration-plan.md",
+      "status": 404
+    },
+    {
+      "path": "/assets/models/unused.glb",
+      "status": 404
+    },
+    {
+      "path": "/_headers",
+      "status": 404
+    }
+  ]
+}

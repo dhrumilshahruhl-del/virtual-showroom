@@ -1,5 +1,6 @@
 import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -53,6 +54,22 @@ const runtimeFiles = [
   ].map(file => copy(`assets/city-context/textures/${file}`)),
 ];
 await Promise.all(runtimeFiles);
+
+// Response policy is generated from the exact deployed import-map bytes.
+const html = await readFile(path.join(output, 'index.html'), 'utf8');
+const importmap = html.match(/<script type="importmap">([\s\S]*?)<\/script>/)[1];
+const hash = createHash('sha256').update(importmap).digest('base64');
+const csp = `default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-${hash}'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:`;
+await writeFile(path.join(output, '_headers'), `/*
+  Content-Security-Policy: ${csp}
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=31536000
+  Cache-Control: public, max-age=0, must-revalidate
+/assets/canary_wharf_4k.hdr
+  Content-Type: application/octet-stream
+`);
 
 const cityOutput = path.join(output, 'assets/city-context');
 await mkdir(cityOutput, { recursive: true });

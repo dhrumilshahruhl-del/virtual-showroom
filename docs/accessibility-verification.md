@@ -1,0 +1,17 @@
+﻿# Accessibility verification — 2026-10-19
+
+Scope: production dist/ served by Cloudflare Wrangler 4.151.2 at http://127.0.0.1:4175/, isolated Chrome profile through CDP. No formal WCAG/ADA compliance claim is made.
+
+Reproduction: start Wrangler and isolated Chrome with remote debugging port 9224, download temporary axe-core 4.10.3 to docs/axe-qa.tmp.js, then run node scripts/final-launch-qa.mjs. The scanner is not a permanent dependency or public artifact. Evidence: final-launch-evidence.json, accessibility-trees.json, and zoom/narrow screenshots beside this file.
+
+Keyboard coverage uses Tab/Shift+Tab and Enter events, three full six-step cycles, Previous/Next, Pause/Resume, Restart, Exit/Finish/Escape, re-entry, opener focus restoration, canvas rotation/zoom/reset, equipment menu, dialog focus containment and Escape restoration. Native dialog semantics provide modal behavior. Active steps expose aria-current=step. One polite atomic step-copy region announces title and explanation; the equipment callout is a named group, avoiding competing live announcements. Native button text exposes pause state. Real NVDA/VoiceOver speech timing remains a short human sanity check.
+
+Tree captures cover initial showroom, flow opening, pause, all six named steps, equipment callout/image labels, impact content, modal, exit, and zoom/narrow states. Page h1, flow/impact h2, subsection h3, main, named controls group, flow region/navigation, dialog name, canvas name/instructions, and image alternatives were reviewed. Decorative SVGs/leaders are hidden. Narrative and labeled metrics explain HVAC behavior independently of color or motion. Duplicate IDs, broken ARIA references, and aria-hidden focusable descendants are checked. Hidden flow/modal UI is absent from the active tree.
+
+Actual browser zoom uses Chrome's browser preference chrome.settingsPrivate.setDefaultZoom(2), not device metrics, CSS zoom, or pinch/page scale. At 1440 outer-window width the viewport was 709 × 401 CSS pixels, devicePixelRatio 2, visualViewport.scale 1. Six-step flow completion is tested at this zoom, with buttons scrolling into view and no horizontal overflow. Dialog and expanded impact states are captured separately. A distinct 390 × 844 narrow test completes the flow with scrollWidth 390. Text sizes are preserved.
+
+Reduced motion removes guided camera transitions and decorative entrance animation while preserving navigation. Hidden-tab rendering suspension/resume is tested. Scanner incomplete findings remain in JSON; contrast over canvas/translucent backdrops needs visual review. Final status appears in final-launch-checklist.md.
+
+Visual remediation: secondary gray text was darkened to #526572, compact-layout navigation now stays in document flow to avoid covering text, and the impact explanation is a named keyboard-focusable scroll region. Focus outlines are preserved at zoom. Native dialogs allow the user to reach browser chrome; the test checks that background application controls never receive modal Tab focus.
+
+Final result: PASS for automated scanning, keyboard-only operation, tree review and actual 200% zoom. All 16 scans have zero violations; axe contrast incomplete results over 3D/translucent backgrounds remain recorded and were supplemented by visual/color review, including darker secondary text. The final layout supplement checks every flow control and the legal link for an unobscured on-screen hit target at zoom and narrow sizes. See final-layout-evidence.json. Actual screen-reader speech has not been tested.

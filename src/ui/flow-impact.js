@@ -105,7 +105,7 @@ export function createFlowImpact(root, flowPanel, onLayoutChange) {
     if (!config) { clear(); return; }
     panel.dataset.type = config.type;
     panel.innerHTML = `<summary><span>Impact</span> ${config.title}<i aria-hidden="true"></i></summary>
-      <div class="flow-impact__content"><p class="flow-impact__eyebrow">Why it matters</p>
+      <div class="flow-impact__content" tabindex="0" role="region" aria-label="Impact explanation"><p class="flow-impact__eyebrow">Why it matters</p>
       <h2>${config.title}</h2>${graphics[config.type]()}</div>`;
     panel.open = desktop.matches;
     panel.hidden = false;

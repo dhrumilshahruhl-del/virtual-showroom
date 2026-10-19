@@ -41,3 +41,5 @@ docs/environment-validation.json
 
 # Do not commit the source archive when present beside the project.
 *.zip
+/.wrangler/
+/docs/axe-qa.tmp.js

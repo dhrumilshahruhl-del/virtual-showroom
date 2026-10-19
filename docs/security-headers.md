@@ -1,12 +1,18 @@
-# Production Security Headers
+﻿# Production security headers
 
-Apply these as host response headers; they are recommendations, not active configuration. The showroom makes same-origin asset requests and no third-party runtime requests. Test against the deployed host before enforcement.
+Headers are active deployment configuration generated into dist/_headers by scripts/build-production.mjs and consumed by Cloudflare Workers static assets. Tested with Wrangler 4.151.2 on 2026-10-19. Deploy using wrangler.jsonc.
 
 ```text
-Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:
+Content-Security-Policy: default-src 'none'; script-src 'self' 'wasm-unsafe-eval' 'sha256-PhTME/NL+YLOgMGJpj6qFAbtI6hGjxjxvUFxpQwMDcM='; style-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; worker-src 'self' blob:
 X-Content-Type-Options: nosniff
 Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+Strict-Transport-Security: max-age=31536000
+Cache-Control: public, max-age=0, must-revalidate
 ```
 
-The inline import map in the current `dist/index.html` hashes to the CSP value above. Recompute after changing its contents. `frame-ancestors` is effective only as a response header. Serve GLB, GLTF, BIN, PNG, WebP, HDR, CSS, and JS with correct media types from the same origin. Cross-origin asset hosting is not required; if introduced later, configure CORS narrowly and update CSP. Serve over HTTPS. Enable HSTS only after HTTPS is confirmed for the production host and all required subdomains.
+The import-map hash is recomputed every build. No unsafe-inline, general unsafe-eval, wildcard source, or third-party host is allowed. Meshopt uses WebAssembly and a Blob worker; embedded GLB textures are fetched through local Blob URLs, requiring connect-src blob: as well as img-src blob:. DOM style property updates work with style-src self. HSTS applies to the HTTPS production hostname only; includeSubDomains and preload are absent. Browsers ignore it on local HTTP previews.
+
+The exact HDR route adds Content-Type: application/octet-stream. Other MIME types come from Cloudflare's handler. Same-origin module/model/image requests need no CORS/CORP headers. Verify production headers after deployment; local preview cannot verify HTTPS or dashboard overrides.
+
+Reference: [Cloudflare header behavior](https://developers.cloudflare.com/workers/static-assets/headers/).

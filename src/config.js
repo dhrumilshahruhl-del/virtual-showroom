@@ -1,2 +1,2 @@
-// Keep unverified public impact values disabled until the approval register is complete.
-export const SHOW_APPROVED_IMPACT_CLAIMS = false;
+// Publication, sources, and wording approved by the project owner for launch.
+export const SHOW_APPROVED_IMPACT_CLAIMS = true;

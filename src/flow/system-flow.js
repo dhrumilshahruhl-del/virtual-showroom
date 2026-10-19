@@ -255,7 +255,7 @@ export function createSystemFlow({ root, building, city, camera, controls, wall,
       goTo(0);
     } else if (button.dataset.flow === 'exit') exit();
   });
-  function onKey(event) { if (event.key === 'Escape' && mode === 'playing') exit(); }
+  function onKey(event) { if (event.key === 'Escape' && mode === 'playing' && !root.querySelector('dialog[open]')) exit(); }
   window.addEventListener('keydown', onKey);
 
   return {
